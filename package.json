@@ -5,12 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npm run build:rss",
+    "build": "npm install && next build && npm run build:rss",
     "build:rss": "node ./.next/server/scripts/generate-rss.js",
     "start": "next start",
     "start:out": "http-server ./out -p 3000",
     "export": "next export && touch out/.nojekyll",
-    "deploy": "rm -rf node_modules/.cache/gh-pages && npm install && npm run build && npm run export && gh-pages -d out -b gh-pages"
+    "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && npm run export && ./node_modules/.bin/gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
