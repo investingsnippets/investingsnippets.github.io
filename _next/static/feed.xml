@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[InvestingSnippets]]></title>
+        <description><![CDATA[InvestingSnippets]]></description>
+        <link>https://www.investingsnippets.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Sun, 20 Sep 2020 13:39:23 GMT</lastBuildDate>
+        <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Long Post]]></title>
+            <description><![CDATA[Who doesn't like a long post showcasing the different headings?]]></description>
+            <link>https://www.investingsnippets.com/post/long-post</link>
+            <guid isPermaLink="false">long-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Tue, 28 Jul 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fifth post]]></title>
+            <description><![CDATA[The fifth post is the least memorable.]]></description>
+            <link>https://www.investingsnippets.com/post/fifth-post</link>
+            <guid isPermaLink="false">fifth-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Mon, 20 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Coding Post]]></title>
+            <description><![CDATA[Coding is such a blissful activity.]]></description>
+            <link>https://www.investingsnippets.com/post/coding-post</link>
+            <guid isPermaLink="false">coding-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Sun, 19 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fourth post]]></title>
+            <description><![CDATA[The fourth post is the least memorable.]]></description>
+            <link>https://www.investingsnippets.com/post/fourth-post</link>
+            <guid isPermaLink="false">fourth-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Sat, 18 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Third post]]></title>
+            <description><![CDATA[The third post is the least memorable.]]></description>
+            <link>https://www.investingsnippets.com/post/third-post</link>
+            <guid isPermaLink="false">third-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Fri, 17 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Second post]]></title>
+            <description><![CDATA[The second post is the least memorable.]]></description>
+            <link>https://www.investingsnippets.com/post/second-post</link>
+            <guid isPermaLink="false">second-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Thu, 16 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[First post]]></title>
+            <description><![CDATA[The first post is the most memorable one. dsssds dsddsdsdddd ddasddadsadsadsad sadadsdffdfdsfsfasfadfdsfsffsffsaf afsfdsfffffsfds dssdsdasdsadsadadas dadsadsadsadas dadadasdas dadadsadsrrrfff]]></description>
+            <link>https://www.investingsnippets.com/post/first-post</link>
+            <guid isPermaLink="false">first-post</guid>
+            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <pubDate>Wed, 15 Apr 2020 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
