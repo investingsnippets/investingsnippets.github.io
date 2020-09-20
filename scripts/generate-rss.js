@@ -13,7 +13,7 @@ function dateSortDesc(a, b) {
 
 function generate() {
   const previewItems = getSortedPosts();
-  const { title, siteUrl, author } = getSiteMetaData();
+  const { title, siteUrl } = getSiteMetaData();
   const feed = new RSS({
     title: title,
     site_url: siteUrl,
@@ -27,7 +27,7 @@ function generate() {
       url: `${siteUrl}/post/${slug}`,
       date: frontmatter.date,
       description: frontmatter.description,
-      author: author.name,
+      author: frontmatter.author.name,
     });
   });
 

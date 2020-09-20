@@ -10,7 +10,7 @@
     "start": "next start",
     "start:out": "http-server ./out -p 3000",
     "export": "next export && touch out/.nojekyll",
-    "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && npm run export && gh-pages -d out -b gh-pages"
+    "deploy": "rm -rf node_modules/.cache/gh-pages && npm install && npm run build && npm run export && gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
