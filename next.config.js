@@ -2,17 +2,6 @@ const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 
 module.exports = withPlugins([optimizedImages], {
-    experimental: {
-        modern: true,
-        rewrites() {
-          return [
-            {
-              source: '/feed.xml',
-              destination: '/_next/static/feed.xml'
-            },
-          ];
-        },
-    },
     webpack: (config, { isServer, dev }) => {
         config.node = {
           fs: "empty",

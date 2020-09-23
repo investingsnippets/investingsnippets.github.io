@@ -9,8 +9,8 @@
     "build:rss": "node ./.next/server/scripts/generate-rss.js",
     "start": "next start",
     "start:out": "http-server ./out -p 3000",
-    "export": "next export && touch out/.nojekyll",
-    "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && npm run export && ./node_modules/.bin/gh-pages -d out -b gh-pages"
+    "export": "next export && touch out/.nojekyll && cp out/_next/static/feed.xml out/",
+    "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && npm run export && ./node_modules/.bin/gh-pages --dotfiles -d out -b gh-pages"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
