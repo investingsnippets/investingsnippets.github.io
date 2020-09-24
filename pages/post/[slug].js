@@ -32,7 +32,7 @@ export default function Post({postData, categories}) {
 
       <article>
         <header className="mb-8">
-          <h1 className="mb-2 text-6xl font-black leading-none font-display">
+          <h1 className="mb-2 text-5xl leading-none font-display font-semibold">
             {frontmatter.title}
           </h1>
           <p className="text-sm mb-2">{frontmatter.date}</p>

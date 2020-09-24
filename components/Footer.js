@@ -5,6 +5,7 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 
 function AppIcon(props) {
   return (
@@ -25,7 +26,22 @@ export default function Footer({ }) {
       <div className="flex pb-4">
 
         <div className="flex-auto">
-          <h6 className="font-semibold text-gray-700 mb-4">Home</h6>
+          <h6>
+          <Link href="/">
+              <a className="font-semibold text-gray-700 mb-4 no-underline">
+                Home
+              </a>
+            </Link>
+          </h6>
+        </div>
+
+        <div className="flex-auto">
+          <h6 >
+            <Link href="/terms/general-terms">
+              <a className="font-semibold text-gray-700 mb-4 no-underline">
+                Terms
+              </a>
+            </Link></h6>
         </div>
 
         <div className="flex-auto flex-no-wrap flex-shrink-0 text-center">

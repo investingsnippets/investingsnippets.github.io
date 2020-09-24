@@ -6,7 +6,7 @@ export default function Bio() {
 
   return (
     <>
-    <h5 className="font-bold text-lg uppercase text-gray-700">About {title} </h5>
+    <h5 className="font-semibold text-lg uppercase text-gray-700">About {title} </h5>
     <div className="flex items-center my-5">
       {/* <Image
         className="flex-shrink-0 mb-0 mr-3 rounded-full w-14 h-14"

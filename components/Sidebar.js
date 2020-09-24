@@ -21,7 +21,7 @@ export default function Sidebar({ categories }) {
 
       {/* <!-- topics --> */}
       <div className="my-2 lg:my-4">
-        <h5 className="font-bold text-lg uppercase text-gray-700 mb-2"> Popular Tags </h5>
+        <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Popular Tags </h5>
         <ul>
           {categories.slice(0, topicLimit).map(({name, count})=>(
             <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={name}>
@@ -43,7 +43,7 @@ export default function Sidebar({ categories }) {
 
       {/* <!-- subscribe --> */}
       <div className="opacity-25 my-2 lg:my-4">
-        <h5 className="font-bold text-lg uppercase text-gray-700 mb-2"> Subscribe </h5>
+        <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Subscribe </h5>
         <p className="text-gray-600">
           Receive the next blog article directly to your mail box!
         </p>

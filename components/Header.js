@@ -7,7 +7,7 @@ export default function Header({}) {
   const header = (
     <h1 className="mb-2 px-2">
       <Link href="/">
-        <a className="text-3xl font-black text-black no-underline font-display">
+        <a className="text-4xl no-underline font-semibold text-gray-700">
           {siteMetadata.title}
         </a>
       </Link>
