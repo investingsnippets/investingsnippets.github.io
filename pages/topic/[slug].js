@@ -1,19 +1,30 @@
 import Layout from "components/Layout";
+import Image from "components/Image";
 import SEO from "components/Seo";
 import PostCardPagination from "components/PostCardPagination"
-import { getPostsByCategory } from "utils/posts";
-import { getSortedTopics, getTopicsSlugs } from "utils/topics";
+import { getPostsByTopic } from "utils/posts";
+import { getSortedTopics, getTopicsSlugs, getTopicBySlug } from "utils/topics";
 
 
-export default function topic({categoryName, posts, topics}) {
+export default function Topic({topic, posts, topics}) {
   return (
     <Layout topics={topics}>
-      {/* <SEO
-        title={frontmatter.title}
-        description={frontmatter.description || post.excerpt}
-      /> */}
-      <h1 className="mb-2">{categoryName}</h1>
-      
+      <SEO
+        title={topic.name}
+        description={topic.description}
+      />
+      <h1 className="mb-5 text-3xl lg:text-4xl leading-none font-display font-semibold">{topic.name}</h1>
+      <Image
+        className="mb-3"
+        src={require(`../../content/assets/${topic.image}`)}
+        previewSrc={require(`../../content/assets/${topic.image}?lqip`)}
+        alt="Automation"
+      />
+
+      <p className="mb-10">
+        {topic.description}
+      </p>  
+
       <PostCardPagination total={posts.length}>
         {posts}
       </PostCardPagination>
@@ -31,12 +42,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const posts = getPostsByCategory(slug);
+  const topic = getTopicBySlug(slug);
+  const posts = getPostsByTopic(slug);
   const topics = getSortedTopics();
 
   return { 
     props: {
-      categoryName: slug,
+      topic,
       posts,
       topics
     },

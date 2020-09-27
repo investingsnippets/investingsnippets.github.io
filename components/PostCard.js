@@ -13,7 +13,7 @@ export default function PostCard({ title, description, img, author, date, topics
         <div>
           <header className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
             <Link href="/post/[slug]" as={`/post/${slug}`}>
-              <a className="text-4xl font-bold text-orange-600 font-display">
+              <a className="text-2xl lg:text-3xl font-bold text-orange-600 font-display">
                 {title}
               </a>
             </Link>
@@ -42,9 +42,9 @@ export default function PostCard({ title, description, img, author, date, topics
             </p>
           </div>
           <div className="ml-10 mr-3 lg:flex flex-row">
-            {topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
-              <Link href="/topic/[topic]" as={`/topic/${cat}`} key={cat}>
-                <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={cat}>{cat}</a>
+            {topics.map(({id, name}) => (
+              <Link href="/topic/[topic]" as={`/topic/${id}`} key={id}>
+                <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={id}>{name}</a>
               </Link>
             ))}
           </div>
