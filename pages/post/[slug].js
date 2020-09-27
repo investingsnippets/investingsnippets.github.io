@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Link from "next/link";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -35,7 +36,13 @@ export default function Post({postData, topics}) {
           <h1 className="mb-2 text-5xl leading-none font-display font-semibold">
             {frontmatter.title}
           </h1>
-          <p className="text-sm mb-2">{frontmatter.date}</p>
+          <p className="text-sm mb-2">
+            {frontmatter.date}
+            {' '}
+            by 
+            {' '}
+            {frontmatter.author.name}
+          </p>
           {frontmatter.topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
             <Link href="/topic/[topic]" as={`/topic/${cat}`} key={cat}>
               <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={cat}>{cat}</a>

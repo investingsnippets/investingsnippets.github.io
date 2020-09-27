@@ -1,15 +1,7 @@
 import fs from "fs";
 import RSS from "rss";
-import { getSiteMetaData } from "utils/helpers";
+import { getSiteMetaData } from "../utils/helpers";
 import { getSortedPosts } from "../utils/posts";
-
-function dateSortDesc(a, b) {
-  const date1 = new Date(a.data.frontmatter.date);
-  const date2 = new Date(b.data.frontmatter.date);
-  if (date1 > date2) return -1;
-  if (date1 < date2) return 1;
-  return 0;
-}
 
 function generate() {
   const previewItems = getSortedPosts();

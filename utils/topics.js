@@ -11,10 +11,11 @@ export function getSortedTopics() {
     }
     return []
   }).reduce((pre, cur) => {
+    const tmp = pre;
     Object.values(cur).forEach((e) => {
-      pre[e] = (pre[e] || 0) + 1 ;
+      tmp[e] = (tmp[e] || 0) + 1 ;
     })
-    return pre;
+    return tmp;
   }, {})
   
   const topicsSorted = Object

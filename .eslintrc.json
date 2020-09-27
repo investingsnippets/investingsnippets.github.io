@@ -24,7 +24,7 @@
   },
   "parserOptions": {
     "ecmaFeatures": {
-      "jsx": true // enable linting for jsx files
+      "jsx": false // enable linting for jsx files
     },
     "ecmaVersion": 11,
     "sourceType": "module"

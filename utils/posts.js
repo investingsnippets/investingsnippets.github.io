@@ -1,6 +1,5 @@
 import matter from "gray-matter";
 import fs from "fs";
-import path from "path";
 
 
 // Get day in format: Month day, Year. e.g. April 19, 2020
@@ -27,7 +26,7 @@ export function getSortedPosts() {
 
       const frontmatter = {
         ...data,
-        author: authors.find( a => a.id == data.author),
+        author: authors.find( a => a.id === data.author),
         date: getFormattedDate(data.date),
       };
 

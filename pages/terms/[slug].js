@@ -3,7 +3,7 @@ import SEO from "components/Seo";
 import ReactMarkdown from "react-markdown/with-html";
 import Image from "components/Image";
 import { getTermsSlugs, getTermsBySlug } from "utils/terms";
-import { getSortedTopics } from "utils/posts";
+import { getSortedTopics } from "utils/topics";
 
 
 const MarkdownImage = ({ alt, src }) => (

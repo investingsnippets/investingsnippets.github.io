@@ -12,7 +12,6 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
         </body>
       </Html>
     );

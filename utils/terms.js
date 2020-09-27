@@ -40,10 +40,10 @@ export function getTermsBySlug(slug) {
       };
 
       // Remove .md file extension from post name
-      const slug = filename.replace(".md", "");
+      const slugFromFile = filename.replace(".md", "");
 
       return {
-        slug,
+        slug: slugFromFile,
         frontmatter,
         excerpt,
         content,

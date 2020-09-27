@@ -1,8 +1,16 @@
 import { getSiteMetaData } from "utils/helpers";
+import { useEffect } from 'react';
 import Image from "./Image";
 
 export default function Bio() {
   const { title, description, social } = getSiteMetaData();
+
+  useEffect(() => {
+    const s = document.createElement("script");
+    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    s.setAttribute("async", "true");
+    document.head.appendChild(s);
+  }, []);
 
   return (
     <>
