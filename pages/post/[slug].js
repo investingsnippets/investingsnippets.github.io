@@ -6,7 +6,7 @@ import Layout from "components/Layout";
 import Image from "components/Image";
 import SEO from "components/Seo";
 import { getPostBySlug, getPostsSlugs } from "utils/posts";
-import { getSortedCategories } from "utils/posts";
+import { getSortedTopics } from "utils/topics";
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
@@ -21,10 +21,10 @@ const MarkdownImage = ({ alt, src }) => (
   />
 );
 
-export default function Post({postData, categories}) {
+export default function Post({postData, topics}) {
   const { post, frontmatter, nextPost, previousPost } = postData;
   return (
-    <Layout categories={categories}>
+    <Layout topics={topics}>
       <SEO
         title={frontmatter.title}
         description={frontmatter.description || post.excerpt}
@@ -36,8 +36,8 @@ export default function Post({postData, categories}) {
             {frontmatter.title}
           </h1>
           <p className="text-sm mb-2">{frontmatter.date}</p>
-          {frontmatter.categories.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
-            <Link href={"/category/[category]"} as={`/category/${cat}`} key={cat}>
+          {frontmatter.topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
+            <Link href={"/topic/[topic]"} as={`/topic/${cat}`} key={cat}>
               <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={cat}>{cat}</a>
             </Link>
           ))}
@@ -95,12 +95,12 @@ export async function getStaticProps({ params: { slug } }) {
     postData.nextPost = null;
   }
 
-  const categories = getSortedCategories();
+  const topics = getSortedTopics();
 
   return { 
     props: {
       postData,
-      categories
+      topics
     },
   };
 }

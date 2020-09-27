@@ -1,12 +1,13 @@
 import Layout from "components/Layout";
 import SEO from "components/Seo";
 import PostCardPagination from "components/PostCardPagination"
-import { getPostsByCategory, getSortedCategories, getCategoriesSlugs } from "utils/posts";
+import { getPostsByCategory } from "utils/posts";
+import { getSortedTopics, getTopicsSlugs } from "utils/topics";
 
 
-export default function Category({categoryName, posts, categories}) {
+export default function topic({categoryName, posts, topics}) {
   return (
-    <Layout categories={categories}>
+    <Layout topics={topics}>
       {/* <SEO
         title={frontmatter.title}
         description={frontmatter.description || post.excerpt}
@@ -21,7 +22,7 @@ export default function Category({categoryName, posts, categories}) {
 }
 
 export async function getStaticPaths() {
-  const paths = getCategoriesSlugs();
+  const paths = getTopicsSlugs();
 
   return {
     paths,
@@ -31,13 +32,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const posts = getPostsByCategory(slug);
-  const categories = getSortedCategories();
+  const topics = getSortedTopics();
 
   return { 
     props: {
       categoryName: slug,
       posts,
-      categories
+      topics
     },
   };
 }

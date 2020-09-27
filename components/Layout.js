@@ -3,7 +3,7 @@ import Header from "./Header";
 import Sidebar from "./Sidebar";
 
 
-export default function Layout({ children, categories }) {
+export default function Layout({ children, topics }) {
 
   return (
     <div className="overflow-hidden items-center justify-center bg-gray-100 max-w-screen-xl mx-auto">
@@ -15,7 +15,7 @@ export default function Layout({ children, categories }) {
         </div>
 
         {/* <!-- right sidebar --> */}
-        <Sidebar categories={categories} />
+        <Sidebar topics={topics} />
       </main>
       <Footer />
     </div>

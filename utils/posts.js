@@ -73,51 +73,15 @@ export function getPostBySlug(slug) {
   return { frontmatter, post: { content, excerpt }, previousPost, nextPost };
 }
 
-export function getSortedCategories() {
-  const posts = getSortedPosts();
 
-  var categoriesList = []
-  for (const postIndex in posts) {
-    const post = posts[postIndex];
-    const categories = post.frontmatter.categories;
-    
-    if (categories) {
-      const categoriesArray = categories.split(/(\s+)/).filter( e => e.trim().length > 0)
-      categoriesList = categoriesList.concat(categoriesArray);
-    }
-  }
-
-  const categoriesCounted = categoriesList.reduce( (acc, cur) => {
-    acc[cur] = (acc[cur] || 0) + 1 ;
-    return acc;
-  } , {})
-  
-  
-  const categoriesSorted = Object.keys(categoriesCounted).sort(function(a, b) {return -(categoriesCounted[a] - categoriesCounted[b])}).map(key => ({name:key, count: categoriesCounted[key]}));
-
-  return categoriesSorted;
-}
-
-export function getPostsByCategory(category) {
+export function getPostsByCategory(topic) {
   const posts = getSortedPosts();
   const categoryPostsFrontMtr = posts
   .filter(({frontmatter}) =>
-    frontmatter.categories.split(/(\s+)/).filter( e => (e.trim().length > 0 && e.trim() === category.trim()) ).length > 0
+    frontmatter.topics.split(/(\s+)/).filter( e => (e.trim().length > 0 && e.trim() === topic.trim()) ).length > 0
   )
   .map(({frontmatter, slug}) => {
     return {frontmatter, slug}
   });
   return categoryPostsFrontMtr
-}
-
-export function getCategoriesSlugs() {
-  const sortedCategories = getSortedCategories();
-
-  const paths = sortedCategories.map(({ name }) => ({
-    params: {
-      slug: name,
-    },
-  }));
-
-  return paths;
 }

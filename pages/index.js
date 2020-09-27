@@ -1,13 +1,13 @@
 import Layout from "components/Layout";
 import { getSortedPosts } from "utils/posts";
-import { getSortedCategories } from "utils/posts";
+import { getSortedTopics } from "utils/topics";
 
 import SEO from "components/Seo";
 import PostCardPagination from "components/PostCardPagination"
 
-export default function Home({ posts, categories }) {
+export default function Home({ posts, topics }) {
   return (
-    <Layout categories={categories}>
+    <Layout topics={topics}>
       <SEO />
       <PostCardPagination total={posts.length}>
         {posts}
@@ -24,12 +24,12 @@ export async function getStaticProps() {
     }
   })
 
-  const categories = getSortedCategories();
+  const topics = getSortedTopics();
 
   return {
     props: {
       posts,
-      categories
+      topics
     },
   };
 }

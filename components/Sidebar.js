@@ -2,7 +2,7 @@ import Bio from "./Bio";
 import Link from "next/link";
 import { getSiteMetaData } from "utils/helpers";
 
-export default function Sidebar({ categories }) {
+export default function Sidebar({ topics }) {
   const {sidebar} = getSiteMetaData();
   const topicLimit = sidebar.topics || 5;
 
@@ -21,11 +21,11 @@ export default function Sidebar({ categories }) {
 
       {/* <!-- topics --> */}
       <div className="my-2 lg:my-4">
-        <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Popular Tags </h5>
+        <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Popular Topics </h5>
         <ul>
-          {categories.slice(0, topicLimit).map(({name, count})=>(
+          {topics.slice(0, topicLimit).map(({name, count})=>(
             <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={name}>
-              <Link href={"/category/[category]"} as={`/category/${name}`}>
+              <Link href={"/topic/[topic]"} as={`/topic/${name}`}>
                 <a className="flex items-center text-gray-600 cursor-pointer">
                   <span className="inline-block h-4 w-4 bg-green-300 mr-3"></span>
                   <span>{name}</span>

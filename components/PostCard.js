@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function PostCard({ title, description, img, author, date, categories, slug }) {
+export default function PostCard({ title, description, img, author, date, topics, slug }) {
 
   return (
     <article className="rounded w-full lg:flex mb-10" key={slug}>
@@ -30,8 +30,8 @@ export default function PostCard({ title, description, img, author, date, catego
             <p className="text-gray-600 text-xs"> {date} </p>
           </div>
           <div className="ml-10 mr-3 lg:flex flex-row">
-            {categories.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
-              <Link href={"/category/[category]"} as={`/category/${cat}`} key={cat}>
+            {topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
+              <Link href={"/topic/[topic]"} as={`/topic/${cat}`} key={cat}>
                 <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={cat}>{cat}</a>
               </Link>
             ))}
