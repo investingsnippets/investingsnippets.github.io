@@ -23,11 +23,11 @@ export default function Sidebar({ topics }) {
       <div className="my-2 lg:my-4">
         <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Popular Topics </h5>
         <ul>
-          {topics.slice(0, topicLimit).map(({slug, name, count})=>(
+          {topics.slice(0, topicLimit).map(({slug, name, color, count})=>(
             <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={slug}>
               <Link href="/topic/[topic]" as={`/topic/${slug}`}>
                 <a className="flex items-center text-gray-600 cursor-pointer">
-                  <span className="inline-block h-4 w-4 bg-green-300 mr-3" />
+                  <span className={`inline-block h-4 w-4 ${color} mr-3`} />
                   <span>{name}</span>
                   <span className="text-gray-500 ml-auto">
                     {count}

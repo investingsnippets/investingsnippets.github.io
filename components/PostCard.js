@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "./Image";
 
 export default function PostCard({ title, description, img, author, date, topics, slug }) {
 
@@ -7,7 +8,7 @@ export default function PostCard({ title, description, img, author, date, topics
       <div
         className="h-48 lg:w-48 flex-none bg-cover text-center overflow-hidden opacity-75"
         style={{ backgroundImage: `url('${img}')`}}
-        title="deit is very important"
+        title={`${title}`}
       />
       <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal w-full">
         <div>
@@ -25,8 +26,10 @@ export default function PostCard({ title, description, img, author, date, topics
           </section>
         </div>
         <div className="flex mt-3 flex-row">
-          <img
+          <Image
+            alt={`${author.name}`}
             src={`${author.image}`}
+            previewSrc={`${author.image}`}
             className="h-10 w-10 rounded-full mr-2 object-cover"
           />
           <div>
@@ -42,9 +45,9 @@ export default function PostCard({ title, description, img, author, date, topics
             </p>
           </div>
           <div className="ml-10 mr-3 lg:flex flex-row">
-            {topics.map(({id, name}) => (
+            {topics.map(({id, color, name}) => (
               <Link href="/topic/[topic]" as={`/topic/${id}`} key={id}>
-                <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={id}>{name}</a>
+                <a className={`inline-block ${color} rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2`} key={id}>{name}</a>
               </Link>
             ))}
           </div>

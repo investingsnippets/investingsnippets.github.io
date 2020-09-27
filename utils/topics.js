@@ -29,7 +29,7 @@ export function getSortedTopics() {
   const topicsSorted = Object
     .keys(topicsCounted)
     .sort( (a, b) => -(topicsCounted[a] - topicsCounted[b]) )
-    .map(key => ({slug:key, name: getTopicBySlug(key).name, count: topicsCounted[key]}));
+    .map(key => ({...getTopicBySlug(key), slug:key, count: topicsCounted[key]}));
 
   return topicsSorted;
 }

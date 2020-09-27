@@ -43,9 +43,9 @@ export default function Post({postData, topics}) {
             {' '}
             {frontmatter.author.name}
           </p>
-          {frontmatter.topics.map(({id, name}) => (
+          {frontmatter.topics.map(({id, color, name}) => (
             <Link href="/topic/[topic]" as={`/topic/${id}`} key={id}>
-              <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={id}>{name}</a>
+              <a className={`inline-block ${color} rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2`} key={id}>{name}</a>
             </Link>
           ))}
         </header>
