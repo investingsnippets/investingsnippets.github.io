@@ -43,9 +43,9 @@ export default function Post({postData, topics}) {
             {' '}
             {frontmatter.author.name}
           </p>
-          {frontmatter.topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
-            <Link href="/topic/[topic]" as={`/topic/${cat}`} key={cat}>
-              <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={cat}>{cat}</a>
+          {frontmatter.topics.map(({id, name}) => (
+            <Link href="/topic/[topic]" as={`/topic/${id}`} key={id}>
+              <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={id}>{name}</a>
             </Link>
           ))}
         </header>
