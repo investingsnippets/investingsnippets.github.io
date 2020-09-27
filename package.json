@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm install && next build && npm run build:rss",
+    "build": "npm install && next build && npm run build:rss && npm run build:sitemap",
     "build:rss": "node ./.next/server/scripts/generate-rss.js",
+    "build:sitemap": "node ./.next/server/scripts/generate-sitemap.js",
     "start": "next start",
     "start:out": "http-server ./out -p 3000",
-    "export": "next export && touch out/.nojekyll && cp out/_next/static/feed.xml out/",
+    "export": "next export && touch out/.nojekyll && cp out/_next/static/feed.xml out/ && cp out/_next/static/sitemap.xml out/",
     "deploy": "rm -rf node_modules/.cache/gh-pages && npm run build && npm run export && ./node_modules/.bin/gh-pages --dotfiles -d out -b gh-pages",
     "lint": "eslint ./components/** ./pages/** ./utils/** ./scripts/** -c .eslintrc.json --ext js,jsx",
     "lint-fix": "eslint ./components/** ./pages/** ./utils/** ./scripts/** -c .eslintrc.json --fix --ext js,jsx"
@@ -20,6 +21,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
     "clsx": "^1.1.1",
+    "gray-matter": "^4.0.2",
     "image-trace-loader": "^1.0.2",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
@@ -31,6 +33,7 @@
     "next": "9.5.3",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.2",
+    "nextjs-sitemap-generator": "^1.1.1",
     "postcss-preset-env": "^6.7.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
@@ -41,8 +44,7 @@
     "svg-sprite-loader": "^5.0.0",
     "typeface-merriweather": "^0.0.72",
     "typeface-open-sans": "^0.0.75",
-    "webp-loader": "^0.6.0",
-    "gray-matter": "^4.0.2"
+    "webp-loader": "^0.6.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.2.0",

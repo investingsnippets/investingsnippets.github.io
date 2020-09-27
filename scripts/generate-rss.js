@@ -12,7 +12,7 @@ function generate() {
     feed_url: `${siteUrl}/feed.xml`,
   });
 
-  previewItems.map(({ frontmatter, slug }) => {
+  previewItems.forEach(({ frontmatter, slug }) => {
     feed.item({
       title: frontmatter.title,
       guid: slug,

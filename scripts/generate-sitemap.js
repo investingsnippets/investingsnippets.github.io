@@ -1,26 +1,25 @@
-/*
-NOT USED
-this could be used if we wanted to generate a sitemap
-*/
-
 const sitemap = require("nextjs-sitemap-generator");
+import { getSiteMetaData } from "../utils/helpers";
 const fs = require("fs");
 
 const BUILD_ID = fs.readFileSync("./.next/BUILD_ID").toString();
 (async function () {
+    const { siteUrl } = getSiteMetaData();
     await Promise.resolve(sitemap({
-        baseUrl: "https://www.investingsnippets.com",
+        baseUrl: `${siteUrl}`,
         ignoredPaths: ['[slug]', 'api', 'github'],
-        pagesDirectory: `.next/server/static/${  BUILD_ID  }/pages`,
+        pagesDirectory: `.next/server/pages`,
         targetDirectory: "./.next/static/",
+        sitemapFilename: 'sitemap.xml',
         extraPaths: ['/'],
         pagesConfig: {
             '/': {
                 priority: '1',
+                changefreq: 'weekly'
             },
             '/post': {
                 priority: '0.5',
-                changefreq: 'daily'
+                changefreq: 'weekly'
             }
         },
     }));

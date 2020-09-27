@@ -13,6 +13,7 @@ module.exports = withPlugins([optimizedImages], {
             const entries = { ...(await originalEntry()) };
             // This script imports components from the Next app, so it's transpiled to `.next/server/scripts/generate-rss.js`
             entries['./scripts/generate-rss.js'] = './scripts/generate-rss.js';
+            entries['./scripts/generate-sitemap.js'] = './scripts/generate-sitemap.js';
             return entries;
           };
         }

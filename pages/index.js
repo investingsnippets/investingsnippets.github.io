@@ -18,7 +18,7 @@ export default function Home({ posts, topics }) {
 
 export async function getStaticProps() {
   const posts = getSortedPosts();
-  posts.map(({ frontmatter: { title, description } }) => {
+  posts.forEach(({ frontmatter: { title, description } }) => {
     if (description.length > 191) {
       console.log(`Description length no more than 191 chars for post: ${title}`);
     }
