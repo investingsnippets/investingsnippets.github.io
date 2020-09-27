@@ -4,14 +4,14 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 24 Sep 2020 18:06:48 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 27 Sep 2020 12:48:28 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Third post]]></title>
             <description><![CDATA[The third post is the least memorable.]]></description>
             <link>https://www.investingsnippets.com/post/third-post</link>
             <guid isPermaLink="false">third-post</guid>
-            <dc:creator><![CDATA[C.P]]></dc:creator>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
             <pubDate>Fri, 17 Apr 2020 00:00:00 GMT</pubDate>
         </item>
     </channel>
