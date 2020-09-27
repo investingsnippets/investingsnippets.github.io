@@ -13,7 +13,7 @@ export default function Topic({topic, posts, topics}) {
         title={topic.name}
         description={topic.description}
       />
-      <h1 className="mb-5 text-3xl lg:text-4xl leading-none font-display font-semibold">{topic.name}</h1>
+      <h1 className="mb-5 text-3xl lg:text-4xl  font-semibold">{topic.name}</h1>
       <Image
         className="mb-3"
         src={require(`../../content/assets/${topic.image}`)}
