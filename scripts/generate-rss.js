@@ -1,7 +1,7 @@
 import fs from "fs";
 import RSS from "rss";
-import { getSortedPosts } from "../utils/posts";
 import { getSiteMetaData } from "utils/helpers";
+import { getSortedPosts } from "../utils/posts";
 
 function dateSortDesc(a, b) {
   const date1 = new Date(a.data.frontmatter.date);
@@ -15,7 +15,7 @@ function generate() {
   const previewItems = getSortedPosts();
   const { title, siteUrl } = getSiteMetaData();
   const feed = new RSS({
-    title: title,
+    title,
     site_url: siteUrl,
     feed_url: `${siteUrl}/feed.xml`,
   });

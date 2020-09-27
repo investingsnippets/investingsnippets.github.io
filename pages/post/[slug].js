@@ -37,7 +37,7 @@ export default function Post({postData, topics}) {
           </h1>
           <p className="text-sm mb-2">{frontmatter.date}</p>
           {frontmatter.topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((cat) => (
-            <Link href={"/topic/[topic]"} as={`/topic/${cat}`} key={cat}>
+            <Link href="/topic/[topic]" as={`/topic/${cat}`} key={cat}>
               <a className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2" key={cat}>{cat}</a>
             </Link>
           ))}
@@ -49,23 +49,27 @@ export default function Post({postData, topics}) {
           renderers={{ code: CodeBlock, image: MarkdownImage }}
         />
         <hr className="mt-4" />
-        <footer>
-          
-        </footer>
+        <footer />
       </article>
       <nav className="flex flex-wrap justify-between mb-10">
         {previousPost ? (
-          <Link href={"/post/[slug]"} as={`/post/${previousPost.slug}`}>
+          <Link href="/post/[slug]" as={`/post/${previousPost.slug}`}>
             <a className="text-lg font-bold">
-              ← {previousPost.frontmatter.title}
+              ← 
+              {' '}
+              {previousPost.frontmatter.title}
             </a>
           </Link>
         ) : (
           <div />
         )}
         {nextPost ? (
-          <Link href={"/post/[slug]"} as={`/post/${nextPost.slug}`}>
-            <a className="text-lg font-bold">{nextPost.frontmatter.title} →</a>
+          <Link href="/post/[slug]" as={`/post/${nextPost.slug}`}>
+            <a className="text-lg font-bold">
+              {nextPost.frontmatter.title}
+              {' '}
+              →
+            </a>
           </Link>
         ) : (
           <div />

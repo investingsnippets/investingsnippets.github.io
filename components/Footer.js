@@ -9,13 +9,14 @@ import Link from "next/link";
 
 function AppIcon(props) {
   return (
-  <a
-  href={props.link}
-  className="inline-block text-orange-600 hover:text-blue-700 no-label px-2"
-  target="_blank"
->
-  <FontAwesomeIcon width="25px" icon={props.icon} />
-</a>);
+    <a
+      href={props.link}
+      className="inline-block text-orange-600 hover:text-blue-700 no-label px-2"
+      target="_blank"
+    >
+      <FontAwesomeIcon width="25px" icon={props.icon} />
+    </a>
+);
 }
 
 export default function Footer({ }) {
@@ -27,7 +28,7 @@ export default function Footer({ }) {
 
         <div className="flex-auto">
           <h6>
-          <Link href="/">
+            <Link href="/">
               <a className="font-semibold text-gray-700 mb-4 no-underline">
                 Home
               </a>
@@ -36,21 +37,22 @@ export default function Footer({ }) {
         </div>
 
         <div className="flex-auto">
-          <h6 >
+          <h6>
             <Link href="/terms/general-terms">
               <a className="font-semibold text-gray-700 mb-4 no-underline">
                 Terms
               </a>
-            </Link></h6>
+            </Link>
+          </h6>
         </div>
 
         <div className="flex-auto flex-no-wrap flex-shrink-0 text-center">
           <AppIcon icon={faTwitter} link={`https://twitter.com/${social.twitter}`} />
           <AppIcon icon={faGithub} link={`https://github.com/${social.github}`} />
           <AppIcon
-              icon={faLinkedin}
-              link={`https://www.linkedin.com/in/${social.linkedin}/`}
-            />
+            icon={faLinkedin}
+            link={`https://www.linkedin.com/in/${social.linkedin}/`}
+          />
         </div>
 
       </div>
@@ -58,7 +60,12 @@ export default function Footer({ }) {
         {disclaimer}
       </div>
       <div className="my-2 text-sm text-gray-600">
-        Copyright © {new Date().getFullYear()}, {title}
+        Copyright © 
+        {' '}
+        {new Date().getFullYear()}
+        , 
+        {' '}
+        {title}
       </div>
     </footer>
   );

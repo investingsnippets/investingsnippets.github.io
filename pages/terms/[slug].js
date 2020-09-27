@@ -38,9 +38,7 @@ export default function Terms({termData, topics}) {
           renderers={{ image: MarkdownImage }}
         />
         <hr className="mt-4" />
-        <footer>
-          
-        </footer>
+        <footer />
       </article>
     </Layout>
   );
