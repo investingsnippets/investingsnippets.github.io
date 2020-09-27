@@ -4,4 +4,39 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
       xmlns:xhtml="http://www.w3.org/1999/xhtml">
-      
+      <url><loc>https://www.investingsnippets.com/404</loc>
+                
+                
+                
+                <lastmod>2020-09-27</lastmod>
+                </url><url><loc>https://www.investingsnippets.com/index</loc>
+                
+                
+                
+                <lastmod>2020-09-27</lastmod>
+                </url><url><loc>https://www.investingsnippets.com/post/third-post</loc>
+                
+                
+                
+                <lastmod>2020-09-27</lastmod>
+                </url><url><loc>https://www.investingsnippets.com/terms/general-terms</loc>
+                
+                
+                
+                <lastmod>2020-09-27</lastmod>
+                </url><url><loc>https://www.investingsnippets.com/topic/automation</loc>
+                
+                
+                
+                <lastmod>2020-09-27</lastmod>
+                </url><url><loc>https://www.investingsnippets.com/topic/book-review</loc>
+                
+                
+                
+                <lastmod>2020-09-27</lastmod>
+                </url><url><loc>https://www.investingsnippets.com/</loc>
+                
+                <priority>1</priority>
+                <changefreq>weekly</changefreq>
+                <lastmod>2020-09-27</lastmod>
+                </url></urlset>
