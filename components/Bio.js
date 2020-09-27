@@ -16,6 +16,7 @@ export default function Bio() {
     <>
       <h5 className="font-semibold text-lg uppercase text-gray-700">
         About
+        {' '}
         {title} 
       </h5>
       <div className="flex items-center my-5">
@@ -31,8 +32,7 @@ export default function Bio() {
       </div>
       <div className="flex">
         <a href={`https://twitter.com/${social.twitter}`} className="twitter-follow-button" data-show-count="false" data-show-screen-name="false">
-          Follow @
-          {social.twitter}
+          Follow @{social.twitter}
         </a>
       </div>
     </>
