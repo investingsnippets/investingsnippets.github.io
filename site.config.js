@@ -8,7 +8,7 @@ export default {
     social: {
       twitter: "investingsnipts",
       github: "investingsnippets",
-      linkedin: ""
+      linkedin: "investingsnippets"
     },
     sidebar: {
       topics: 4

@@ -32,7 +32,6 @@ export default function Bio() {
       </div>
       <div className="flex">
         <a href={`https://twitter.com/${social.twitter}`} className="twitter-follow-button" data-show-count="false" data-show-screen-name="false">
-          Follow @{social.twitter}
         </a>
       </div>
     </>
