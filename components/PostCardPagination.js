@@ -23,7 +23,7 @@ export default function PostCardPagination({children, total}) {
   const childTo = (currentPage * pageLimit)
 
   return (
-    <>
+    <content>
       <div>
         {children.slice(childFrom, childTo).map(({ frontmatter, slug }) => (
           <PostCard {...frontmatter} slug={slug} key={slug} />
@@ -89,6 +89,6 @@ export default function PostCardPagination({children, total}) {
         </div>
       </div>
     )}
-    </>
+    </content>
   );
 }

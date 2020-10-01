@@ -13,7 +13,7 @@ export default function Bio() {
   }, []);
 
   return (
-    <>
+    <content>
       <h5 className="font-semibold text-lg uppercase text-gray-700">
         About
         {' '}
@@ -34,6 +34,6 @@ export default function Bio() {
         <a href={`https://twitter.com/${social.twitter}`} className="twitter-follow-button" data-show-count="false" data-show-screen-name="false">
         </a>
       </div>
-    </>
+    </content>
   );
 }
