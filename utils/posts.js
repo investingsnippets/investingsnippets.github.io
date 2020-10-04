@@ -13,6 +13,7 @@ function getFormattedDate(date) {
 export function getSortedPosts() {
   const authors = JSON.parse(fs.readFileSync(`${process.cwd()}/content/authors/authors.json`));
   const topics = JSON.parse(fs.readFileSync(`${process.cwd()}/content/topics/topics.json`));
+  const tags = JSON.parse(fs.readFileSync(`${process.cwd()}/content/tags/tags.json`));
 
   const posts = fs
     .readdirSync(`${process.cwd()}/content/posts`)
@@ -25,13 +26,15 @@ export function getSortedPosts() {
       // Parse markdown, get frontmatter data, excerpt and content.
       const { data, excerpt, content } = matter(markdownWithMetadata);
 
-      const dataTopics = data.topics.split(/(\s+)/).filter( e => e.trim().length > 0).map((tpcId) => {
-        return topics.find(a => a.id === tpcId)
-      })
+      const dataTags = data.tags ? data.tags.split(/(\s+)/).filter( e => e.trim().length > 0).map((tgId) => {
+        return tags.find(a => a.id === tgId)
+      }) : []
 
+      const dataTopic =  topics.find(a => a.id === data.topic.trim())
       const frontmatter = {
         ...data,
-        topics: dataTopics,
+        tags: dataTags,
+        topic: dataTopic,
         author: authors.find( a => a.id === data.author),
         date: getFormattedDate(data.date),
       };
@@ -79,10 +82,20 @@ export function getPostBySlug(slug) {
 }
 
 
+export function getPostsByTag(tagSlug) {
+  const posts = getSortedPosts();
+  const categoryPostsFrontMtr = posts
+  .filter(({frontmatter}) => frontmatter.tags.find(({id}) => id === tagSlug))
+  .map(({frontmatter, slug}) => {
+    return {frontmatter, slug}
+  });
+  return categoryPostsFrontMtr
+}
+
 export function getPostsByTopic(topicSlug) {
   const posts = getSortedPosts();
   const categoryPostsFrontMtr = posts
-  .filter(({frontmatter}) => frontmatter.topics.find(({id}) => id === topicSlug))
+  .filter(({frontmatter}) => frontmatter.topic.id === topicSlug )
   .map(({frontmatter, slug}) => {
     return {frontmatter, slug}
   });

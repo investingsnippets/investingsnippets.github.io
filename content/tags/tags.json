@@ -1,0 +1,14 @@
+[{
+    "id": "python",
+    "name": "python",
+    "image": "automation.jpg",
+    "description": "Python",
+    "color": "bg-green-300"
+},
+{
+    "id": "statistics",
+    "name": "statistics",
+    "image": "automation.jpg",
+    "description": "statistics",
+    "color": "bg-green-300"
+}]

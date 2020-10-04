@@ -35,6 +35,9 @@ module.exports = {
       spacing: {
         14: "3.375rem",
       },
+      inset: {
+        '-4/5': '-80%',
+      },
     },
     fontFamily: {
       display: ["Open Sans", ...defaultSans],

@@ -2,15 +2,15 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-export default function PopularTopics({ sortedTopics }) {
+export default function PopularTags({ tags, tagsLimit }) {
  
   return (
     <content>
-      <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Topics </h5>
+      <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Popular Tags </h5>
       <ul>
-        {sortedTopics.map(({slug, name, color, count})=>(
+        {tags.slice(0, tagsLimit).map(({slug, name, color, count})=>(
           <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={slug}>
-            <Link href="/topic/[topic]" as={`/topic/${slug}`}>
+            <Link href="/tag/[tag]" as={`/tag/${slug}`}>
               <a className="flex items-center text-gray-600 cursor-pointer">
                 <span className={`inline-block h-4 w-4 ${color} mr-3`} />
                 <span>{name}</span>
@@ -29,10 +29,12 @@ export default function PopularTopics({ sortedTopics }) {
   )
 }
 
-PopularTopics.defaultProps = {
-  sortedTopics: []
+PopularTags.defaultProps = {
+  tags: [],
+  tagsLimit: 0
 };
 
-PopularTopics.propTypes = {
-  sortedTopics: PropTypes.arrayOf(PropTypes.object)
+PopularTags.propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.object),
+  tagsLimit: PropTypes.number
 };

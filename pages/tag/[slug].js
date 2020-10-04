@@ -2,28 +2,28 @@ import Layout from "components/Layout";
 import Image from "components/Image";
 import SEO from "components/Seo";
 import PostCardPagination from "components/PostCardPagination"
-import { getSortedTags } from "utils/tags";
-import { getPostsByTopic } from "utils/posts";
-import { getSortedTopics, getTopicSlugs, getTopicBySlug, getAllTopics } from "utils/topics";
+import { getPostsByTag } from "utils/posts";
+import { getSortedTags, getTagsSlugs, getTagBySlug } from "utils/tags";
+import { getSortedTopics, getAllTopics } from "utils/topics";
 
 
-export default function Topic({topic, posts, tags, sortedTopics, allTopics}) {
+export default function Topic({tag, posts, tags, sortedTopics, allTopics}) {
   return (
     <Layout tags={tags} sortedTopics={sortedTopics} allTopics={allTopics}>
       <SEO
-        title={topic.name}
-        description={topic.description}
+        title={tag.name}
+        description={tag.description}
       />
-      <h1 className="mb-5 text-3xl lg:text-4xl  font-semibold">{topic.name}</h1>
+      <h1 className="mb-5 text-3xl lg:text-4xl  font-semibold">{tag.name}</h1>
       <Image
         className="mb-3"
-        src={require(`../../content/assets/${topic.image}`)}
-        previewSrc={require(`../../content/assets/${topic.image}?lqip`)}
+        src={require(`../../content/assets/${tag.image}`)}
+        previewSrc={require(`../../content/assets/${tag.image}?lqip`)}
         alt="Automation"
       />
 
       <p className="mb-10">
-        {topic.description}
+        {tag.description}
       </p>  
 
       <PostCardPagination total={posts.length}>
@@ -34,7 +34,7 @@ export default function Topic({topic, posts, tags, sortedTopics, allTopics}) {
 }
 
 export async function getStaticPaths() {
-  const paths = getTopicSlugs();
+  const paths = getTagsSlugs();
 
   return {
     paths,
@@ -43,8 +43,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const topic = getTopicBySlug(slug);
-  const posts = getPostsByTopic(slug);
+  const tag = getTagBySlug(slug);
+  const posts = getPostsByTag(slug);
   
   const tags = getSortedTags();
   const sortedTopics = getSortedTopics();
@@ -52,7 +52,7 @@ export async function getStaticProps({ params: { slug } }) {
 
   return { 
     props: {
-      topic,
+      tag,
       posts,
       tags,
       sortedTopics,

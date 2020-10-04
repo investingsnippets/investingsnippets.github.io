@@ -1,13 +1,13 @@
 import Layout from "components/Layout";
 import { getSortedPosts } from "utils/posts";
-import { getSortedTopics } from "utils/topics";
-
+import { getSortedTags } from "utils/tags";
+import { getSortedTopics, getAllTopics } from "utils/topics";
 import SEO from "components/Seo";
 import PostCardPagination from "components/PostCardPagination"
 
-export default function Home({ posts, topics }) {
+export default function Home({ posts, tags, sortedTopics, allTopics }) {
   return (
-    <Layout topics={topics}>
+    <Layout tags={tags} sortedTopics={sortedTopics} allTopics={allTopics}>
       <SEO />
       <PostCardPagination total={posts.length}>
         {posts}
@@ -24,12 +24,16 @@ export async function getStaticProps() {
     }
   })
 
-  const topics = getSortedTopics();
+  const tags = getSortedTags();
+  const sortedTopics = getSortedTopics();
+  const allTopics = getAllTopics();
 
   return {
     props: {
       posts,
-      topics
+      tags,
+      sortedTopics,
+      allTopics
     },
   };
 }

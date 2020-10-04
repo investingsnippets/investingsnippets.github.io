@@ -11,7 +11,7 @@ export default {
       linkedin: "investingsnippets"
     },
     sidebar: {
-      topics: 4
+      tagsLimit: 4
     },
     paginationLimit: 4,
   },

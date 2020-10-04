@@ -17,7 +17,7 @@ export function getSortedTopics() {
   const posts = getSortedPosts();
 
   const topicsCounted = posts.map((post) => {
-    return post.frontmatter.topics.map(({id}) => id)
+    return [post.frontmatter.topic.id]
   }).reduce((pre, cur) => {
     const tmp = pre;
     Object.values(cur).forEach((e) => {
@@ -34,7 +34,7 @@ export function getSortedTopics() {
   return topicsSorted;
 }
 
-export function getTopicsSlugs() {
+export function getTopicSlugs() {
   const topics = JSON.parse(fs.readFileSync(`${process.cwd()}/content/topics/topics.json`));
 
   const paths = topics.map(({ id }) => ({
@@ -44,5 +44,10 @@ export function getTopicsSlugs() {
   }));
 
   return paths;
+}
+
+export function getAllTopics() {
+  const topics = JSON.parse(fs.readFileSync(`${process.cwd()}/content/topics/topics.json`));
+  return topics;
 }
   

@@ -1,12 +1,14 @@
-import Link from "next/link";
+import PropTypes from "prop-types"
 import { getSiteMetaData } from "utils/helpers";
 import Bio from "./Bio";
 import Subscribe from './Subscribe'
 import PopularTopics from './PopularTopics'
+import PopularTags from './PopularTags'
 
-export default function Sidebar({ topics }) {
+
+export default function Sidebar({ tags, sortedTopics }) {
   const {sidebar} = getSiteMetaData();
-  const topicLimit = sidebar.topics || 5;
+  const tagsLimit = sidebar.tagsLimit || 5;
 
   return (
     <div className="w-full lg:w-1/3 px-2">
@@ -23,7 +25,15 @@ export default function Sidebar({ topics }) {
 
       {/* <!-- topics --> */}
       <div className="my-2 lg:my-4">
-        <PopularTopics topics={topics} topicLimit={topicLimit} />
+        <PopularTopics sortedTopics={sortedTopics} />
+      </div>
+
+      {/* <!-- divider --> */}
+      <div className="border border-dotted" />
+
+      {/* <!-- tags --> */}
+      <div className="my-2 lg:my-4">
+        <PopularTags tags={tags} tagsLimit={tagsLimit} />
       </div>
 
       {/* <!-- divider --> */}
@@ -39,3 +49,13 @@ export default function Sidebar({ topics }) {
     </div>
   );
 }
+
+Sidebar.defaultProps = {
+  tags: [],
+  sortedTopics: []
+};
+
+Sidebar.propTypes = {
+  tags: PropTypes.arrayOf(PropTypes.object),
+  sortedTopics: PropTypes.arrayOf(PropTypes.object)
+};

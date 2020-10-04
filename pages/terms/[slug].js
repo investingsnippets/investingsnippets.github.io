@@ -3,7 +3,8 @@ import SEO from "components/Seo";
 import ReactMarkdown from "react-markdown/with-html";
 import Image from "components/Image";
 import { getTermsSlugs, getTermsBySlug } from "utils/terms";
-import { getSortedTopics } from "utils/topics";
+import { getSortedTags } from "utils/tags";
+import { getSortedTopics, getAllTopics } from "utils/topics";
 
 
 const MarkdownImage = ({ alt, src }) => (
@@ -16,10 +17,10 @@ const MarkdownImage = ({ alt, src }) => (
 );
 
 
-export default function Terms({termData, topics}) {
+export default function Terms({termData, tags, sortedTopics, allTopics}) {
   const { term, frontmatter } = termData;
   return (
-    <Layout topics={topics}>
+    <Layout tags={tags} sortedTopics={sortedTopics} allTopics={allTopics}>
       <SEO
         title={frontmatter.title}
         description={frontmatter.description || term.excerpt}
@@ -55,12 +56,16 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
   const termData = getTermsBySlug(slug);
-  const topics = getSortedTopics();
+  const tags = getSortedTags();
+  const sortedTopics = getSortedTopics();
+  const allTopics = getAllTopics();
 
   return { 
     props: {
       termData,
-      topics
+      tags,
+      sortedTopics,
+      allTopics
     },
   };
 }

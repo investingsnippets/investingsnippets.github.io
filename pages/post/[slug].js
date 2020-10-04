@@ -7,7 +7,8 @@ import Layout from "components/Layout";
 import Image from "components/Image";
 import SEO from "components/Seo";
 import { getPostBySlug, getPostsSlugs } from "utils/posts";
-import { getSortedTopics } from "utils/topics";
+import { getSortedTags } from "utils/tags";
+import { getSortedTopics, getAllTopics } from "utils/topics";
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
@@ -22,10 +23,10 @@ const MarkdownImage = ({ alt, src }) => (
   />
 );
 
-export default function Post({postData, topics}) {
+export default function Post({postData, tags, sortedTopics, allTopics}) {
   const { post, frontmatter, nextPost, previousPost } = postData;
   return (
-    <Layout topics={topics}>
+    <Layout tags={tags} sortedTopics={sortedTopics} allTopics={allTopics}>
       <SEO
         title={frontmatter.title}
         description={frontmatter.description || post.excerpt}
@@ -42,9 +43,15 @@ export default function Post({postData, topics}) {
             by 
             {' '}
             {frontmatter.author.name}
+            {' '}
+            under
+            {' '}
+            <Link href="/topic/[topic]" as={`/topic/${frontmatter.topic.id}`} key={frontmatter.topic.id}>
+              <a className='' key={frontmatter.topic.id}>{frontmatter.topic.name}</a>
+            </Link>
           </p>
-          {frontmatter.topics.map(({id, color, name}) => (
-            <Link href="/topic/[topic]" as={`/topic/${id}`} key={id}>
+          {frontmatter.tags.map(({id, color, name}) => (
+            <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
               <a className={`inline-block ${color} rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2`} key={id}>{name}</a>
             </Link>
           ))}
@@ -106,12 +113,16 @@ export async function getStaticProps({ params: { slug } }) {
     postData.nextPost = null;
   }
 
-  const topics = getSortedTopics();
+  const tags = getSortedTags();
+  const sortedTopics = getSortedTopics();
+  const allTopics = getAllTopics();
 
   return { 
     props: {
       postData,
-      topics
+      tags,
+      sortedTopics,
+      allTopics
     },
   };
 }
