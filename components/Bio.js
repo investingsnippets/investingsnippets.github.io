@@ -1,6 +1,5 @@
 import { getSiteMetaData } from "utils/helpers";
 import { useEffect } from 'react';
-import Image from "./Image";
 
 export default function Bio() {
   const { title, description, social } = getSiteMetaData();
@@ -32,6 +31,7 @@ export default function Bio() {
       </div>
       <div className="flex">
         <a href={`https://twitter.com/${social.twitter}`} className="twitter-follow-button" data-show-count="false" data-show-screen-name="false">
+          {' '}
         </a>
       </div>
     </content>

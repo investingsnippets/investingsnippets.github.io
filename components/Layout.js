@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Footer from "./Footer";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
@@ -20,4 +21,11 @@ export default function Layout({ children, tags, sortedTopics, allTopics }) {
       <Footer />
     </div>
   );
+}
+
+Layout.propTypes = {
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sortedTopics: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allTopics: PropTypes.arrayOf(PropTypes.object).isRequired
 }

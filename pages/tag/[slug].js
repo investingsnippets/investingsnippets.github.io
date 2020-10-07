@@ -1,3 +1,6 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable react/prop-types */
 import Layout from "components/Layout";
 import Image from "components/Image";
 import SEO from "components/Seo";

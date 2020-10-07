@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import Layout from "components/Layout";
 import SEO from "components/Seo";
 import ReactMarkdown from "react-markdown/with-html";

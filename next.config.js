@@ -3,6 +3,7 @@ const optimizedImages = require("next-optimized-images");
 
 module.exports = withPlugins([optimizedImages], {
     webpack: (config, { isServer, dev }) => {
+        
         config.node = {
           fs: "empty",
         }

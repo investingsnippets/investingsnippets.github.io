@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Head from "next/head";
 import { getSiteMetaData } from "utils/helpers";
 
@@ -28,4 +29,14 @@ export default function SEO({ title, description = "" }) {
       <link rel="apple-touch-icon" href="/static/favicon.ico" />
     </Head>
   );
+}
+
+SEO.defaultProps = {
+  title: '',
+  description: ''
+};
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string
 }

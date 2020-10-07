@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Link from "next/link";
 import Image from "./Image";
 
@@ -10,10 +11,10 @@ export default function PostCard({ title, description, img, author, date, tags, 
         style={{ backgroundImage: `url('${img}')`}}
         title={`${title}`}
       >
-        <div class="relative -bottom-4/5 z-20">
+        <div className="relative -bottom-4/5 z-20">
           <Link href="/topic/[slug]" as={`/topic/${topic.id}`}>
             <a className="ml-2 px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center">
-            {topic.name}
+              {topic.name}
             </a>
           </Link>
         </div>
@@ -63,4 +64,18 @@ export default function PostCard({ title, description, img, author, date, tags, 
       </div>
     </article>
   );
+}
+
+PostCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  author: PropTypes.shape({
+    name: PropTypes.string,
+    image: PropTypes.string
+  }).isRequired,
+  date: PropTypes.string.isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
+  topic: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired
 }

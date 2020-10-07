@@ -6,20 +6,28 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import PropTypes from "prop-types";
 
 function AppIcon(props) {
+  const { link, icon } = props
   return (
     <a
-      href={props.link}
+      href={link}
       className="inline-block text-orange-600 hover:text-blue-700 no-label px-2"
       target="_blank"
+      rel='noreferrer'
     >
-      <FontAwesomeIcon width="25px" icon={props.icon} />
+      <FontAwesomeIcon width="25px" icon={icon} />
     </a>
-);
+  );
 }
 
-export default function Footer({ }) {
+AppIcon.propTypes = {
+  link: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired
+}
+
+export default function Footer() {
   const {social, disclaimer, title} = getSiteMetaData();
 
   return (

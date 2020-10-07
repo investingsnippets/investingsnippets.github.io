@@ -57,6 +57,7 @@ class Subscribe extends Component {
   }
 
   render () {
+    const {values} = this.state
     return (
       <content>
         <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Subscribe </h5>
@@ -68,7 +69,7 @@ class Subscribe extends Component {
             type="email"
             name="email"
             id="email"
-            value={this.state.values.email}
+            value={values.email}
             onChange={this.handleInputChange}
             title="Email"
             required

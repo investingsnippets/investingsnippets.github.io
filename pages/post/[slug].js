@@ -1,3 +1,5 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 /* eslint-disable react/prop-types */
 import Link from "next/link";
 import ReactMarkdown from "react-markdown/with-html";

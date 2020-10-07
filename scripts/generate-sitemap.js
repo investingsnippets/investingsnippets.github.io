@@ -1,8 +1,10 @@
-const sitemap = require("nextjs-sitemap-generator");
 import { getSiteMetaData } from "../utils/helpers";
-const fs = require("fs");
 
-const BUILD_ID = fs.readFileSync("./.next/BUILD_ID").toString();
+const sitemap = require("nextjs-sitemap-generator");
+
+// const fs = require("fs");
+// const BUILD_ID = fs.readFileSync("./.next/BUILD_ID").toString();
+
 (async function () {
     const { siteUrl } = getSiteMetaData();
     await Promise.resolve(sitemap({

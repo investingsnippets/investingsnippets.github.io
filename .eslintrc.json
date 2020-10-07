@@ -32,6 +32,14 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": [
+          "node_modules",
+          "."
+        ]
+      }
     }
   },
   "plugins": ["react", "react-hooks"],
@@ -40,6 +48,11 @@
     "react/react-in-jsx-scope": "off",
     // NextJs specific fix: allow jsx syntax in js files
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], //should add ".ts" if typescript project
-    "react/display-name": 1
+    "react/display-name": 1,
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "invalidHref", "preferButton" ]
+    }]
   }
 }
