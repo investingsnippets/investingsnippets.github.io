@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Component } from 'react'
-import 'isomorphic-fetch'
 
 
 class Subscribe extends Component {
@@ -10,50 +9,23 @@ class Subscribe extends Component {
       values: {
         email: "", // entry.1180315201
         // register: "" , // entry.1842903919
-      },
-      submitting: false,
-      submitted: false
+      }
     }
     this.submitForm = this.submitForm.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
-  handleInputChange = e =>
-    this.setState({
-      values: { ...this.state.values, [e.target.name]: e.target.value }
-    });
+  handleInputChange = e => {
+    this.setState(prevState => {
+      const values = {...prevState.values};
+      values[e.target.name] = e.target.value;               
+      return { values };
+    })
+  }
+    
 
   submitForm = e => {
       e.preventDefault();
-      this.setState({ isSubmitting: true });
-      fetch("https://forms.gle/2p1kgzpDNjqKmJ1J8/formResponse", {
-        method: "POST",
-        mode: 'no-cors',
-        // body: JSON.stringify(this.state.values),
-        body: JSON.stringify({
-          'emailAddress': 'xp@g.com',
-          'entry.1842903919': false
-        }),
-        headers: {
-            "Content-Type": "text/html; charset=utf-8",
-            'Accept': '*/*',
-            'Accept-Language': 'en-GB',
-            'Accept-Encoding': 'gzip, deflate',
-            'Connection': 'Keep-alive',
-        }
-      })
-      .then(res => {
-          this.setState({ isSubmitting: false });
-          console.log(res.status)
-          console.log(res.ok)
-          return res.text();
-      })
-      .then(data => {
-          console.log(data);
-          // !data.hasOwnProperty("error")
-          //     ? this.setState({ message: data.success })
-          //     : this.setState({ message: data.error, isError: true });
-      });
   }
 
   render () {

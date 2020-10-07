@@ -6,9 +6,9 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
-import PropTypes from "prop-types";
 
 function AppIcon(props) {
+  // eslint-disable-next-line react/prop-types
   const { link, icon } = props
   return (
     <a
@@ -20,11 +20,6 @@ function AppIcon(props) {
       <FontAwesomeIcon width="25px" icon={icon} />
     </a>
   );
-}
-
-AppIcon.propTypes = {
-  link: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired
 }
 
 export default function Footer() {

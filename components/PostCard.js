@@ -76,6 +76,9 @@ PostCard.propTypes = {
   }).isRequired,
   date: PropTypes.string.isRequired,
   tags: PropTypes.arrayOf(PropTypes.object).isRequired,
-  topic: PropTypes.string.isRequired,
+  topic: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string
+  }).isRequired,
   slug: PropTypes.string.isRequired
 }

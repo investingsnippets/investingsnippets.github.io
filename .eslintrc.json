@@ -37,6 +37,7 @@
       "node": {
         "moduleDirectory": [
           "node_modules",
+          "app",
           "."
         ]
       }

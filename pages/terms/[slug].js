@@ -4,21 +4,10 @@
 import Layout from "components/Layout";
 import SEO from "components/Seo";
 import ReactMarkdown from "react-markdown/with-html";
-import Image from "components/Image";
 import { getTermsSlugs, getTermsBySlug } from "utils/terms";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
-
-
-const MarkdownImage = ({ alt, src }) => (
-  <Image
-    alt={alt}
-    src={require(`../../content/assets/${src}`)}
-    previewSrc={require(`../../content/assets/${src}?lqip`)}
-    className="w-full"
-  />
-);
-
+import { MarkdownImage } from "utils/helpers";
 
 export default function Terms({termData, tags, sortedTopics, allTopics}) {
   const { term, frontmatter } = termData;
