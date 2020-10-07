@@ -3,6 +3,7 @@ import { getSortedPosts } from "utils/posts";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
 import SEO from "components/Seo";
+import PropTypes from "prop-types";
 import PostCardPagination from "components/PostCardPagination"
 
 export default function Home({ posts, tags, sortedTopics, allTopics }) {
@@ -14,6 +15,13 @@ export default function Home({ posts, tags, sortedTopics, allTopics }) {
       </PostCardPagination>
     </Layout>
   );
+}
+
+Home.propTypes = {
+  posts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.object).isRequired,
+  sortedTopics: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allTopics: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export async function getStaticProps() {

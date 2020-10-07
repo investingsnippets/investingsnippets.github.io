@@ -12,7 +12,7 @@ export default function PostCardPagination({children, total}) {
     path = router.pathname.replace(/\[slug\]/g, rQuery.slug);
   }
   
-  const currentPage = rQuery.hasOwnProperty('page')? parseInt(rQuery.page) : 1;
+  const currentPage = Object.prototype.hasOwnProperty.call(rQuery, "page")? parseInt(rQuery.page, 10) : 1;
   const siteMetadata = getSiteMetaData();
   const pageLimit = siteMetadata.paginationLimit;
 
@@ -24,9 +24,11 @@ export default function PostCardPagination({children, total}) {
   const childTo = (currentPage * pageLimit)
 
   return (
+    
     <content>
       <div>
         {children.slice(childFrom, childTo).map(({ frontmatter, slug }) => (
+          // eslint-disable-next-line react/jsx-props-no-spreading
           <PostCard {...frontmatter} slug={slug} key={slug} />
         ))}
       </div>
@@ -66,6 +68,7 @@ export default function PostCardPagination({children, total}) {
                 </a>
               </Link>
               { Array(slices).fill().map((_, i) => (
+                // eslint-disable-next-line react/no-array-index-key
                 <Link href={`${path}/?page=${i+1}`} key={i+1}>
                   <a className={`-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 ${i+1 === currentPage? 'bg-orange-600': 'bg-white'} text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150`}>
                     {i+1}
