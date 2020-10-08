@@ -10,6 +10,9 @@ export default {
       github: "investingsnippets",
       linkedin: "investingsnippets"
     },
+    disqus: {
+      hostname: "investingsnippets",
+    },
     sidebar: {
       tagsLimit: 4
     },

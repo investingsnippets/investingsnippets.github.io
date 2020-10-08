@@ -4,20 +4,28 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Disqus from "disqus-react"
 
 import Layout from "components/Layout";
 import SEO from "components/Seo";
 import { getPostBySlug, getPostsSlugs } from "utils/posts";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
-import { MarkdownImage } from "utils/helpers";
+import { MarkdownImage, getSiteMetaData } from "utils/helpers";
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
 };
 
-export default function Post({postData, tags, sortedTopics, allTopics}) {
+export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
+  const { siteUrl, disqus } = getSiteMetaData();
   const { post, frontmatter, nextPost, previousPost } = postData;
+  const disqusShortname = disqus.hostname
+  const disqusConfig = {
+    url: siteUrl,
+    identifier: slug,
+    title: frontmatter.title
+  }
   return (
     <Layout tags={tags} sortedTopics={sortedTopics} allTopics={allTopics}>
       <SEO
@@ -82,6 +90,10 @@ export default function Post({postData, tags, sortedTopics, allTopics}) {
           <div />
         )}
       </nav>
+      <Disqus.DiscussionEmbed
+        shortname={disqusShortname}
+        config={disqusConfig}
+      />
     </Layout>
   );
 }
@@ -115,7 +127,8 @@ export async function getStaticProps({ params: { slug } }) {
       postData,
       tags,
       sortedTopics,
-      allTopics
+      allTopics,
+      slug
     },
   };
 }
