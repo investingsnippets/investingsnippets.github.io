@@ -21,8 +21,9 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
   const { siteUrl, disqus } = getSiteMetaData();
   const { post, frontmatter, nextPost, previousPost } = postData;
   const disqusShortname = disqus.hostname
+  const prod = process.env.NODE_ENV === 'production'
   const disqusConfig = {
-    url: siteUrl,
+    url: prod ? siteUrl : 'http://localhost:3000',
     identifier: slug,
     title: frontmatter.title
   }
