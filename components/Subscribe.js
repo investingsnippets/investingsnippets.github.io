@@ -5,54 +5,43 @@ import { Component } from 'react'
 class Subscribe extends Component {
   constructor (props) {
     super(props)
-    this.state = {
-      values: {
-        email: "", // entry.1180315201
-        // register: "" , // entry.1842903919
-      }
-    }
     this.submitForm = this.submitForm.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
   }
-
-  handleInputChange = e => {
-    this.setState(prevState => {
-      const values = {...prevState.values};
-      values[e.target.name] = e.target.value;               
-      return { values };
-    })
-  }
-    
 
   submitForm = e => {
-      e.preventDefault();
+    e.preventDefault();
+    window.open('https://tinyletter.com/investingsnippets', 'popupwindow', 'scrollbars=yes,width=800,height=600');
+    return true
   }
 
   render () {
-    const {values} = this.state
     return (
       <content>
         <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Subscribe </h5>
         <p className="text-gray-600">
           Receive the next blog article directly to your email!
         </p>
-        <form onSubmit={this.submitForm}>
+        <form
+          action="https://tinyletter.com/investingsnippets"
+          method="post"
+          target="popupwindow"
+          // onSubmit={this.submitForm}
+        >
           <input
             type="email"
             name="email"
-            id="email"
-            value={values.email}
-            onChange={this.handleInputChange}
+            id="tlemail"
             title="Email"
             required
             placeholder="your email address"
             className="text-gray-700 bg-gray-100 rounded-t hover:outline-none p-2 w-full mt-4 border outline-none"
-            disabled
+            // disabled
           />
+          <input type="hidden" value="1" name="embed" />
           <button
             type="submit"
             className="px-4 py-2 bg-orange-600 text-gray-200 rounded-b w-full capitalize tracking-wide"
-            disabled
+            // disabled
           >
             Subscribe
           </button>

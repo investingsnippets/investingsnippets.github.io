@@ -40,7 +40,7 @@ export default function Sidebar({ tags, sortedTopics }) {
       <div className="border border-dotted" />
 
       {/* <!-- subscribe --> */}
-      <div className="opacity-25 my-2 lg:my-4">
+      <div className="my-2 lg:my-4">
         <Subscribe />
       </div>
 
