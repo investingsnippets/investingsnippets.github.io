@@ -5,10 +5,10 @@ export default function Bio() {
   const { title, description, social } = getSiteMetaData();
 
   useEffect(() => {
-    const s = document.createElement("script");
-    s.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    s.setAttribute("async", "true");
-    document.head.appendChild(s);
+    const t = document.createElement("script");
+    t.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    t.setAttribute("async", "true");
+    document.head.appendChild(t);
   }, []);
 
   return (
@@ -33,6 +33,9 @@ export default function Bio() {
         <a href={`https://twitter.com/${social.twitter}`} className="twitter-follow-button" data-show-count="false" data-show-screen-name="false">
           {' '}
         </a>
+      </div>
+      <div className="flex py-1">
+        <iframe title="facebook buttons" src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.investingsnippets.com%2F&width=450&layout=standard&action=like&size=small&share=true&height=35&appId" width="450" height="35" style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameBorder="0" allowtransparency="true" allow="encrypted-media" />
       </div>
     </content>
   );
