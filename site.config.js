@@ -17,5 +17,6 @@ export default {
       tagsLimit: 4
     },
     paginationLimit: 4,
-  },
+    GA_TRACKING_ID: 'UA-180222243-1'
+  }, 
 };

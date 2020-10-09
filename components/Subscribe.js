@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Component } from 'react'
+import * as gtag from 'utils/gtag'
 
 
 class Subscribe extends Component {
@@ -10,6 +11,11 @@ class Subscribe extends Component {
 
   submitForm = e => {
     e.preventDefault();
+    gtag.event({
+      action: 'submit_form',
+      category: 'Subscribe',
+      label: 'buttont_clicked',
+    })
     window.open('https://tinyletter.com/investingsnippets', 'popupwindow', 'scrollbars=yes,width=800,height=600');
     return true
   }
