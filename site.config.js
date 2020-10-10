@@ -16,6 +16,9 @@ export default {
     disqus: {
       hostname: "investingsnippets",
     },
+    tinyletter: {
+      id: 'investingsnippets'
+    },
     sidebar: {
       tagsLimit: 4
     },

@@ -1,6 +1,5 @@
-import { getSiteMetaData } from "utils/helpers";
+import { getSiteMetaData, AppIcon } from "utils/helpers";
 import { useEffect } from 'react';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGithub,
   faLinkedin,
@@ -8,20 +7,6 @@ import {
   faFacebook
 } from "@fortawesome/free-brands-svg-icons";
 
-function AppIcon(props) {
-  // eslint-disable-next-line react/prop-types
-  const { link, icon } = props
-  return (
-    <a
-      href={link}
-      className="inline-block text-orange-600 hover:text-blue-700 no-label px-2"
-      target="_blank"
-      rel='noreferrer'
-    >
-      <FontAwesomeIcon width="25px" icon={icon} />
-    </a>
-  );
-}
 
 export default function Bio() {
   const { title, description, social, siteUrl } = getSiteMetaData();
@@ -41,10 +26,10 @@ export default function Bio() {
         {title} 
       </h5>
       <div className="flex-auto flex-no-wrap flex-shrink-0 text-center pt-5">
-        {social.twitter && (<AppIcon icon={faTwitter} link={`https://twitter.com/${social.twitter}`} />)}
-        {social.github && (<AppIcon icon={faGithub} link={`https://github.com/${social.github}`} />)}
-        {social.github && (<AppIcon icon={faLinkedin} link={`https://www.linkedin.com/in/${social.linkedin}/`} />)}
-        {social.facebook && (<AppIcon icon={faFacebook} link={`https://${social.facebook.id}/`} />)}
+        {social.twitter && (<AppIcon icon={faTwitter} link={`https://twitter.com/${social.twitter}`} width='25px' />)}
+        {social.github && (<AppIcon icon={faGithub} link={`https://github.com/${social.github}`} width='25px' />)}
+        {social.github && (<AppIcon icon={faLinkedin} link={`https://www.linkedin.com/in/${social.linkedin}/`} width='25px' />)}
+        {social.facebook && (<AppIcon icon={faFacebook} link={`https://${social.facebook.id}/`} width='25px' />)}
       </div>
       <div className="flex items-center my-5">
         {/* <Image
