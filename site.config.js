@@ -8,7 +8,10 @@ export default {
     social: {
       twitter: "investingsnipts",
       github: "investingsnippets",
-      linkedin: "investingsnippets"
+      linkedin: "investingsnippets",
+      facebook: {
+        page: false,
+        id: ""}
     },
     disqus: {
       hostname: "investingsnippets",

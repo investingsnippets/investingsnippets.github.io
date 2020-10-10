@@ -1,29 +1,8 @@
 import { getSiteMetaData } from "utils/helpers";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faGithub,
-  faLinkedin,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 
-function AppIcon(props) {
-  // eslint-disable-next-line react/prop-types
-  const { link, icon } = props
-  return (
-    <a
-      href={link}
-      className="inline-block text-orange-600 hover:text-blue-700 no-label px-2"
-      target="_blank"
-      rel='noreferrer'
-    >
-      <FontAwesomeIcon width="25px" icon={icon} />
-    </a>
-  );
-}
-
 export default function Footer() {
-  const {social, disclaimer, title} = getSiteMetaData();
+  const {disclaimer, title} = getSiteMetaData();
 
   return (
     <footer className="border-t py-12 px-2">
@@ -48,16 +27,6 @@ export default function Footer() {
             </Link>
           </h6>
         </div>
-
-        <div className="flex-auto flex-no-wrap flex-shrink-0 text-center">
-          <AppIcon icon={faTwitter} link={`https://twitter.com/${social.twitter}`} />
-          <AppIcon icon={faGithub} link={`https://github.com/${social.github}`} />
-          <AppIcon
-            icon={faLinkedin}
-            link={`https://www.linkedin.com/in/${social.linkedin}/`}
-          />
-        </div>
-
       </div>
       <div className="text-sm my-2 leading-4 text-gray-600">
         {disclaimer}

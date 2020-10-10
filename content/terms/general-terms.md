@@ -87,7 +87,7 @@ Personal information and other information that you register on InvestingSnippet
 
 ### Email Subscription
 
-As for the newsletter, you can make request deletion yourself via InvestingSnippets website .
+As for the newsletter, you can make request deletion yourself via InvestingSnippets website.
 
 Contact information can be found at the bottom of these general terms and conditions. We do not store personal data for longer than is necessary with regard to the purpose of the collection under these terms.
 
