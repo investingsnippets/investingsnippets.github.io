@@ -54,7 +54,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           </p>
           {frontmatter.tags.map(({id, color, name}) => (
             <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
-              <a className={`inline-block ${color} rounded-full px-3 py-1 text-sm text-gray-600 mr-2 my-2`} key={id}>{name}</a>
+              <a className={`inline-block ${color} px-1 text-sm text-gray-600 mr-2 my-1`} key={id}>{name}</a>
             </Link>
           ))}
         </header>
