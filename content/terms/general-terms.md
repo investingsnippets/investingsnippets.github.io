@@ -87,7 +87,11 @@ Personal information and other information that you register on InvestingSnippet
 
 ### Email Subscription
 
-As for the newsletter, you can make request deletion yourself via InvestingSnippets website.
+As for the newsletter, you use [tinyletter](http://tinyletter.com/). 
+
+Their terms state: 
+
+> If you no longer want to be contacted by one of our Members through our Service, please unsubscribe directly from that Member’s newsletter or contact the Member directly to update or delete your data
 
 Contact information can be found at the bottom of these general terms and conditions. We do not store personal data for longer than is necessary with regard to the purpose of the collection under these terms.
 
