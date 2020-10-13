@@ -8,11 +8,10 @@ export default function PopularTopics({ sortedTopics }) {
     <content>
       <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Topics </h5>
       <ul>
-        {sortedTopics.map(({slug, name, color, count})=>(
+        {sortedTopics.map(({slug, name, count})=>(
           <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={slug}>
             <Link href="/topic/[topic]" as={`/topic/${slug}`}>
               <a className="flex items-center text-gray-600 cursor-pointer">
-                <span className={`inline-block h-4 w-4 ${color} mr-3`} />
                 <span>{name}</span>
                 <span className="text-gray-500 ml-auto">
                   {count}
