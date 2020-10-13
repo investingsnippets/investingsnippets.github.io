@@ -36,6 +36,16 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
 
       <article>
         <header className="mb-8">
+          <p className="text-sm mb-2">
+            <Link href="/" key='home'>
+              <a className='' key='home'>Home</a>
+            </Link>
+            {' > '}
+            <Link href="/topic/[topic]" as={`/topic/${frontmatter.topic.id}`} key={frontmatter.topic.id}>
+              <a className='' key={frontmatter.topic.id}>{frontmatter.topic.name}</a>
+            </Link>
+            {' > '}
+          </p>
           <h1 className="mb-2 text-3xl lg:text-4xl leading-none font-display font-semibold">
             {frontmatter.title}
           </h1>
@@ -45,12 +55,6 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
             by 
             {' '}
             {frontmatter.author.name}
-            {' '}
-            under
-            {' '}
-            <Link href="/topic/[topic]" as={`/topic/${frontmatter.topic.id}`} key={frontmatter.topic.id}>
-              <a className='' key={frontmatter.topic.id}>{frontmatter.topic.name}</a>
-            </Link>
           </p>
           {frontmatter.tags.map(({id, color, name}) => (
             <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>

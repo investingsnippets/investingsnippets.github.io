@@ -4,6 +4,7 @@
 import Layout from "components/Layout";
 import Image from "components/Image";
 import SEO from "components/Seo";
+import Link from "next/link";
 import PostCardPagination from "components/PostCardPagination"
 import { getSortedTags } from "utils/tags";
 import { getPostsByTopic } from "utils/posts";
@@ -17,7 +18,15 @@ export default function Topic({topic, posts, tags, sortedTopics, allTopics}) {
         title={topic.name}
         description={topic.description}
       />
-      <h1 className="mb-5 text-3xl lg:text-4xl  font-semibold">{topic.name}</h1>
+      <p className="text-sm mb-2">
+        <Link href="/" key='home'>
+          <a className='' key='home'>Home</a>
+        </Link>
+        {' > '}
+        <Link href="/topic/[topic]" as={`/topic/${topic.id}`} key={topic.id}>
+          <a className='' key={topic.id}>{topic.name}</a>
+        </Link>
+      </p>
       <Image
         className="mb-3"
         src={require(`../../content/assets/${topic.image}`)}
