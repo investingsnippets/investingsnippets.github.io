@@ -20,6 +20,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "@tailwindcss/typography": "^0.2.0",
     "clsx": "^1.1.1",
     "disqus-react": "^1.0.10",
     "gray-matter": "^4.0.2",
@@ -45,12 +46,12 @@
     "responsive-loader": "^2.1.1",
     "rss": "^1.2.2",
     "svg-sprite-loader": "^5.0.0",
+    "tailwindcss": "^1.7.6",
     "typeface-merriweather": "^0.0.72",
     "typeface-open-sans": "^0.0.75",
     "webp-loader": "^0.6.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.2.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.2.0",
@@ -61,8 +62,7 @@
     "eslint-plugin-react": "^7.21.2",
     "eslint-plugin-react-hooks": "^4.0.0",
     "gh-pages": "^3.1.0",
-    "http-server": "^0.12.3",
-    "tailwindcss": "^1.7.6"
+    "http-server": "^0.12.3"
   },
   "repository": {
     "type": "git",

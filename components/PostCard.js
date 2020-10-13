@@ -23,7 +23,7 @@ export default function PostCard({ title, description, img, author, date, tags, 
         <div>
           <header className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
             <Link href="/post/[slug]" as={`/post/${slug}`}>
-              <a className="text-2xl lg:text-3xl font-bold text-orange-600 font-display">
+              <a className="text-2xl lg:text-3xl font-bold font-display">
                 {title}
               </a>
             </Link>

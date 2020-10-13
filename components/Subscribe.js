@@ -55,7 +55,7 @@ class Subscribe extends Component {
             <input type="hidden" value="1" name="embed" />
             <button
               type="submit"
-              className="px-4 py-2 bg-orange-600 text-gray-200 rounded-b w-full capitalize tracking-wide"
+              className="px-4 py-2 bg-orange-700 text-gray-200 rounded-b w-full capitalize tracking-wide"
               // disabled
             >
               Subscribe

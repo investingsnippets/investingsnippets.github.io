@@ -33,7 +33,7 @@ class Header extends Component {
         <nav className="relative select-none bg-grey lg:flex lg:items-stretch w-full pt-4">
           <div className="flex flex-no-shrink items-stretch h-12">
             <Link href="/">
-              <a className="flex-no-grow flex-no-shrink relative p-2 leading-normal text-3xl lg:text-5xl no-underline font-semibold text-gray-700 flex items-center">
+              <a className="flex-no-grow flex-no-shrink relative p-2 leading-normal text-3xl lg:text-5xl no-underline font-semibold flex items-center">
                 {this.siteMetadata.title}
               </a>
             </Link>

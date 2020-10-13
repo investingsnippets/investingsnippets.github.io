@@ -3,7 +3,7 @@
 @import "tailwindcss/utilities";
 
 a {
-  @apply text-neon-orange;
+  @apply text-orange-700;
 }
 
 a:hover {

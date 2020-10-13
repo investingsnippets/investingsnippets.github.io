@@ -25,7 +25,7 @@ export function AppIcon(props) {
   return (
     <a
       href={link}
-      className="inline-block text-orange-600 hover:text-blue-700 no-label px-2"
+      className="inline-block hover:text-blue-700 no-label px-2"
       target="_blank"
       rel='noreferrer'
     >
