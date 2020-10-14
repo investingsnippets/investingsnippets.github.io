@@ -9,9 +9,10 @@ export default {
       twitter: "investingsnipts",
       github: "investingsnippets",
       linkedin: "investingsnippets",
-      facebook: {
-        page: false,
-        id: ""}
+      // facebook: {
+      //   page: false,
+      //   id: ""
+      // }
     },
     disqus: {
       hostname: "investingsnippets",

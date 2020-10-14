@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 import Link from "next/link";
 import Image from "./Image";
@@ -54,10 +55,18 @@ export default function PostCard({ title, description, img, author, date, tags, 
             </p>
           </div>
           <div className="ml-10 mr-3 lg:flex flex-row">
-            {tags.map(({id, color, name}) => (
-              <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
-                <a className={`inline-block ${color} px-1 text-sm text-gray-600 mr-2 my-2`} key={id}>{name}</a>
-              </Link>
+            {tags.map(({id, icon, name}) => (
+              <div className="bg-gray-200 pr-1 text-sm mr-2 my-3 flex justify-items-center" key={id}>
+                <img
+                  className="filter-orange-700 h-4 w-4 m-1 inline-block"
+                  alt={`${name}`}
+                  src={`static/${icon}`}
+                  data-srcset={`static/${icon}`}
+                />
+                <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
+                  <a className="text-gray-600" key={id}>{name}</a>
+                </Link>
+              </div>
             ))}
           </div>
         </div>

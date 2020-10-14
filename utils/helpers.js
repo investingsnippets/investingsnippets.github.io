@@ -21,7 +21,7 @@ export function MarkdownImage({ alt, src }) {
 
 export function AppIcon(props) {
   // eslint-disable-next-line react/prop-types
-  const { link, icon, width } = props
+  const { link, icon, width, ...moreProps } = props
   return (
     <a
       href={link}
@@ -29,7 +29,7 @@ export function AppIcon(props) {
       target="_blank"
       rel='noreferrer'
     >
-      <FontAwesomeIcon width={width} icon={icon} />
+      <FontAwesomeIcon width={width} icon={icon} {...moreProps} />
     </a>
   );
 }

@@ -30,3 +30,7 @@ p {
 .active{
   display: block;
 }
+
+.filter-orange-700{
+  filter: brightness(0) saturate(100%) invert(35%) sepia(91%) saturate(547%) hue-rotate(338deg) brightness(95%) contrast(96%);
+}

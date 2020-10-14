@@ -3,7 +3,8 @@
     "name": "python",
     "image": "automation.jpg",
     "description": "Python",
-    "color": "bg-green-300"
+    "color": "bg-green-300",
+    "icon": "python.svg"
 },
 {
     "id": "statistics",
