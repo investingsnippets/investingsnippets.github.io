@@ -21,9 +21,8 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
   const { siteUrl, disqus } = getSiteMetaData();
   const { post, frontmatter, nextPost, previousPost } = postData;
   const disqusShortname = disqus.hostname
-  const prod = process.env.NODE_ENV === 'production'
   const disqusConfig = {
-    url: prod ? siteUrl : 'http://localhost:3000',
+    url: siteUrl,
     identifier: slug,
     title: frontmatter.title
   }
@@ -56,9 +55,17 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
             {' '}
             {frontmatter.author.name}
           </p>
-          {frontmatter.tags.map(({id, color, name}) => (
+          {frontmatter.tags.map(({id, icon, name}) => (
             <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
-              <a className={`inline-block ${color} px-1 text-sm text-gray-600 mr-2 my-1`} key={id}>{name}</a>
+              <a className="text-gray-600" key={id}>
+                <img
+                  className="filter-orange-700 h-4 w-4 m-1 inline-block"
+                  alt={`${name}`}
+                  src={`${siteUrl}/static/${icon}`}
+                  data-srcset={`${siteUrl}/static/${icon}`}
+                />
+                {name}
+              </a>
             </Link>
           ))}
         </header>

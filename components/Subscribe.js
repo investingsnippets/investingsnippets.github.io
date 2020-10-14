@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Component } from 'react'
 import * as gtag from 'utils/gtag'
 import { getSiteMetaData, AppIcon } from "utils/helpers";

@@ -1,8 +1,10 @@
 
 import Link from "next/link";
 import PropTypes from "prop-types";
+import { getSiteMetaData } from "utils/helpers";
 
 export default function PopularTags({ tags, tagsLimit }) {
+  const { siteUrl } = getSiteMetaData();
  
   return (
     <content>
@@ -15,8 +17,8 @@ export default function PopularTags({ tags, tagsLimit }) {
                 <img
                   className="filter-orange-700 h-4 w-4 mr-3 inline-block"
                   alt={`${name}`}
-                  src={`static/${icon}`}
-                  data-srcset={`static/${icon}`}
+                  src={`${siteUrl}/static/${icon}`}
+                  data-srcset={`${siteUrl}/static/${icon}`}
                 />
                 <span>{name}</span>
                 <span className="text-gray-500 ml-auto">

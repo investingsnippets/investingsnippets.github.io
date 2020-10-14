@@ -1,9 +1,10 @@
-
 import PropTypes from "prop-types";
 import Link from "next/link";
+import { getSiteMetaData } from "utils/helpers";
 import Image from "./Image";
 
 export default function PostCard({ title, description, img, author, date, tags, topic, slug }) {
+  const { siteUrl } = getSiteMetaData();
 
   return (
     <article className="rounded w-full lg:flex mb-10" key={slug}>
@@ -62,8 +63,8 @@ export default function PostCard({ title, description, img, author, date, tags, 
                     <img
                       className="filter-orange-700 h-4 w-4 m-1 inline-block"
                       alt={`${name}`}
-                      src={`static/${icon}`}
-                      data-srcset={`static/${icon}`}
+                      src={`${siteUrl}/static/${icon}`}
+                      data-srcset={`${siteUrl}/static/${icon}`}
                     />
                     {name}
                   </a>
