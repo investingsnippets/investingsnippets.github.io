@@ -2,7 +2,7 @@
 /* eslint-disable global-require */
 /* eslint-disable react/prop-types */
 import Link from "next/link";
-import ReactMarkdown from "react-markdown/with-html";
+import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import Disqus from "disqus-react"
 
@@ -12,6 +12,9 @@ import { getPostBySlug, getPostsSlugs } from "utils/posts";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
 import { MarkdownImage, getSiteMetaData } from "utils/helpers";
+import RemarkMathPlugin from 'remark-math';
+import { BlockMath, InlineMath } from 'react-katex';
+// import 'katex/dist/katex.min.css';
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
@@ -73,7 +76,13 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           className="mb-4 prose-sm prose sm:prose lg:prose-lg"
           escapeHtml={false}
           source={post.content}
-          renderers={{ code: CodeBlock, image: MarkdownImage }}
+          plugins={[RemarkMathPlugin]}
+          renderers={{ 
+            code: CodeBlock,
+            image: MarkdownImage,
+            math: ({ value }) => <BlockMath>{value}</BlockMath>,
+            inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>
+          }}
         />
         <hr className="mt-4" />
         <footer />

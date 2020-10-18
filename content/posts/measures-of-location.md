@@ -8,8 +8,6 @@ author: chris
 img: https://www.picpedia.org/highway-signs/images/average.jpg
 ---
 
-## Measures of Location
-
 In investing, we are often presented with the challenge to analyze a data set. Usually a graph of how a stock, a fund, etc. performs. 
 
 We are asked to answer questions like:
