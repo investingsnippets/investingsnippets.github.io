@@ -4,15 +4,15 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 14 Oct 2020 13:08:14 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 25 Oct 2020 15:31:40 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Third post]]></title>
-            <description><![CDATA[The third post is the least memorable.]]></description>
-            <link>https://www.investingsnippets.com/post/third-post</link>
-            <guid isPermaLink="false">third-post</guid>
+            <title><![CDATA[Measures of Location]]></title>
+            <description><![CDATA[Use average, mean, median and more measures to understand basic investing.]]></description>
+            <link>https://www.investingsnippets.com/post/measures-of-location</link>
+            <guid isPermaLink="false">measures-of-location</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
-            <pubDate>Fri, 17 Apr 2020 00:00:00 GMT</pubDate>
+            <pubDate>Sun, 18 Oct 2020 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
