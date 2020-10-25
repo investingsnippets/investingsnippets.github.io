@@ -14,7 +14,6 @@ import { getSortedTopics, getAllTopics } from "utils/topics";
 import { MarkdownImage, getSiteMetaData } from "utils/helpers";
 import RemarkMathPlugin from 'remark-math';
 import { BlockMath, InlineMath } from 'react-katex';
-// import 'katex/dist/katex.min.css';
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
@@ -80,8 +79,10 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           renderers={{ 
             code: CodeBlock,
             image: MarkdownImage,
-            math: ({ value }) => <BlockMath>{value}</BlockMath>,
-            inlineMath: ({ value }) => <InlineMath>{value}</InlineMath>
+            // math: ({ value }) => `math: ${value}`,
+            // inlineMath: ({ value }) => `inlineMath: ${value}`
+            math: ({ value }) => <BlockMath math={value} />,
+            inlineMath: ({ value }) => <InlineMath math={value} />
           }}
         />
         <hr className="mt-4" />

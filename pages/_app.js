@@ -4,6 +4,7 @@ import "typeface-merriweather";
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import * as gtag from '../utils/gtag'
+import 'katex/dist/katex.min.css';
 
 // eslint-disable-next-line react/prop-types
 export default function MyApp({ Component, pageProps }) {

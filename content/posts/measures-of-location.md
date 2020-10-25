@@ -24,7 +24,7 @@ The most common measures of location are the Mean, Median and Mode.
 
 Mean is the sum of the values of the data points divided by the number of data points. That is,
 
-$$
+$$ 
 \bar{Y} = \frac {\sum_{i=1}^N Y_{i}}{N},
 $$
 
@@ -38,9 +38,13 @@ $$
 
 Is the value of the point which has half the data smaller than that point and half the data larger than that point.
 
-$$\tilde{Y} = Y_{\frac {N+1}{2}}, \text{if } N = odd $$
+$$
+\tilde{Y} = Y_{\frac {N+1}{2}}, \text{if } N = odd
+$$
 
-$$\tilde{Y} = \frac {Y_{\frac {N}{2}} + Y_{\frac {N}{2} + 1}}{2}, \text{if } N = even $$
+$$
+\tilde{Y} = \frac {Y_{\frac {N}{2}} + Y_{\frac {N}{2} + 1}}{2}, \text{if } N = even
+$$
 
 ### Mode
 
