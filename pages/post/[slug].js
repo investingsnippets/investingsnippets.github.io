@@ -82,7 +82,10 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
             // math: ({ value }) => `math: ${value}`,
             // inlineMath: ({ value }) => `inlineMath: ${value}`
             math: ({ value }) => <BlockMath math={value} />,
-            inlineMath: ({ value }) => <InlineMath math={value} />
+            inlineMath: ({ value }) => <InlineMath math={value} />,
+            link: ({ children, href }) => {
+              return <Link href={href}><a>{children}</a></Link>
+            }
           }}
         />
         <hr className="mt-4" />
