@@ -1,6 +1,6 @@
 ---
 title: Measures of Variability
-description: Use average, median, mode and more, to understand basic investing.
+description: Standard deviation is one of the most common measures of risk in investing. In this post we walk through the simple maths to understand this basic measure of variability.
 date: 2020-11-01T11:00:00.000Z
 topic: mathematics
 author: chris
