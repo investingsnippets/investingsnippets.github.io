@@ -4,11 +4,11 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 25 Oct 2020 15:31:40 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 01 Nov 2020 12:06:41 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Measures of Location]]></title>
-            <description><![CDATA[Use average, mean, median and more measures to understand basic investing.]]></description>
+            <description><![CDATA[Use average, median, mode and more, to understand basic investing.]]></description>
             <link>https://www.investingsnippets.com/post/measures-of-location</link>
             <guid isPermaLink="false">measures-of-location</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
