@@ -8,7 +8,7 @@ author: chris
 img: https://www.picpedia.org/highway-signs/images/average.jpg
 ---
 
-In investing, we are often presented with the challenge to analyze a data set. Usually a graph of how a stock, a fund, etc. performs. 
+In investing, we are often presented with the challenge to analyze a data set (with historical prices of stocks, funds, etc.). 
 
 We are asked to answer questions like:
 
@@ -52,11 +52,9 @@ Is the value of the random sample that occurs with the greatest frequency (might
 
 ## Example
 
-Let us generate some random data to showcase the above. We use `random.normal` here, which generates normally distributed numbers (we will discuss about normality in a following article) between -10 and 10. In terms of Investing, think of it as the simple returns of a stock over a period.
+Let us generate some random data to showcase the above. We use `random.normal` here, which generates normally distributed numbers (we will discuss about normality in a following article) between -10 and 10. In terms of Investing, think of it as the simple returns (return = the percentage change of the today's closing price, over the yesterday's closing price) of a stock over a period.
 
-
-
-```
+```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -67,135 +65,86 @@ randomInts = np.random.normal(loc=10, scale=3, size=1000).astype(int)-10
 
 df = pd.DataFrame(randomInts, columns=['Returns'])
 df.plot();
-
 ```
-
-
-    
+   
 ![png](measures-of-location_3_0.png)
-    
-
 
 ### Mean
 
-
-```
+```python
 df.Returns.sum()/df.Returns.size
 ```
 
-
-
-
     -0.612
 
-
-
-
-```
+```python
 # or
 mean = df.Returns.mean()
 mean
 ```
 
-
-
-
     -0.612
-
-
 
 Which is the answer to: `What is the average return of a stock the last x days?`
 
 ### Median
 
-
-```
+```python
 np.sort(df.Returns.values)[int(df.Returns.size/2)]
 ```
 
-
-
-
     -1
 
-
-
-
-```
+```python
 # or
 median = np.percentile(df.Returns,50)
 median
 ```
-
-
-
-
     -1.0
-
-
 
 ### Mode
 
-
-```
+```python
 sample_data = [1,2,3,4,3,5,3,6,3,7,8,9]
 sample_data_df = pd.DataFrame(sample_data, columns=['Returns'])
 sample_data_df.Returns.mode()[0]
 ```
 
-
-
-
     3
-
-
 
 It is apparent from the above that the number with the most frequent appearance is the number 3. That is because the numbers are discrete.
 
 But, in a sequence of data that is continuous, the numbers can take any value in a range, which means decimal part (fractions). In cases like that it is difficult to find a single number that is present more often in the set. And that is normally the case in investing (the returns can take any value). Thus, we have to follow another approach and that is to separate the data into buckets. Here is where the notion of the [histogram](https://en.wikipedia.org/wiki/Histogram) comes into play and generates an outcome like:
 
 
-```
+```python
 df.plot.hist(bins=50, figsize=(12,6), grid=True);
 ```
-
-
     
 ![png](measures-of-location_14_0.png)
-    
-
 
 What really happens is to order the values in ascending order and then separate them in a number of buckets. For example if the min value is 1 and the max 10 and we split them in 9 buckets, the first one will include all numbers from 1 to 2, the second all numbers from 2 to 3 and so on. The next step is to find the bucket with the highest amount of elements and take the middle value.  
 
-
-```
+```python
 counts, bins = np.histogram(df.Returns, bins=50)
 max_index_col = np.argmax(counts, axis=0)
 mode = bins[max_index_col]
 mode
 ```
 
-
-
-
     -1.0
 
-
-
-
-```
+```python
 # or
 df.Returns.mode()[0]
 ```
 
-
-
-
     -1
 
 
-
 ## Alternative Measures of Location
+
+In addition to the more common measures, there are several more that can also be included to the investing algorithms. 
 
 * Mid-Mean - computes a mean using the data between the 25th and 75th percentiles.
 
@@ -207,8 +156,7 @@ df.Returns.mode()[0]
 
 ### Mid-Mean
 
-
-```
+```python
 # p_25 = df.Returns.quantile(0.25)  # Much slower than np.percentile
 p_25 = np.percentile(df.Returns,25) # attention : the percentile is given in percent (5 = 5%)
 p_75 = np.percentile(df.Returns,75)
@@ -216,35 +164,22 @@ mid_mean = df[df.Returns.gt(p_25) & df.Returns.lt(p_75)].Returns.mean()
 mid_mean
 ```
 
-
-
-
     -1.010498687664042
-
-
 
 ### Trimmed-Mean
 
-
-```
+```python
 p_5 = np.percentile(df.Returns,5)
 p_95 = np.percentile(df.Returns,95)
 trimmed_mean = df[df.Returns.gt(p_5) & df.Returns.lt(p_95)].Returns.mean()
 trimmed_mean
 ```
 
-
-
-
     -0.5480427046263345
-
-
-
 
 ### Winsorized Mean
 
-
-```
+```python
 data_indexes_to_stay_same = ( df.Returns > p_5 ) & ( df.Returns < p_95 )
 data_to_stay_same = df[data_indexes_to_stay_same]
 all_data_bellow_p_5 = df[df.Returns <= p_5].copy()
@@ -257,32 +192,20 @@ winsored_mean = winsored_rets.Returns.mean()
 winsored_mean
 ```
 
-
-
-
     -0.608
-
-
 
 ### Mid-range
 
-
-```
+```python
 mid_range = (df.Returns.max() + df.Returns.min())/2
 mid_range
 ```
 
-
-
-
     -1.0
-
-
 
 #### All Together
 
-
-```
+```python
 # df.Returns.plot.hist(bins=200, figsize=(15,6), grid=True)
 plt.figure(figsize=(15,6))
 sns.histplot(df.Returns, kde=True, bins=100)
@@ -300,8 +223,4 @@ plt.gca().legend(loc="upper left")
 plt.show()
 ```
 
-
-    
 ![png](measures-of-location_28_0.png)
-    
-
