@@ -1,8 +1,8 @@
 [{
     "id": "python",
     "name": "python",
-    "image": "automation.jpg",
-    "description": "Python",
+    "image": "python-header.png",
+    "description": "Python is very handy in investing",
     "color": "bg-green-300",
     "icon": "python.svg"
 },

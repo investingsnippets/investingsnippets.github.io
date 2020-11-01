@@ -1,6 +1,6 @@
 ---
 title: Measures of Location
-description: Use average, mean, median and more measures to understand basic investing.
+description: Use average, median, mode and more, to understand basic investing.
 date: 2020-10-18T11:00:00.000Z
 tags: python
 topic: mathematics
