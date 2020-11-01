@@ -18,7 +18,7 @@ export default function Topic({topic, posts, tags, sortedTopics, allTopics}) {
         title={topic.name}
         description={topic.description}
       />
-      <p className="text-sm mb-2">
+      <p className="text-sm mb-4">
         <Link href="/" key='home'>
           <a className='' key='home'>Home</a>
         </Link>
@@ -27,16 +27,20 @@ export default function Topic({topic, posts, tags, sortedTopics, allTopics}) {
           <a className='' key={topic.id}>{topic.name}</a>
         </Link>
       </p>
-      <Image
-        className="mb-3"
-        src={require(`../../content/assets/${topic.image}`)}
-        previewSrc={require(`../../content/assets/${topic.image}?lqip`)}
-        alt="Automation"
-      />
+      <div className="mb-4 flex text-center content-center flex-wrap place-items-center">
+        <Image
+          className="mx-auto"
+          src={require(`../../content/assets/${topic.image}`)}
+          previewSrc={require(`../../content/assets/${topic.image}?lqip`)}
+          alt="Automation"
+        />
+      </div>
 
-      <p className="mb-10">
+      <p className="mb-3">
         {topic.description}
-      </p>  
+      </p>
+
+      <div className="border border-white mb-4" />
 
       <PostCardPagination total={posts.length}>
         {posts}
