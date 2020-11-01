@@ -4,11 +4,11 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 01 Nov 2020 15:06:03 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 01 Nov 2020 19:05:24 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Measures of Variability]]></title>
-            <description><![CDATA[Use average, median, mode and more, to understand basic investing.]]></description>
+            <description><![CDATA[Standard deviation is one of the most common measures of risk in investing. In this post we walk through the simple maths to understand this basic measure of variability.]]></description>
             <link>https://www.investingsnippets.com/post/measures-of-variability</link>
             <guid isPermaLink="false">measures-of-variability</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
