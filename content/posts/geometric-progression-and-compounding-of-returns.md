@@ -95,3 +95,15 @@ Finally, from (3),
 $$
 R_monthly = \sqrt[12]{1 + 0.1} - 1 = \sqrt[12]{1.1} - 1 = 1.0079 - 1 = 0.0079
 $$
+
+## Compounding variable returns
+
+It is commonly accepted that returns do not stay the same over periods. For example, the average return of this month is not the same as the one from last month! However, the same principle of compounding applies in this case too. Let's see an example.
+
+An asset yields the following return for the past couple of months $0.021, 0.032, -0.018, 0.06, -0.043, 0.048$. The total return is the **product** of the individual returns when 1 is added to them:
+
+$$
+R = (1 + 0.021) * (1 + 0.032) * (1 - 0.018) * (1 + 0.06) * (1 - 0.043) * (1 + 0.048) = ...
+$$
+
+This, resonates with the equation (1) above where for a fixed return we have $R_total = (1 + R_fixed)^#_of_periods$
