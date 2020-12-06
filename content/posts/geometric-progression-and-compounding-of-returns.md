@@ -80,20 +80,20 @@ $$
 
 where $P_i$ is the price of the asset on the period $i$.
 
-By assuming (for simplicity) that $P_0 = 1$ and from (2), $P_1 = P_0 * (1 + R_annual)$
+By assuming (for simplicity) that $P_0 = 1$ and from (2), $P_1 = P_0 * (1 + R_{annual})$
 
 Then from (1),
 
 $$
-1 + R_annual = 1 * (1 + R_month)^12 => R_month = \sqrt[12]{1+R_annual} - 1 (3)
+1 + R_{annual} = 1 * (1 + R_{month})^12 => R_{month} = \sqrt[12]{1+R_{annual}} - 1 (3)
 $$
 
-We use ν = 12, because 1 year = 12 months (=> 12 compounding periods). If instead of monthly returns we were asked to find quarter returns then we would use ν = 4 ($R_quarter = \sqrt[4]{1+R_annual} - 1$).
+We use ν = 12, because 1 year = 12 months (=> 12 compounding periods). If instead of monthly returns we were asked to find quarter returns then we would use ν = 4 ($R_{quarter} = \sqrt[4]{1+R_{annual}} - 1$).
 
 Finally, from (3),
 
 $$
-R_monthly = \sqrt[12]{1 + 0.1} - 1 = \sqrt[12]{1.1} - 1 = 1.0079 - 1 = 0.0079
+R_{monthly} = \sqrt[12]{1 + 0.1} - 1 = \sqrt[12]{1.1} - 1 = 1.0079 - 1 = 0.0079
 $$
 
 ## Compounding variable returns
@@ -106,4 +106,4 @@ $$
 R = (1 + 0.021) * (1 + 0.032) * (1 - 0.018) * (1 + 0.06) * (1 - 0.043) * (1 + 0.048) = ...
 $$
 
-This, resonates with the equation (1) above where for a fixed return we have $R_total = (1 + R_fixed)^#_of_periods$
+This, resonates with the equation (1) above where for a fixed return we have $R_{total} = (1 + R_{fixed})^{number-of-periods}$
