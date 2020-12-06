@@ -14,7 +14,7 @@ Let us consider the following scenario. A stock asset yields an average monthly 
 Consider the initial asset price $P_0 = 100$. After the first month of the investment the outcome would be:
 
 $$
-P_1 = 100 + (100 * 2%) = (100 * 1) + (100 * 0.02) = 100 * (1 + 0.02) = P_0 * 1.02
+P_1 = 100 + (100 * 0.02) = (100 * 1) + (100 * 0.02) = 100 * (1 + 0.02) = P_0 * 1.02
 $$
 
 The outcome after the 2nd month would be:
@@ -93,5 +93,5 @@ We use ν = 12, because 1 year = 12 months (=> 12 compounding periods). If inste
 Finally, from (3),
 
 $$
-R_monthly = \sqrt[12]{1 + 0.1} - 1 = \sqrt[12]{1.1} - 1 = 1.0079 - 1 = 0.0079 => 0.79% 
+R_monthly = \sqrt[12]{1 + 0.1} - 1 = \sqrt[12]{1.1} - 1 = 1.0079 - 1 = 0.0079
 $$
