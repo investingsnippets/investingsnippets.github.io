@@ -4,4 +4,11 @@
     "image": "mathematics.png",
     "description": "Investing, as part of the Science of Finance, is subject to the lows of Mathematics!",
     "color": "bg-green-300"
+},
+{
+    "id": "automation",
+    "name": "Automation",
+    "image": "automation.png",
+    "description": "Spending time to do the same thing over and over again is tedious! Thus, I like to automate as much as possible.",
+    "color": "bg-green-300"
 }]
