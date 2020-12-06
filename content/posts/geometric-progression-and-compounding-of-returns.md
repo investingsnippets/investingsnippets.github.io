@@ -1,6 +1,6 @@
 ---
 title: Geometric Progression and the Compounding of the Returns
-description: 
+description: Your savings account offers a 1% annual interest! The account balance in 10 years? +10%? Naaaah   
 date: 2020-12-06T11:00:00.000Z
 topic: mathematics
 author: chris
