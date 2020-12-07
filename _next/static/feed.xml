@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 06 Dec 2020 17:18:50 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 07 Dec 2020 04:57:45 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Load Google Drive folder in Google Colab]]></title>
+            <description><![CDATA[How to mount a Google Drive in Google Colab and load some stock data.]]></description>
+            <link>https://www.investingsnippets.com/post/load-google-drive-folder-in-google-colab</link>
+            <guid isPermaLink="false">load-google-drive-folder-in-google-colab</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Mon, 07 Dec 2020 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Geometric Progression and the Compounding of the Returns]]></title>
             <description><![CDATA[Your savings account offers a 1% annual interest! The account balance in 10 years? +10%? Naaaah]]></description>
