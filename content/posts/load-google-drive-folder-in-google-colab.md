@@ -1,7 +1,7 @@
 ---
 title: Load Google Drive folder in Google Colab
 description: How to mount a Google Drive in Google Colab and load some stock data.  
-date: 2020-12-06T12:00:00.000Z
+date: 2020-12-07T05:00:00.000Z
 topic: automation
 tags: python
 author: chris
