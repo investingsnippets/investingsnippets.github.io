@@ -84,10 +84,10 @@ In this case above, I have intentionally picked the data as such to resemble the
 Back to our question now! The probability, the next person that joins the party, weights between 80 and 90 kilos, can be estimated by measuring the area below the curve for that bucket. So, if the whole area below the curve is 1 (zero moment, see below), the part that belongs to bucket 80-90 is a percentage :) and that is the probability we are after. The expression is:
 
 $$
-P( \text{weight between 80 and 90 kilos} | \text{mean=x and standard_deviation=y} )
+P( \text{weight between 80 and 90 kilos} | \text{mean=x and standard-deviation=y} )
 $$
 
-Which is translated to: The probability a person weights between 80 and 90 kilos given an average of x and standard_deviation of y.
+Which is translated to: The probability a person weights between 80 and 90 kilos given an average of x and standard-deviation of y.
 
 And the area below the curve is the integral between the points:
 

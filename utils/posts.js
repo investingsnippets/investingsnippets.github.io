@@ -26,9 +26,15 @@ export function getSortedPosts() {
       // Parse markdown, get frontmatter data, excerpt and content.
       const { data, excerpt, content } = matter(markdownWithMetadata);
 
-      const dataTags = data.tags ? data.tags.split(/(\s+)/).filter( e => e.trim().length > 0).map((tgId) => {
-        return tags.find(a => a.id === tgId)
-      }) : []
+      // splits tags by comma or whitespace and sorts alphabetically
+      const dataTags = data.tags ? 
+        data.tags.split(/[ ,]+/)
+                 .filter( e => e.trim().length > 0)
+                 .sort((a, b) => a.localeCompare(b))
+                 .map((tgId) => {
+                    return tags.find(a => a.id === tgId)
+                 }) 
+      : []
 
       const dataTopic =  topics.find(a => a.id === data.topic.trim())
       const frontmatter = {

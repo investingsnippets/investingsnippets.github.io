@@ -81,7 +81,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           )}
         </header>
         <ReactMarkdown
-          className="mb-4 prose-sm prose sm:prose lg:prose-lg"
+          className="mb-4 prose-lg"
           escapeHtml={false}
           source={post.content}
           plugins={[RemarkMathPlugin]}
