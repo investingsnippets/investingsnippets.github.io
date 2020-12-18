@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 07 Dec 2020 04:57:45 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 18 Dec 2020 20:59:01 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Higher Moments of a Distribution]]></title>
+            <description><![CDATA[See how higher moments can reveal more characteristics of a data series.]]></description>
+            <link>https://www.investingsnippets.com/post/higher-moments-of-a-distribution</link>
+            <guid isPermaLink="false">higher-moments-of-a-distribution</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Thu, 17 Dec 2020 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Load Google Drive folder in Google Colab]]></title>
             <description><![CDATA[How to mount a Google Drive in Google Colab and load some stock data.]]></description>
