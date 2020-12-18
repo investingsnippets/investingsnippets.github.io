@@ -3,6 +3,7 @@ title: Measures of Variability
 description: Standard deviation & percentiles! Used for measuring volatility, and allow for a rough "estimate" of the near future.
 date: 2020-11-01T11:00:00.000Z
 topic: mathematics
+tags: statistics
 author: chris
 img: /static/standard-deviation.png
 ---
@@ -31,7 +32,7 @@ $$
 
 > **Note**: We can divide by n or n-1. n is the total population of an event. n-1 a series of it. numpy is, by default, using n-1! The difference is negligible for long sequences, but not for short ones!
 
-We see above that, for some reason, we squared the difference ($(x_i - \bar{x})^2$), instead of just taking the absolute difference ($x_i - \bar{x}$). We did that in order to avoid the [same problem](/post/measures-of-location) we have with the mean, where the sum can be zero because of negative values in the list. Imagine, for example, having the sequence `-10,1,2,3,4`. What is the mean value? 0! And, how spread are the data around the mean? 0 again. It doesn't really make any sense, right? By observing the sequence, we see that there is some spreading of the data around "something". This, "something" doesn't feel to be 0. It feels like something close to the `1,2,3,4` values, which look like a group of values that are really close to each other. I know that is difficult to grasp it. But not until we raise it to another "dimension" :). And that is what we do when we square the values.
+We see above that, for some reason, we squared the difference ($(x_i - \bar{x})^2$), instead of just taking the absolute difference ($x_i - \bar{x}$). We did that in order to avoid the [same problem](/post/measures-of-location) we have with the mean, where the sum can be zero because of negative values in the list. Imagine, for example, having the sequence `-10,1,2,3,4`. What is the mean value? 0! And, how spread are the data around the mean? 0 again. It doesn't really make much sense, right? By observing the sequence, we see that there is some spreading of the data around "something". This, "something" doesn't feel to be 0. It feels like something close to the `1,2,3,4` values, which look like a group of values that are really close to each other. I know that is kinda difficult to grasp. But, not until we raise it to another "dimension" :). And that is what we do when we square the values.
 
 * we remove the negative sign
 * we make the values that are far from "the group", to stand out (the outliers are emphasized).
@@ -61,6 +62,7 @@ Normal distributions have some very unique attributes. The most important are:
 
 Let's assume that the average price of an asset $40 (measured with daily returns for some period) and the standard deviation is $5. We can assume with 95% certainty the next closing price remains between $30 and $50! (More on that in a later post). In other words, we are 95% sure that the max loss will not exceed $10.
 
+> Standard Deviation is considered a pure measure of risk (due to returns distribution deviate from the normal one), but is a good indicator of how volatile as asset is. 
 
 ## Percentiles
 

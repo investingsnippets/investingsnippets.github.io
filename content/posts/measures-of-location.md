@@ -2,7 +2,7 @@
 title: Measures of Location
 description: Use average, median, mode and more, to understand basic investing.
 date: 2020-10-18T11:00:00.000Z
-tags: python
+tags: statistics python
 topic: mathematics
 author: chris
 img: https://www.picpedia.org/highway-signs/images/average.jpg
@@ -20,7 +20,7 @@ To answer, we commonly start by exploring some attributes that best describe the
 
 The most common measures of location are the Mean, Median and Mode.
 
-### Mean (or **average**) and Root Mean Square (RMS)
+### Mean (or **average**, or **Expected Value**) and Root Mean Square (RMS)
 
 Mean is the sum of the values of the data points divided by the number of data points. That is,
 
@@ -67,7 +67,7 @@ df = pd.DataFrame(randomInts, columns=['Returns'])
 df.plot();
 ```
    
-![png](measures-of-location_3_0.png)
+![png](measures-of-location/measures-of-location_3_0.png)
 
 ### Mean
 
@@ -121,7 +121,7 @@ But, in a sequence of data that is continuous, the numbers can take any value in
 df.plot.hist(bins=50, figsize=(12,6), grid=True);
 ```
     
-![png](measures-of-location_14_0.png)
+![png](measures-of-location/measures-of-location_14_0.png)
 
 What really happens is to order the values in ascending order and then separate them in a number of buckets. For example if the min value is 1 and the max 10 and we split them in 9 buckets, the first one will include all numbers from 1 to 2, the second all numbers from 2 to 3 and so on. The next step is to find the bucket with the highest amount of elements and take the middle value.  
 
@@ -223,4 +223,4 @@ plt.gca().legend(loc="upper left")
 plt.show()
 ```
 
-![png](measures-of-location_28_0.png)
+![png](measures-of-location/measures-of-location_28_0.png)

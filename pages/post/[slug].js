@@ -57,19 +57,28 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
             {' '}
             {frontmatter.author.name}
           </p>
-          {frontmatter.tags.map(({id, icon, name}) => (
-            <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
-              <a className="text-gray-600" key={id}>
-                <img
-                  className="filter-orange-700 h-4 w-4 m-1 inline-block"
-                  alt={`${name}`}
-                  src={`${siteUrl}/static/${icon}`}
-                  data-srcset={`${siteUrl}/static/${icon}`}
-                />
-                {name}
+          <div className="flex justify-end mt-2 mr-5">
+            {frontmatter.tags.map(({id, icon, name}) => (
+              <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
+                <a className="text-gray-600" key={id}>
+                  <img
+                    className="filter-orange-700 h-4 w-4 m-1 inline-block"
+                    alt={`${name}`}
+                    src={`${siteUrl}/static/${icon}`}
+                    data-srcset={`${siteUrl}/static/${icon}`}
+                  />
+                  {name}
+                </a>
+              </Link>
+            ))}
+          </div>  
+          {frontmatter.colab && (
+            <div className="flex justify-end mt-2 mr-5">
+              <a href={`${frontmatter.colab}`}>
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
               </a>
-            </Link>
-          ))}
+            </div>
+          )}
         </header>
         <ReactMarkdown
           className="mb-4 prose-sm prose sm:prose lg:prose-lg"
