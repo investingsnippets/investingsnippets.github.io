@@ -109,7 +109,7 @@ $$
 \int_{x=-\infty}^{x=\infty} f(x)dx = 1 \qquad (2)
 $$
 
-> Probability Distributions are normalized quantities, that they always sum to one. Think of that as the probability that at least one of the events in a sample space will occur. Isn't that 100%?
+> Probability Distributions are normalized quantities, that always sum to one. Think of that as the probability that at least one of the events in a sample space will occur. Isn't that 100%?
 
 ## 1st Moment - Mean
 
