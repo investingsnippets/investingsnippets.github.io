@@ -71,10 +71,10 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
                 </a>
               </Link>
             ))}
-          </div>  
+          </div>
           {frontmatter.colab && (
             <div className="flex justify-end mt-2 mr-5">
-              <a href={`${frontmatter.colab}`}>
+              <a target="_blank" rel="noopener noreferrer" href={`${frontmatter.colab}`}>
                 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
               </a>
             </div>
