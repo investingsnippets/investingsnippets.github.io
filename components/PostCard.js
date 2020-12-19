@@ -14,7 +14,7 @@ export default function PostCard({ title, description, img, author, date, tags, 
         title={`${title}`}
       >
         <div className="relative -bottom-4/5 z-20">
-          <Link href="/topic/[slug]" as={`/topic/${topic.id}`}>
+          <Link href={`/topic/${topic.id}`}>
             <a className="ml-2 px-4 py-1 bg-black text-gray-200 inline-flex items-center justify-center">
               {topic.name}
             </a>
@@ -24,7 +24,7 @@ export default function PostCard({ title, description, img, author, date, tags, 
       <div className="bg-white rounded px-4 flex flex-col justify-between leading-normal w-full">
         <div>
           <header className="mt-3 md:mt-0 text-gray-700 font-bold text-2xl mb-2">
-            <Link href="/post/[slug]" as={`/post/${slug}`}>
+            <Link href={`/post/${slug}`}>
               <a className="text-2xl lg:text-3xl font-bold font-display">
                 {title}
               </a>
@@ -58,7 +58,7 @@ export default function PostCard({ title, description, img, author, date, tags, 
           <div className="ml-10 mr-3 lg:flex flex-row">
             {tags.map(({id, icon, name}) => (
               <div className="bg-gray-200 pr-1 pb-1 text-sm mr-2 my-3 flex justify-items-center" key={id}>
-                <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
+                <Link href={`/tag/${id}`} key={id}>
                   <a className="text-gray-600" key={id}>
                     <div className="space-x-0">
                       <div className="px-1 inline-block">

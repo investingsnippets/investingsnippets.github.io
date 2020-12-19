@@ -23,7 +23,7 @@ export default function Topic({tag, posts, tags, sortedTopics, allTopics}) {
           <a className='' key='home'>Home</a>
         </Link>
         {' > '}
-        <Link href="/tag/[tag]" as={`/tag/${tag.id}`} key={tag.id}>
+        <Link href={`/tag/${tag.id}`} key={tag.id}>
           <a className='' key={tag.id}>{tag.name}</a>
         </Link>
       </p>

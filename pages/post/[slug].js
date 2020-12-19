@@ -42,7 +42,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
               <a className='' key='home'>Home</a>
             </Link>
             {' > '}
-            <Link href="/topic/[topic]" as={`/topic/${frontmatter.topic.id}`} key={frontmatter.topic.id}>
+            <Link href={`/topic/${frontmatter.topic.id}`} key={frontmatter.topic.id}>
               <a className='' key={frontmatter.topic.id}>{frontmatter.topic.name}</a>
             </Link>
             {' > '}
@@ -59,7 +59,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           </p>
           <div className="flex justify-end mt-2 mr-5">
             {frontmatter.tags.map(({id, icon, name}) => (
-              <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
+              <Link href={`/tag/${id}`} key={id}>
                 <a className="text-gray-600" key={id}>
                   <img
                     className="filter-orange-700 h-4 w-4 m-1 inline-block"
@@ -102,7 +102,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
       </article>
       <nav className="flex flex-wrap justify-between mb-10">
         {previousPost ? (
-          <Link href="/post/[slug]" as={`/post/${previousPost.slug}`}>
+          <Link href={`/post/${previousPost.slug}`}>
             <a className="text-lg font-bold">
               ← 
               {' '}
@@ -113,7 +113,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           <div />
         )}
         {nextPost ? (
-          <Link href="/post/[slug]" as={`/post/${nextPost.slug}`}>
+          <Link href={`/post/${nextPost.slug}`}>
             <a className="text-lg font-bold">
               {nextPost.frontmatter.title}
               {' '}

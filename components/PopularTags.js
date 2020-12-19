@@ -13,7 +13,7 @@ export default function PopularTags({ tags, tagsLimit }) {
       <ul>
         {tags.slice(0, tagsLimit).map(({slug, name, icon, count})=>(
           <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={slug}>
-            <Link href="/tag/[tag]" as={`/tag/${slug}`}>
+            <Link href={`/tag/${slug}`}>
               <a className="flex items-center text-gray-600 cursor-pointer">
                 <Image
                   className="filter-orange-700 h-4 w-4 mr-3 inline-block"

@@ -10,7 +10,7 @@ export default function PopularTopics({ sortedTopics }) {
       <ul>
         {sortedTopics.map(({slug, name, count})=>(
           <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={slug}>
-            <Link href="/topic/[topic]" as={`/topic/${slug}`}>
+            <Link href={`/topic/${slug}`}>
               <a className="flex items-center text-gray-600 cursor-pointer">
                 <span>{name}</span>
                 <span className="text-gray-500 ml-auto">

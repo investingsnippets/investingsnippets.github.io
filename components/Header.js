@@ -45,7 +45,7 @@ class Header extends Component {
           <div className={`lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow ${active ? 'visible' : 'hidden'}`} id="mobileMenu">
             <div className="lg:flex lg:items-stretch lg:justify-end ml-auto">
               {allTopics.map(({id, name})=>(
-                <Link href="/topic/[topic]" as={`/topic/${id}`} key={name}>
+                <Link href={`/topic/${id}`} key={name}>
                   <a className="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal font-semibold text-gray-700 no-underline flex items-center hover:bg-grey-dark">
                     <span>{name}</span>
                   </a>
