@@ -2,6 +2,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 import { getSiteMetaData } from "utils/helpers";
+import Image from "./Image";
 
 export default function PopularTags({ tags, tagsLimit }) {
   const { siteUrl } = getSiteMetaData();
@@ -14,7 +15,7 @@ export default function PopularTags({ tags, tagsLimit }) {
           <li className="p-1 py-4 border-b border-t border-white hover:border-gray-200 transition duration-300" key={slug}>
             <Link href="/tag/[tag]" as={`/tag/${slug}`}>
               <a className="flex items-center text-gray-600 cursor-pointer">
-                <img
+                <Image
                   className="filter-orange-700 h-4 w-4 mr-3 inline-block"
                   alt={`${name}`}
                   src={`${siteUrl}/static/${icon}`}

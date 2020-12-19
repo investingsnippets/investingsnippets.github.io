@@ -2,6 +2,9 @@ const withPlugins = require("next-compose-plugins");
 const optimizedImages = require("next-optimized-images");
 
 module.exports = withPlugins([optimizedImages], {
+    images: {
+      domains: ['s.gravatar.com', 'localhost'],
+    },
     webpack: (config, { isServer, dev }) => {
         
         config.node = {

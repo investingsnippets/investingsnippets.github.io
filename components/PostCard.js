@@ -57,16 +57,22 @@ export default function PostCard({ title, description, img, author, date, tags, 
           </div>
           <div className="ml-10 mr-3 lg:flex flex-row">
             {tags.map(({id, icon, name}) => (
-              <div className="bg-gray-200 pr-1 text-sm mr-2 my-3 flex justify-items-center" key={id}>
+              <div className="bg-gray-200 pr-1 pb-1 text-sm mr-2 my-3 flex justify-items-center" key={id}>
                 <Link href="/tag/[tag]" as={`/tag/${id}`} key={id}>
                   <a className="text-gray-600" key={id}>
-                    <img
-                      className="filter-orange-700 h-4 w-4 m-1 inline-block"
-                      alt={`${name}`}
-                      src={`${siteUrl}/static/${icon}`}
-                      data-srcset={`${siteUrl}/static/${icon}`}
-                    />
-                    {name}
+                    <div className="space-x-0">
+                      <div className="px-1 inline-block">
+                        <Image
+                          className="filter-orange-700 h-3 w-4"
+                          alt={`${name}`}
+                          src={`${siteUrl}/static/${icon}`}
+                          data-srcset={`${siteUrl}/static/${icon}`}
+                        />
+                      </div>
+                      <div className="inline-block">
+                        {name}
+                      </div>
+                    </div>
                   </a>
                 </Link>
               </div>
