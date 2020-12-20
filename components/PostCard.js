@@ -37,13 +37,15 @@ export default function PostCard({ title, description, img, author, date, tags, 
           </section>
         </div>
         <div className="flex mt-3 flex-row">
-          <Image
-            alt={`${author.name}`}
-            src={`${author.image}`}
-            previewSrc={`${author.image}`}
-            className="h-10 w-10 rounded-full mr-2 object-cover"
-          />
-          <div>
+          <div className="px-1 inline-block">
+            <Image
+              alt={`${author.name}`}
+              src={`${author.image}`}
+              previewSrc={`${author.image}`}
+              className="h-10 w-10 rounded-full mr-2 object-cover"
+            />
+          </div>
+          <div className="inline-block">
             <p className="font-semibold text-gray-700 text-sm capitalize"> 
               {' '}
               {author.name}
@@ -55,23 +57,21 @@ export default function PostCard({ title, description, img, author, date, tags, 
               {' '}
             </p>
           </div>
-          <div className="ml-10 mr-3 lg:flex flex-row">
+          <div className="ml-10 mr-3 sm:flex flex-row">
             {tags.map(({id, icon, name}) => (
               <div className="bg-gray-200 pr-1 pb-1 text-sm mr-2 my-3 flex justify-items-center" key={id}>
                 <Link href={`/tag/${id}`} key={id}>
                   <a className="text-gray-600" key={id}>
-                    <div className="space-x-0">
-                      <div className="px-1 inline-block">
-                        <Image
-                          className="filter-orange-700 h-3 w-4"
-                          alt={`${name}`}
-                          src={`${siteUrl}/static/${icon}`}
-                          data-srcset={`${siteUrl}/static/${icon}`}
-                        />
-                      </div>
-                      <div className="inline-block">
-                        {name}
-                      </div>
+                    <div className="px-1 inline-block">
+                      <Image
+                        className="filter-orange-700 h-3 w-4"
+                        alt={`${name}`}
+                        src={`${siteUrl}/static/${icon}`}
+                        data-srcset={`${siteUrl}/static/${icon}`}
+                      />
+                    </div>
+                    <div className="inline-block">
+                      {name}
                     </div>
                   </a>
                 </Link>
