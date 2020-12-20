@@ -9,7 +9,7 @@ img: /static/skewness-kurtosis.png
 colab: https://colab.research.google.com/drive/1iYrNJ9ISktohy1dG2s16_FZKakB8FLU5?usp=sharing
 ---
 
-In a previous post we talked about the [Higher Moments of a Distribution](). We saw that skewness and kurtosis are two attributes that can identify if a distribution is normal or not (skewnes = 0 & kurtosis = 3).
+In a previous post we talked about the [Higher Moments of a Distribution](/post/higher-moments-of-a-distribution). We saw that skewness and kurtosis are two attributes that can identify if a distribution is normal or not (skewnes = 0 & kurtosis = 3).
 
 Let's try this approach on the MSFT's stock.
 
@@ -58,7 +58,7 @@ plt.title("Daily returns", weight="bold");
   
 ![png](are-stock-returns-normally-distributed/are-stock-returns-normally-distributed-1-1.png)
 
-Let's print skeweness and kurtosis:
+Let's print skewness and kurtosis:
 
 ```
 from scipy.stats import kurtosis, skew
@@ -193,7 +193,7 @@ jarque_bera_p > 0.05
 
 ## Conclusion
 
-In this post we went through some techniques that allow us identify if stock returns are normally distributed. We saw, with an example, that returns (arithmetic, or log) are not normally distributed but instead excibit fat tails. I cannot generalize of course by only one example that I provide here, but I will leave that as a small excersise to the curious readers.
+In this post we went through some techniques that allow us identify if stock returns are normally distributed. We saw, with an example, that returns (arithmetic, or log) are not normally distributed but instead exhibit fat tails. I cannot generalize of course by only one example that I provide here, but I will leave that as a small exercise to the curious readers.
 
 The question that is now left is? Since the (I could event say here, financial asset returns (everything that is publicly traded)) returns are not following a normal distribution, that what type of distribution they follow?
 
