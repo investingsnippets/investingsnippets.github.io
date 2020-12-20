@@ -147,6 +147,8 @@ A left-skewed (negatively-skewed) distribution has a long left tail. That’s be
 
 A right-skewed (positive-skew) distribution has a long right tail. That’s because there is a long tail in the positive direction on the number line. The mean is also to the right of the peak.
 
+![png](higher-moments-of-a-distribution/Relationship_between_mean_and_median_under_different_skewness.png)
+
 ## 4th Moment - Kurtosis
 
 The fourth central moment is a measure of the heaviness of the tail of the distribution.
@@ -156,6 +158,8 @@ from scipy.stats import kurtosis
 kurtosis(values, bias=False)
 ```
     0.14330737818315065
+
+![jpg](higher-moments-of-a-distribution/kurtosis-types.jpg)
 
 ## Higher Moments of the Normal Distribution
 
