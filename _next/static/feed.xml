@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 20 Dec 2020 12:40:03 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 20 Dec 2020 14:57:56 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Are Stock Returns Normally Distributed?]]></title>
+            <description><![CDATA[What do you think?]]></description>
+            <link>https://www.investingsnippets.com/post/are-stock-returns-normally-distributed</link>
+            <guid isPermaLink="false">are-stock-returns-normally-distributed</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sun, 20 Dec 2020 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Higher Moments of a Distribution]]></title>
             <description><![CDATA[See how higher moments can reveal more characteristics of a data series.]]></description>
