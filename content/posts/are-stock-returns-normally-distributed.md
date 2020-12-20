@@ -5,7 +5,7 @@ date: 2020-12-20T11:00:00.000Z
 topic: investing
 tags: python
 author: chris
-img: /static/skewness-kurtosis.png
+img: /static/normal-dist-with-hist.png
 colab: https://colab.research.google.com/drive/1iYrNJ9ISktohy1dG2s16_FZKakB8FLU5?usp=sharing
 ---
 
@@ -51,10 +51,6 @@ rets.columns = ['returns']
 rets.plot(figsize=(14,7))
 plt.title("Daily returns", weight="bold");
 ```
-
-    Requirement already satisfied: yahoofinancials in /usr/local/lib/python3.6/dist-packages (1.6)
-    Requirement already satisfied: beautifulsoup4 in /usr/local/lib/python3.6/dist-packages (from yahoofinancials) (4.6.3)
-    Requirement already satisfied: pytz in /usr/local/lib/python3.6/dist-packages (from yahoofinancials) (2018.9)
   
 ![png](are-stock-returns-normally-distributed/are-stock-returns-normally-distributed-1-1.png)
 
