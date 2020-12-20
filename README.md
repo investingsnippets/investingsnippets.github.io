@@ -17,7 +17,7 @@ docker-compose run --rm npm npm run deploy
 ## Generate md from ipynb
 
 ```bash
-docker run --rm -v ~/Downloads:/app -w="/app" -it python:3.8-alpine bash -c "pip install nbconvert pandoc && jupyter nbconvert --to markdown measures-of-location.ipynb"
+docker run --rm -v ~/Downloads:/app -w="/app" -it python:3.8 bash -c "pip install nbconvert pandoc && jupyter nbconvert measures-of-location.ipynb --to markdown"
 ```
 
 * If Katex error complaining about a letter, then delete and add the letter again!

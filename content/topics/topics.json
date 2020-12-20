@@ -11,4 +11,11 @@
     "image": "automation.jpg",
     "description": "Spending time to do the same thing over and over again is tedious! Thus, I like to automate as much as possible.",
     "color": "bg-green-300"
+},
+{
+    "id": "investing",
+    "name": "Investing",
+    "image": "investing.png",
+    "description": "The piggy bank digests a good amount of the savings! There is only one way to get away ... investing. BUT, there is a hidden enemy, Speculation!",
+    "color": "bg-green-300"
 }]
