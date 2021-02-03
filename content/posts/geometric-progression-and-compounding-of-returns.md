@@ -54,7 +54,7 @@ So, after 12 months we will have $100 * 1.02^12 = 126.82$!
 The generic equation is:
 
 $$
-P_ν = P_0 * (1 + R_ν)^ν \qquad (1)
+P_ν = P_0 * (1 + R_ν)^ν \quad (1)
 $$
 
 ## Geometric Progression
@@ -75,7 +75,7 @@ Let's see the example above from another angle. Let's say that an assets had a t
 We calculate a simple/arithmetic return (pandas.pct_change) like:
 
 $$
-R_i = \frac{P_i-P_{i-1}}{P_{i-1}} = \frac{P_i}{P_{i-1}} - 1 \qquad (2)
+R_i = \frac{P_i-P_{i-1}}{P_{i-1}} = \frac{P_i}{P_{i-1}} - 1 \quad (2)
 $$
 
 where $P_i$ is the price of the asset on the period $i$.
