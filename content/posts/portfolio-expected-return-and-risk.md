@@ -43,6 +43,8 @@ Back to the equation (2). If we have a negative correlation of the assets, the t
 
 It becomes pretty obvious that by just combining two non correlated assets we can achieve volatility sometimes even smaller than the assets' individually. Who wouldn't want that!
 
+> Keep in mind that $\rho_{A,B} = \frac{cov_{A,B}}{\sigma_A\sigma_B}$ where $cov_{A,B}$ is the covariance of the two variables.
+
 Let's see an example...
 
 ## Real example of a two asset portfolio
@@ -185,12 +187,24 @@ vols = [portfolio_vol(w, returns.cov()) for w in weights]
 
 ef = pd.DataFrame({
     "Return": portfolio_returns, 
-    "Volatility": vols
+    "Volatility": vols,
+    "weights": weights
 })
-ef.plot(x="Volatility", y="Return", style=".-", figsize=(10,5))
+
+ax = ef.plot(x="Volatility", y="Return", style=".-", figsize=(11,6),
+             title="2 Asset Portfolio Risk/Return", legend=False)
+plt.ylabel("Return")
+
+def label_point(x, y, val, ax):
+  a = pd.concat({'x': x, 'y': y, 'val': val}, axis=1)
+  for i, point in a.iterrows():
+    prettified_p = f"({round(point['val'][0], 2)},{round(point['val'][1], 2)})"
+    ax.text(point['x'], point['y'], prettified_p)
+
+label_point(ef.Volatility, ef.Return, ef.weights, ax)
 ```
   
-![png](portfolio-expected-return-and-risk/portfolio-expected-return-and-risk_12_1.png)
+![png](portfolio-expected-return-and-risk/portfolio-expected-return-and-risk_12_0.png)
 
 What the graph above tells us is that by combining the two assets we are able to achieve a total volatility (risk) that is less than each asset's individual volatility!
 
@@ -198,4 +212,12 @@ Observe the left most point on the graph!
 
 In a next post we will calculate the optimal weights that minimize the risk of a portfolio as well as explore portfolios with more than 2 assets.
 
-Stay tunned...
+## Some More Notes
+
+* The approach I followed above is not something new. Is called [Markowitz Model](https://en.wikipedia.org/wiki/Markowitz_model) and won a [Nobel Price](https://www.nobelprize.org/prizes/economic-sciences/1990/press-release/) in 1990.
+* I tried to oversimplify the example, just to show the basics.
+* I randomly picked the two assets, in the example, from [IMPACTOPIA](http://www.market-topology.com/correlation/MSFT?etf=0).
+* We will prove later on that volatility changes over time :) and that would normally lead to rebalances.
+* As always, `Historical returns are no guarantee of future returns.`
+
+Stay tuned ...
