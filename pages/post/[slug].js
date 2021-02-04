@@ -3,21 +3,34 @@
 /* eslint-disable react/prop-types */
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import Disqus from "disqus-react"
+import gfm from 'remark-gfm';
+import Tex from '@matejmazur/react-katex'
+import RemarkMathPlugin from 'remark-math';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
+import Disqus from "disqus-react"
 import Layout from "components/Layout";
 import SEO from "components/Seo";
 import { getPostBySlug, getPostsSlugs } from "utils/posts";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
 import { MarkdownImage, getSiteMetaData } from "utils/helpers";
-import RemarkMathPlugin from 'remark-math';
-import { BlockMath, InlineMath } from 'react-katex';
 
-const CodeBlock = ({ language, value }) => {
-  return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
-};
+const renderers = {
+  inlineMath: ({value}) => <Tex math={value} />,
+  math: ({value}) => <Tex block math={value} />,
+  image: MarkdownImage,
+  link: ({ children, href }) => {
+    return <Link href={href}><a>{children}</a></Link>
+  },
+  code: ({language, value}) => {
+    return <SyntaxHighlighter style={darcula} language={language} children={value} />
+  },
+  list: ({children}) => {
+    return children
+  }
+}
 
 export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
   const { siteUrl, disqus } = getSiteMetaData();
@@ -84,18 +97,8 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           className="mb-4 prose-lg"
           escapeHtml={false}
           source={post.content}
-          plugins={[RemarkMathPlugin]}
-          renderers={{ 
-            code: CodeBlock,
-            image: MarkdownImage,
-            // math: ({ value }) => `math: ${value}`,
-            // inlineMath: ({ value }) => `inlineMath: ${value}`
-            math: ({ value }) => <BlockMath math={value} />,
-            inlineMath: ({ value }) => <InlineMath math={value} />,
-            link: ({ children, href }) => {
-              return <Link href={href}><a>{children}</a></Link>
-            }
-          }}
+          plugins={[RemarkMathPlugin, gfm]}
+          renderers={renderers}
         />
         <hr className="mt-4" />
         <footer />
