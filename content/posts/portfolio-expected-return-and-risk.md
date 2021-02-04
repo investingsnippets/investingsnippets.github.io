@@ -214,10 +214,10 @@ In a next post we will calculate the optimal weights that minimize the risk of a
 
 ## Some More Notes
 
-* The approach I followed above is not something new. Is called [Markowitz Model](https://en.wikipedia.org/wiki/Markowitz_model) and won a [Nobel Price](https://www.nobelprize.org/prizes/economic-sciences/1990/press-release/) in 1990.
-* I tried to oversimplify the example, just to show the basics.
+- The approach I followed above is not something new. Is called [Markowitz Model](https://en.wikipedia.org/wiki/Markowitz_model) and won a [Nobel Price](https://www.nobelprize.org/prizes/economic-sciences/1990/press-release/) in 1990.
+- I tried to oversimplify the example, just to show the basics.
 * I randomly picked the two assets, in the example, from [IMPACTOPIA](http://www.market-topology.com/correlation/MSFT?etf=0).
-* We will prove later on that volatility changes over time :) and that would normally lead to rebalances.
+* We will prove, later on, that volatility changes over time :) and that would normally lead to rebalances.
 * As always, `Historical returns are no guarantee of future returns.`
 
 Stay tuned ...
