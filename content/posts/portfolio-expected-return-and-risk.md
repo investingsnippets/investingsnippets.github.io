@@ -1,5 +1,5 @@
 ---
-title: Return & Volatility of a multi asset portfolio
+title: Return & Volatility of a Multi-Asset Portfolio
 description: Maths are magical :) And why diversification makes sense!
 date: 2021-01-31T11:00:00.000Z
 topic: investing
