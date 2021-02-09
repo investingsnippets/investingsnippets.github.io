@@ -14,7 +14,7 @@ We have already discussed about the [mean](/post/measures-of-location) and the [
 Mean is also called the 1st moment and variance the 2nd moment. The type to get a moment (the movement) about a non-random value c, of a density function is:
 
 $$
-E[(X-c)^κ] = \int_{-\infty}^{+\infty} (x-c)^k f(x) dx  \quad (1)
+E[(X-c)^κ] = \int_{-\infty}^{+\infty} (x-c)^k f(x) dx  \qquad (1)
 $$
 
 Before explaining the moments, we should first understand what a density function is. Commonly called probability density function (PDF).
@@ -106,7 +106,7 @@ There are many pros in trying to use distributions to represent how the values i
 That means that in (1), k=0 and as such $(...)^0 = 1$. That leaves us with:
 
 $$
-\int_{x=-\infty}^{x=\infty} f(x)dx = 1 \quad (2)
+\int_{x=-\infty}^{x=\infty} f(x)dx = 1 \qquad (2)
 $$
 
 > Probability Distributions are normalized quantities, that always sum to one. Think of that as the probability that at least one of the events in a sample space will occur. Isn't that 100%?
@@ -114,7 +114,7 @@ $$
 ## 1st Moment - Mean
 
 $$
-μ_1 = E[(X-0)^1] = E[X] = \int_{-\infty}^{+\infty} xf(x)dx  \quad (3)
+μ_1 = E[(X-0)^1] = E[X] = \int_{-\infty}^{+\infty} xf(x)dx  \qquad (3)
 $$
 
 c=0 in this case since we do not have an origin to get the moment (movement) about.
@@ -128,7 +128,7 @@ From (1), we can take c=0 and k=2! But what will that show us? How the mass is b
 For that reason we get $c=μ$ and that will start making sense, since we se how the mass is diverging from the mean. It will show the variance of the data around the mean :)
 
 $$
-Var = \int_{-\infty}^{+\infty} (x-μ_x)^2f(x)dx  \quad (4)
+Var = \int_{-\infty}^{+\infty} (x-μ_x)^2f(x)dx  \qquad (4)
 $$
 
 ## 3rd Moment - Skewness

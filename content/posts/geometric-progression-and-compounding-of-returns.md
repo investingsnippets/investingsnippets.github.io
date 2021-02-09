@@ -49,12 +49,12 @@ $$
 P_ν = P_{ν-1} * 1.02 = (P_{ν-2} * 1.02) * 1.02 = P_{ν-2} * 1.02^2 = .... = P_0 * (1 + 0.02)^ν
 $$
 
-So, after 12 months we will have $100 * 1.02^12 = 126.82$!
+So, after 12 months we will have $100 * 1.02^{12} = 126.82$!
 
 The generic equation is:
 
 $$
-P_ν = P_0 * (1 + R_ν)^ν \quad (1)
+P_ν = P_0 * (1 + R_ν)^ν \qquad (1)
 $$
 
 ## Geometric Progression
@@ -75,7 +75,7 @@ Let's see the example above from another angle. Let's say that an assets had a t
 We calculate a simple/arithmetic return (pandas.pct_change) like:
 
 $$
-R_i = \frac{P_i-P_{i-1}}{P_{i-1}} = \frac{P_i}{P_{i-1}} - 1 \quad (2)
+R_i = \frac{P_i-P_{i-1}}{P_{i-1}} = \frac{P_i}{P_{i-1}} - 1 \qquad (2)
 $$
 
 where $P_i$ is the price of the asset on the period $i$.
@@ -85,7 +85,7 @@ By assuming (for simplicity) that $P_0 = 1$ and from (2), $P_1 = P_0 * (1 + R_{a
 Then from (1),
 
 $$
-1 + R_{annual} = 1 * (1 + R_{month})^12 => R_{month} = \sqrt[12]{1+R_{annual}} - 1 (3)
+1 + R_{annual} = 1 * (1 + R_{month})^12 => R_{month} = \sqrt[12]{1+R_{annual}} - 1 \qquad (3)
 $$
 
 We use ν = 12, because 1 year = 12 months (=> 12 compounding periods). If instead of monthly returns we were asked to find quarter returns then we would use ν = 4 ($R_{quarter} = \sqrt[4]{1+R_{annual}} - 1$).

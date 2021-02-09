@@ -30,7 +30,7 @@ $$
 the volatility is
 
 $$
-\sigma_{A,B}=\sqrt{\sigma_A^2w_A^2 + \sigma_B^2w_B^2 + 2w_Aw_B\sigma_A\sigma_B\rho_{A,B}}  \quad (2)
+\sigma_{A,B}=\sqrt{\sigma_A^2w_A^2 + \sigma_B^2w_B^2 + 2w_Aw_B\sigma_A\sigma_B\rho_{A,B}}  \qquad (2)
 $$
 
 This second (2) equation tells us that the standard deviation of a 2 asset distribution is equal to the square root of the variance of asset A multiplied by the squared weight of A plus the variance of asset B multiplied by the squared weight of B, plus twice the product of variance of A times the variance of B times the weight of A times the weight of B times the correlation coefficient of A and B!
