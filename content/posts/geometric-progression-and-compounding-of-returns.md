@@ -54,12 +54,18 @@ So, after 12 months we will have $100 * 1.02^{12} = 126.82$!
 The generic equation is:
 
 $$
-P_ν = P_0 * (1 + R_ν)^ν \qquad (1)
+P_ν = P_0 * (1 + R)^ν \qquad (1)
 $$
 
 ## Geometric Progression
 
 In calculus, a sequence of numbers where each term after the first is found by multiplying the previous one by a fixed, non-one number, called `geometric progression`. The fixed number is called, the `common ratio`.
+
+$$
+a, ar, ar^2, ... , ar^{n-1}
+$$
+
+$1+R$ is the `common ratio` in our case. 
 
 Some interesting properties to notice:
 
