@@ -76,13 +76,10 @@ skew(log_msft_rets, bias=False)[0], kurtosis(log_msft_rets, bias=False, fisher=F
 
 There are several interrelated approaches to determining normality.
 
-1. Histogram with the normal curve superimposed. Unfortunately, there is no automated way to represent the "fitness" as a value. This approach is empirical mostly and requires experience.
-
-2. Skewness & Kurtosis Tests.
-
-3. Normality plots. “Normal Q-Q Plot” provides a graphical way to determine the level of normality.
-
-4. Normality tests. The Kolmogorov-Smirnov test (K-S) and Shapiro-Wilk (S-W) test are designed to test normality by comparing your data to a normal distribution with the same mean and standard deviation of your sample. If the test is NOT significant, then the data are normal, so any value above .05 indicates normality. If the test is significant (less than .05), then the data are non-normal.
+* Histogram with the normal curve superimposed. Unfortunately, there is no automated way to represent the "fitness" as a value. This approach is empirical mostly and requires experience.
+* Skewness & Kurtosis Tests.
+* Normality plots. “Normal Q-Q Plot” provides a graphical way to determine the level of normality.
+* Normality tests. The Kolmogorov-Smirnov test (K-S) and Shapiro-Wilk (S-W) test are designed to test normality by comparing your data to a normal distribution with the same mean and standard deviation of your sample. If the test is NOT significant, then the data are normal, so any value above .05 indicates normality. If the test is significant (less than .05), then the data are non-normal.
 
 ### Histogram & Normal PDF
 

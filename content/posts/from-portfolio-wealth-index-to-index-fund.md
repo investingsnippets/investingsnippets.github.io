@@ -331,7 +331,7 @@ In practice, a fund is a bucket of assets weighted in a structured way, and init
 
 The difference among the different types of funds is due to the way weights are calculated. Mutual and ETFs have managers that pick these weights based on market research, and other characteristics. The managers, can change the weights by performing a rebalancing of the portfolio.
 
-In index funds the weights are usually based on market cap and maybe other attributes and require minimum intervention from a manager (and due to that are normally much cheaper than the other types of funds). In the simplest case, an index fund could follow all the assets of a specific industry and allocate the weights according to the market capitalization of each asset (divided by the total market cap of all the assets in the index).
+In index funds (also known as passive ETFs) the weights are usually based on market cap and maybe other attributes and require minimum intervention from a manager (and due to that are normally much cheaper than the other types of funds). In the simplest case, an index fund could follow all the assets of a specific industry and allocate the weights according to the market capitalization of each asset (divided by the total market cap of all the assets in the index) or just follow the same weighting strategy of a well known index, such as S&P 500.
 
 In future posts, I will try to build (and invent) different types of funds.
 
