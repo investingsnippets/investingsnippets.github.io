@@ -72,11 +72,11 @@ plt.show()
  
 ![png](drawdown/drawdown_5_0.png)
 
-Do you see these nice lagoons? Well, we wouldn't want then to be deep and long, cause that is when our investment looses value and we need to wait!
+Do you see these nice lagoons? Well, we wouldn't want them to be deep and long in duration, cause that is when our investment looses value and we have to wait until it recovers!
 
 So, moving forward we want to find which lagoon was the deepest, how deep? and how long did it take to move back to the previous peak.
 
-First things first, we have to measure at any given point what is the difference between the peak and the wealth index. For example, the peak at a given point is 220\\$ and the index is 150\\$. That means that the index is 70\\$ below the peak. Since our target point is 220\\$ and we have lost 70\\$, we can say that we we are $-\frac{70}{220}=31.8$% below the target.
+First things first, we have to measure at any given point what is the difference between the peak and the wealth index. For example, the peak at a given point is 220\$ and the index is 150\$. That means that the index is 70\$ below the peak. Since our target point is 220\$ and we have lost 70\$, we can say that we we are $-\frac{70}{220}=31.8$% below the target.
 
 ```
 drawdown =  (wealth_index - peaks)/peaks
@@ -87,7 +87,7 @@ drawdown.plot(figsize=(14,7), title="Drawdown")
 
 The diagram above is what we call a **Drawdown** of an asset and it doesn't really have to do with any initial investment. Drawdown is a very nice indicator of risk since it is more realistic when compared to other risk indicators that involve standard deviations (Since returns deviate from normality as we proved in [Are Stock Returns Normally Distributed](/post/are-stock-returns-normally-distributed))
 
-We are now ready to find the largest drawdown and the date that happened. 
+We are now ready to find the largest drawdown and the date that occurred. 
 
 ```
 drawdown.min(), drawdown.idxmin()
@@ -134,7 +134,7 @@ df
     2021-02-16    21 days
     Name: duration, Length: 69, dtype: timedelta64[ns]
 
-The DataFrame above prints the last day of a drawdown, and for how long it lasted in days
+The DataFrame above prints the last day of a drawdown, and its duration in days.
 
 ```
 df.max(), df.mean()
