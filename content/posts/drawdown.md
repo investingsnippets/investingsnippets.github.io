@@ -11,11 +11,11 @@ colab: https://colab.research.google.com/drive/1LFUprI0yMOLPDK4yqgpRAi5sPrGrDhTi
 
 In a previous [post](/post/from-portfolio-wealth-index-to-index-fund) we talked about the wealth index of an asset as well as a portfolio of assets. The idea of the `wealth index` is very powerful because it represents the cumulative profit of an asset (since it depends on the price returns).
 
-Now, if we have invested 100$ on an asset and we were asked to find the maximum loss, when did that happen and for how long did it last? We need to walk through our wealth index and find all the deeps, then see which one was the largest, when it happen and when it recovered to the previous value.
+Now, if we have invested 100$ on an asset and we were asked to find the maximum loss, when did that happen and for how long did it last? We need to walk through our wealth index and find all the deeps, then see which one was the largest, when it did happen and when it finally recovered to the previous peak value.
 
-We employ a well known notion in Investing Risk Management called **Drawdown**.
+We employ a well known measure of risk in Investing, called **Drawdown**.
 
-## Computing and Plotting the Drawdown of an asset
+## Computation and Plotting of the Drawdown
 
 First the ground code that allows us to fetch stock historical data.
 
@@ -87,6 +87,8 @@ drawdown.plot(figsize=(14,7), title="Drawdown")
 
 The diagram above is what we call a **Drawdown** of an asset and it doesn't really have to do with any initial investment. Drawdown is a very nice indicator of risk since it is more realistic when compared to other risk indicators that involve standard deviations (Since returns deviate from normality as we proved in [Are Stock Returns Normally Distributed](/post/are-stock-returns-normally-distributed))
 
+## Useful insights from the Drawdown
+
 We are now ready to find the largest drawdown and the date that occurred. 
 
 ```
@@ -120,6 +122,7 @@ def compute_drawdown_lagoons_durations(drawdown):
 df = compute_drawdown_lagoons_durations(drawdown)
 df
 ```
+
     date
     2016-12-06     4 days
     2016-12-13     4 days
@@ -139,6 +142,7 @@ The DataFrame above prints the last day of a drawdown, and its duration in days.
 ```
 df.max(), df.mean()
 ```
+
     (Timedelta('372 days 00:00:00'), Timedelta('20 days 02:46:57.391304347'))
 
 The longest drawdown lasted 372 days! and the average duration of a drawdown was 20 days :)
