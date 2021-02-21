@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 19 Feb 2021 17:14:22 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 21 Feb 2021 18:42:21 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[A Tradeable Investment Portfolio as ERC20 Token]]></title>
+            <description><![CDATA[Building a simple portfolio on Ethereum blockchain as an ERC20 token.]]></description>
+            <link>https://www.investingsnippets.com/post/a-tradeable-investment-portfolio-as-erc20-token</link>
+            <guid isPermaLink="false">a-tradeable-investment-portfolio-as-erc20-token</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sun, 21 Feb 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Drawdown]]></title>
             <description><![CDATA[One of the most famous Risk Management Indicators.]]></description>
