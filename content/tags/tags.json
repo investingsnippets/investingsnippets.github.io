@@ -13,4 +13,12 @@
     "description": "Statistics is the discipline that concerns the collection, organization, analysis, interpretation and presentation of data. - Wikipedia",
     "color": "bg-green-300",
     "icon": "statistics.svg"
+},
+{
+    "id": "cryptos",
+    "name": "cryptos",
+    "image": "bitcoin.png",
+    "description": "The amazing world of Blockchain opens one more chapter in the Investing.",
+    "color": "bg-green-300",
+    "icon": "bitcoin.svg"
 }]
