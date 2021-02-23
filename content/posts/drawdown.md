@@ -1,6 +1,6 @@
 ---
 title: Drawdown
-description: One of the most famous Risk Management Indicators.
+description: A great measure of risk indicator.
 date: 2021-02-18T11:00:00.000Z
 topic: investing
 tags: python
