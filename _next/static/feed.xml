@@ -4,7 +4,7 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 21 Feb 2021 18:42:21 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 23 Feb 2021 11:00:15 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[A Tradeable Investment Portfolio as ERC20 Token]]></title>
@@ -16,7 +16,7 @@
         </item>
         <item>
             <title><![CDATA[Drawdown]]></title>
-            <description><![CDATA[One of the most famous Risk Management Indicators.]]></description>
+            <description><![CDATA[A great measure of risk indicator.]]></description>
             <link>https://www.investingsnippets.com/post/drawdown</link>
             <guid isPermaLink="false">drawdown</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
