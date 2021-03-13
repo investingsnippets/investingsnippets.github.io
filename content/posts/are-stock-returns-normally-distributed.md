@@ -11,8 +11,9 @@ colab: https://colab.research.google.com/drive/1iYrNJ9ISktohy1dG2s16_FZKakB8FLU5
 
 In a previous post we talked about the [Higher Moments of a Distribution](/post/higher-moments-of-a-distribution). We saw that skewness and kurtosis are two attributes that can identify if a distribution is normal or not (skewnes = 0 & kurtosis = 3).
 
-Let's try this approach on the MSFT's stock.
+Let's try this approach on the MSFT stock.
 
+First step is to to fetch the data and print the returns.
 
 ```
 %pip install yahoofinancials
@@ -51,25 +52,23 @@ rets.columns = ['returns']
 rets.plot(figsize=(14,7))
 plt.title("Daily returns", weight="bold");
 ```
-  
+
 ![png](are-stock-returns-normally-distributed/are-stock-returns-normally-distributed-1-1.png)
 
-Let's print skewness and kurtosis:
+Let's find skewness and kurtosis:
 
 ```
 from scipy.stats import kurtosis, skew
 skew(rets, bias=False)[0], kurtosis(rets, bias=False, fisher=False)[0]
 ```
-
     (0.20887713542026032, 13.229622042763442)
 
-It is obvious that the MSFT stock returns for that period follow a leptokurtic distribution and are far from normal. Same, of course, happens if we get the log returns instead.
+It is obvious that the MSFT stock returns (for that period) do not comply with the kurtosis and skewness of a normal distribution. Same, of course, happens if we get the log returns instead.
 
 ```
 log_msft_rets = log_rets(stock_prices).dropna()
 skew(log_msft_rets, bias=False)[0], kurtosis(log_msft_rets, bias=False, fisher=False)[0]
 ```
-
     (-0.12981025399984283, 12.81366131030108)
 
 ## Normality Tests
@@ -123,11 +122,11 @@ pyplot.show()
 ![png](are-stock-returns-normally-distributed/are-stock-returns-normally-distributed-13-0.png)
     
 
-The Quantile-Quantile plot, as the name suggests, will compare the quantiles between the normal distribution and our data. We notice here that, the tails of the distribution of our data are diverging a lot from the normal distribution. This is what we would expect. Fat tails!
+The Quantile-Quantile plot, as the name suggests, will compare the quantiles between the normal distribution and our data. We notice here that, the tails of the distribution of our data are diverging a lot from the normal distribution. This is what we would expect. Fat tails (leptokurtic)!
 
 ### Statistical Normality Tests
 
-The tests assume that that the sample was drawn from a Gaussian distribution. Technically this is called the null hypothesis, or H0. A threshold level is chosen called alpha, typically 5% (or 0.05), that is used to interpret the p-value.
+The tests assume that the sample was drawn from a Gaussian distribution. Technically this is called the null hypothesis, or H0. A threshold level is chosen called alpha, typically 5% (or 0.05), that is used to interpret the p-value.
 
 In the SciPy implementation of these tests, you can interpret the p value as follows.
 
@@ -160,7 +159,7 @@ shapiro_p > 0.05
 
 #### D’Agostino’s K^2 Test
 
-The D’Agostino’s K^2 test calculates summary statistics from the data, namely kurtosis and skewness, to determine if the data distribution departs from the normal distribution, named for Ralph D’Agostino.
+The D’Agostino’s K^2 test calculates summary statistics from the data, namely kurtosis and skewness, to determine if the data distribution departs from the normal distribution. (named for Ralph D’Agostino)
 
 * Skew is a quantification of how much a distribution is pushed left or right, a measure of asymmetry in the distribution.
 * Kurtosis quantifies how much of the distribution is in the tail.
@@ -186,8 +185,8 @@ jarque_bera_p > 0.05
 
 ## Conclusion
 
-In this post we went through some techniques that allow us identify if stock returns are normally distributed. We saw, with an example, that returns (arithmetic, or log) are not normally distributed but instead exhibit fat tails. I cannot generalize of course by only one example that I provide here, but I will leave that as a small exercise to the curious readers.
+In this article we went through some techniques that allow us identify if stock returns are normally distributed. We saw, with examples, that returns (arithmetic, or log) are not normally distributed but instead exhibit fat tails. We cannot generalize, of course, just by looking into one stock, but I will leave that as a small exercise to the curious readers.
 
-The question that is now left is? Since the (I could event say here, financial asset returns (everything that is publicly traded)) returns are not following a normal distribution, that what type of distribution they follow?
+The question is still... Since the returns are not following a normal distribution, then what type of distribution do they follow?
 
 The answer to that ... in a later article! :)
