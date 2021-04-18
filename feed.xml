@@ -4,11 +4,11 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 29 Mar 2021 06:11:27 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 18 Apr 2021 12:48:35 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Fit multiple distributions to asset returns?]]></title>
-            <description><![CDATA[Why normal distribution is not preferred for stock returns analysis]]></description>
+            <title><![CDATA[Fit Multiple Distributions to Asset Returns!]]></title>
+            <description><![CDATA[Why normal distribution is not preferred for stock returns analysis.]]></description>
             <link>https://www.investingsnippets.com/post/fit-distributions-to-asset-returns</link>
             <guid isPermaLink="false">fit-distributions-to-asset-returns</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
