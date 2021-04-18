@@ -1,6 +1,6 @@
 ---
-title: Fit multiple distributions to asset returns?
-description: Why normal distribution is not preferred for stock returns analysis
+title: Fit Multiple Distributions to Asset Returns!
+description: Why normal distribution is not preferred for stock returns analysis.
 date: 2021-03-28T11:00:00.000Z
 topic: investing
 tags: python
@@ -256,7 +256,7 @@ So, are we done yet? Shall we, from now on, use `laplace` as the distribution to
 
 Unfortunately no :(! And the reason why, is that there are several other parameters that can easily interfere with what we expect:
 
-* The number of datapoints (daily vs. minute vs. monthly)
+* The number of data points (daily vs. minute vs. monthly)
 * The selected period. (last 3 months will give different result compared to last 6 months or 1 year, or more)
 * The reason we use a distribution (to measure risk? to predict returns? etc.)
 
@@ -266,12 +266,11 @@ You might have wondered, why so many people use the T-Student distribution when 
 
 The answer to that has to do with the risk that an investor can accept when placing money to a risky asset. There are different ways to measure risk and one of them is the risk estimation based on distributions (model risk). 
 
-Say for example, in the MSFT scenario above, that we would like to avoid any loss of more than 2%. And we ask, how confident are we that there will not be any drop of more than 2% tomorrow (since we have daily returns)? 
+Say for example, in the MSFT scenario above, that we would like to avoid any daily price drop of more than 2%. And we ask, how confident are we that there will be no drop of more than 2% tomorrow (since we have daily returns)? 
 
 The answer to that question can be derived from the CDF (Cumulative Distribution Function) of a distribution (which is the area under the PDF (Point Distribution Function))
 
 Here is how the normal and student-t PDF looks like for MSFT returns in the period we test. 
-
 
 ```
 ax = rets.returns.plot(kind='hist', bins=19, figsize=(14,7), density=True, alpha=0.5, 
@@ -294,7 +293,6 @@ ax.plot()
 
 Back to our question now. How confident are we that tomorrow the price will not drop below 2% (-0.02)? 
 
-
 ```
 norm_cdf = np.cumsum(normal_pdf)
 t_cdf = np.cumsum(student_t_pdf)
@@ -305,14 +303,12 @@ ax2.plot(x, t_cdf)
 plt.show()
 ```
 
-![png](fit-distributions-to-asset-returnss/fit_distributions_to_asset_returns_12_0.png)
+![png](fit-distributions-to-asset-returns/fit_distributions_to_asset_returns_12_0.png)
     
-
 ```
 norm_cdf[np.where(x <= -0.02)][-1]
 ```
     9.876651890962592
-
 
 ```
 t_cdf[np.where(x <= -0.02)][-1]
@@ -320,3 +316,5 @@ t_cdf[np.where(x <= -0.02)][-1]
     8.086428763077489
 
 According to the normal distribution, there is 9.9% probability that the price will drop below 2% while only 8.1% student-t probability. Someone, based on their risk tolerance, would be more confident to place some more money knowing that the estimate is much closer to the reality (well, historical reality)!  
+
+But, again, it is really up to us to use any distribution we feel comfortable with, based on the data we have, our risk level, and of course (when it comes to statistics) the tools to do our analysis easier.
