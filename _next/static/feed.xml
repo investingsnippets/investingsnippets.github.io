@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 18 Apr 2021 12:48:35 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 03 May 2021 19:02:53 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Modern Portfolio Theory - Part 1]]></title>
+            <description><![CDATA[A Nobel Price winning theory that has shaped Investing.]]></description>
+            <link>https://www.investingsnippets.com/post/modern-portfolio-theory</link>
+            <guid isPermaLink="false">modern-portfolio-theory</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Fri, 02 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Fit Multiple Distributions to Asset Returns!]]></title>
             <description><![CDATA[Why normal distribution is not preferred for stock returns analysis.]]></description>
