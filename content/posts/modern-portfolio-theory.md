@@ -9,11 +9,11 @@ img: /static/nobel-price.jpg
 colab: https://colab.research.google.com/drive/1U6dR3xx-g4NWXl-5NKtGlMZVIkSJcJEz?usp=sharing
 ---
 
-In a previous post about [Return & Volatility of a Multi-Asset Portfolio](post/portfolio-expected-return-and-risk) we saw how the correlation of the prices of two assets was a key part to achieving lower volatility than the volatility of the assets' individually. We built a visual proof with just two random assets.
+In a previous post about [Return & Volatility of a Multi-Asset Portfolio](/post/portfolio-expected-return-and-risk) we saw how the correlation of the prices of two assets was a key part to achieving lower volatility than the volatility of the assets' individually. We built a visual proof with just two random assets.
 
 This "visual proof" is called Efficient Frontier
 
-![alt text](https://en.wikipedia.org/wiki/Modern_portfolio_theory#/media/File:Markowitz_frontier.jpg "Efficient Frontier")
+![jpg](https://upload.wikimedia.org/wikipedia/commons/e/e1/Markowitz_frontier.jpg)
 
 which is part of Modern portfolio theory (MPT) and according to [wikipedia](https://en.wikipedia.org/wiki/Modern_portfolio_theory)
 
@@ -139,7 +139,7 @@ returns.head(5)
 
 ## Volatility Minimization
 
-The data we collected above is the same as [Return & Volatility of a Multi-Asset Portfolio](post/portfolio-expected-return-and-risk), and the purpose is to find the weights that minimize the volatility of the portfolio. As we saw from the graph in the previous article, the weights should be somewhere close to [0.89, 0.11].
+The data we collected above is the same as [Return & Volatility of a Multi-Asset Portfolio](/post/portfolio-expected-return-and-risk), and the purpose is to find the weights that minimize the volatility of the portfolio. As we saw from the graph in the previous article, the weights should be somewhere close to [0.89, 0.11].
 
 For example, given weights [0.5, 0.5], the portfolio return is:
 

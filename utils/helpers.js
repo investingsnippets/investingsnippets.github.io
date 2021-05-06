@@ -10,14 +10,24 @@ export function getSiteMetaData() {
 }
 
 export function MarkdownImage({ alt, src }) {
+  if (src.startsWith('https')) {
+    return (
+      <Image
+        alt={alt}
+        src={src}
+        className="w-full mx-auto flex justify-center"
+      />
+    )
+  }
   return (
     <Image
       alt={alt}
       src={require(`../content/assets/${src}`)}
       previewSrc={require(`../content/assets/${src}?lqip`)}
-      className="w-full"
+      className="w-full mx-auto flex justify-center"
     />
-)}
+  )
+}
 
 export function AppIcon(props) {
   // eslint-disable-next-line react/prop-types
