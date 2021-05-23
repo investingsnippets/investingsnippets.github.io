@@ -9,17 +9,17 @@ img: /static/inflation.jpeg
 colab: https://drive.google.com/file/d/13aiLUQUIXhfjfnO_20U4Dap0tsfRiF-B/view?usp=sharing
 ---
 
-Inflation is the reason behind the erosion of the value of money over time. 1\\$ today is more valuable that 1\\$ after 5 years given a positive Inflation rate. I will not get into the details of what inflation is since there is lots of literature around that.
+Inflation is the reason behind the erosion of the value of money over time. 1\$ today is more valuable that 1\$ after 5 years given a positive Inflation rate. I will not get into the details of what inflation is since there is lots of literature around that.
 
 In this article I will showcase how to plan the financing of future expenses by including inflation, taxes on earnings and annual fees.
 
-Let's see that with an example. Let's assume that a person decides a job break for 3 years. Estimates his/her monthly expenses to be 300$. What is the initial amount of money the person needs to have to be able to fulfill their goal?
+Let's see that with an example. Let's assume that a person decides a job break for 3 years. Estimates his/her monthly expenses to be 300\$. What is the initial amount of money the person needs to have to be able to fulfill their goal?
 
-The quick response to that is $3 * 12 * 300 = 10800\$$! but that is not actually true due to the inflation. Let's (for the sake of the example) say that the inflation is 2% per year. That means that 1\$ today will be valued at $1*\frac{1}{1 + .02}=0.9804\$$ in one year from now.
+The quick response to that is $3 * 12 * 300 = 10800$\$! but that is not actually true due to the inflation. Let's (for the sake of the example) say that the inflation is 2% per year. That means that 1\$ today will be valued at $1*\frac{1}{1 + .02}=0.9804$\$ in one year from now.
 
-So, for the first year, the person will pay 3600\\$ but the actual cost of 3600\$ today is $3600*(1+.02)^1 =3672\$$. That means that there are $3672-3600=72\$$ that are missing and should be added to the initial amount. The second year the person will need to pay 3600 again, but the value today is $3600*(1+.02)^2=3745.44\$$. The third year, the situation is the same and the calculated value for the 3600\$ would today be $3600*(1+.02)^3=3820.348\$$.
+So, for the first year, the person will pay 3600\$ but the actual cost of 3600\$ today is $3600*(1+.02)^1 =3672$\$. That means that there are $3672-3600=72$\$ that are missing and should be added to the initial amount. The second year the person will need to pay 3600 again, but the value today is $3600*(1+.02)^2=3745.44$\$. The third year, the situation is the same and the calculated value for the 3600\$ would today be $3600*(1+.02)^3=3820.348$\$.
 
-> Note: the notation $(1+i)^n$ where i is the annual inflation rate and n is the periods in years, is something we discussed in the [Geometric Progression and the Compounding of the Returns](post/geometric-progression-and-compounding-of-returns) article. Think of inflation as compounding with negative rate.
+> Note: the notation $(1+i)^n$ where i is the annual inflation rate and n is the periods in years, is something we discussed in the [Geometric Progression and the Compounding of the Returns](/post/geometric-progression-and-compounding-of-returns) article. Think of inflation as compounding with negative rate.
 
 So far, the deficit for the first year is 72, for the second year is 145 and for the third year is 220. A total of 437\$ needs to be added to our initial thought of 10800!
 
