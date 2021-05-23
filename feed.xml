@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 09 May 2021 08:56:21 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 23 May 2021 16:07:18 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Inflation Looking Forward!]]></title>
+            <description><![CDATA[How to plan for future cash flows taking into account inflation, taxes and fees.]]></description>
+            <link>https://www.investingsnippets.com/post/inflation-planning-future-cash-flows</link>
+            <guid isPermaLink="false">inflation-planning-future-cash-flows</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sun, 23 May 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Modern Portfolio Theory - Part 1]]></title>
             <description><![CDATA[A Nobel Price winning theory that has shaped Investing.]]></description>
