@@ -1,5 +1,5 @@
 ---
-title: Inflation Looking Forward!
+title: Inflation - Planning Forward!
 description: How to plan for future cash flows taking into account inflation, taxes and fees.
 date: 2021-05-23T11:00:00.000Z
 topic: investing
@@ -37,7 +37,6 @@ from IPython.display import display
 %matplotlib inline
 ```
 
-
 ```python
 monthly_liabilities = 300
 years = 3
@@ -73,12 +72,10 @@ Let's go back to our example and say that we found a savings account that pays 2
 
 But what if there was a 10% tax on the profits from this interest? How much money would we need today to start with?
 
-
 ```python
 investment_annual_return = 0.02
 investment_profit_tax = 0.1
 ```
-
 
 ```python
 def discount(t, r, earnings_tax):
@@ -98,23 +95,19 @@ def present_value(liabilities, return_annual, earnings_tax):
   return (discounts * liabilities).sum()
 ```
 
-
 ```python
 present_value(inflated_liabilities, investment_annual_return, investment_profit_tax)
 ```
-    10842.491757684631
-
+  10842.491757684631
 
 
 Moving forward, lets say that instead of a savings account we invest in funds that have an annual return of 2%, a profit tax of 10% and an annual administration fee of 0.5% on the total invested amount.
 
 What should the initial investment be?
 
-
 ```python
 annual_fee = .005 # percentage of total amount per year
 ```
-
 
 ```python
 def present_value_with_fees(liabilities, return_annual, earnings_tax, annual_fee):
@@ -125,13 +118,10 @@ def present_value_with_fees(liabilities, return_annual, earnings_tax, annual_fee
   
 ```
 
-
 ```python
 present_value_with_fees(inflated_liabilities, investment_annual_return, investment_profit_tax, annual_fee)
 ```
-    10951.755210394398
-
-
+  10951.755210394398
 
 It becomes apparent that taxes and fees play an important role in calculating future cash flows.
 
@@ -152,11 +142,10 @@ def show_funding_ratio(monthly_liabilities, years, inflation_rate, current_asset
   print(f'{fr:.2f}')
 ```
 
-
 ```python
 funding_ratio(10951.76, inflated_liabilities, investment_annual_return, investment_profit_tax, annual_fee)
 ```
-    100.00004373368022
+  100.00004373368022
 
 
 Below I have included a widget which helps me plan for my future goals. I will try to have it as an HTML widget at some point but for the ones who are interested try the [colab](https://drive.google.com/file/d/13aiLUQUIXhfjfnO_20U4Dap0tsfRiF-B/view?usp=sharing) representation of this article. 

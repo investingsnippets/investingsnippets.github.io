@@ -4,7 +4,7 @@
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import gfm from 'remark-gfm';
-import Tex from '@matejmazur/react-katex'
+import rehypeKatex from 'rehype-katex'
 import RemarkMathPlugin from 'remark-math';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
@@ -17,17 +17,37 @@ import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
 import { MarkdownImage, getSiteMetaData } from "utils/helpers";
 
-const renderers = {
-  inlineMath: ({value}) => <Tex math={value} />,
-  math: ({value}) => <Tex block math={value} />,
-  image: MarkdownImage,
+// const components = {
+//   inlineMath: ({value}) => <rehypeKatex math={value} />,
+//   math: ({value}) => <rehypeKatex block math={value} />,
+  // image: MarkdownImage,
+  // link: ({ children, href }) => {
+  //   return <Link href={href}><a>{children}</a></Link>
+  // },
+//   code: ({language, value}) => {
+//     return <SyntaxHighlighter style={darcula} language={language} children={value} />
+//   },
+  // list: ({children}) => {
+  //   return children
+  // }
+// }
+
+const components = {
+  code({node, inline, className, children, ...props}) {
+    const match = /language-(\w+)/.exec(className || '')
+    return !inline && match ? (
+      <SyntaxHighlighter style={darcula} language={match[1]} PreTag="div" {...props} >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className} {...props} />
+    )
+  },
+  img: MarkdownImage,
   link: ({ children, href }) => {
     return <Link href={href}><a>{children}</a></Link>
   },
-  code: ({language, value}) => {
-    return <SyntaxHighlighter style={darcula} language={language} children={value} />
-  },
-  list: ({children}) => {
+  ul: ({children}) => {
     return children
   }
 }
@@ -94,11 +114,12 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           )}
         </header>
         <ReactMarkdown
-          className="mb-4 prose-lg"
-          escapeHtml={false}
-          source={post.content}
-          plugins={[RemarkMathPlugin, gfm]}
-          renderers={renderers}
+          className="mb-4 prose-lg max-w-none"
+          skipHtml={false}
+          children={post.content}
+          remarkPlugins={[RemarkMathPlugin, gfm]}
+          rehypePlugins={[rehypeKatex]}
+          components={components}
         />
         <hr className="mt-4" />
         <footer />

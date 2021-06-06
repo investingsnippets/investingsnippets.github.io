@@ -34,3 +34,12 @@ p {
 .filter-orange-700{
   filter: brightness(0) saturate(100%) invert(35%) sepia(91%) saturate(547%) hue-rotate(338deg) brightness(95%) contrast(96%);
 }
+
+.prose :not(pre) > code.language-text {
+  white-space: pre-line;
+}
+
+.prose-lg pre {
+  margin: 0em;
+  padding: 0em;
+}
