@@ -74,16 +74,14 @@ df.plot();
 ```python
 df.Returns.sum()/df.Returns.size
 ```
-
-    -0.612
+ -0.612
 
 ```python
 # or
 mean = df.Returns.mean()
 mean
 ```
-
-    -0.612
+ -0.612
 
 Which is the answer to: `What is the average return of a stock the last x days?`
 
@@ -92,15 +90,14 @@ Which is the answer to: `What is the average return of a stock the last x days?`
 ```python
 np.sort(df.Returns.values)[int(df.Returns.size/2)]
 ```
-
-    -1
+ -1
 
 ```python
 # or
 median = np.percentile(df.Returns,50)
 median
 ```
-    -1.0
+ -1.0
 
 ### Mode
 
@@ -109,8 +106,7 @@ sample_data = [1,2,3,4,3,5,3,6,3,7,8,9]
 sample_data_df = pd.DataFrame(sample_data, columns=['Returns'])
 sample_data_df.Returns.mode()[0]
 ```
-
-    3
+ 3
 
 It is apparent from the above that the number with the most frequent appearance is the number 3. That is because the numbers are discrete.
 
@@ -131,15 +127,13 @@ max_index_col = np.argmax(counts, axis=0)
 mode = bins[max_index_col]
 mode
 ```
-
-    -1.0
+ -1.0
 
 ```python
 # or
 df.Returns.mode()[0]
 ```
-
-    -1
+ -1
 
 
 ## Alternative Measures of Location
@@ -147,11 +141,8 @@ df.Returns.mode()[0]
 In addition to the more common measures, there are several more that can also be included to the investing algorithms. 
 
 * Mid-Mean - computes a mean using the data between the 25th and 75th percentiles.
-
 * Trimmed Mean - similar to the mid-mean except different percentile values are used. A common choice is to trim 5% of the points in both the lower and upper tails, i.e., calculate the mean for data between the 5th and 95th percentiles.
-
 * Winsorized Mean - similar to the trimmed mean. However, instead of trimming the points, they are set to the lowest (or highest) value. For example, all data below the 5th percentile are set equal to the value of the 5th percentile and all data greater than the 95th percentile are set equal to the 95th percentile.
-
 * Mid-range = (largest + smallest)/2.
 
 ### Mid-Mean
@@ -163,8 +154,7 @@ p_75 = np.percentile(df.Returns,75)
 mid_mean = df[df.Returns.gt(p_25) & df.Returns.lt(p_75)].Returns.mean()
 mid_mean
 ```
-
-    -1.010498687664042
+ -1.010498687664042
 
 ### Trimmed-Mean
 
@@ -174,8 +164,7 @@ p_95 = np.percentile(df.Returns,95)
 trimmed_mean = df[df.Returns.gt(p_5) & df.Returns.lt(p_95)].Returns.mean()
 trimmed_mean
 ```
-
-    -0.5480427046263345
+ -0.5480427046263345
 
 ### Winsorized Mean
 
@@ -191,8 +180,7 @@ winsored_rets = pd.concat(winsored_rets_list)
 winsored_mean = winsored_rets.Returns.mean()
 winsored_mean
 ```
-
-    -0.608
+ -0.608
 
 ### Mid-range
 
@@ -200,8 +188,7 @@ winsored_mean
 mid_range = (df.Returns.max() + df.Returns.min())/2
 mid_range
 ```
-
-    -1.0
+ -1.0
 
 #### All Together
 
