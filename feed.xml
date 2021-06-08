@@ -4,10 +4,18 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 24 May 2021 05:51:17 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 08 Jun 2021 18:56:43 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Inflation Looking Forward!]]></title>
+            <title><![CDATA[Inflation - Looking Back!]]></title>
+            <description><![CDATA[See how the piggy bank :P can digest part of your money.]]></description>
+            <link>https://www.investingsnippets.com/post/inflation-looking-back</link>
+            <guid isPermaLink="false">inflation-looking-back</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Tue, 08 Jun 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Inflation - Planning Forward!]]></title>
             <description><![CDATA[How to plan for future cash flows taking into account inflation, taxes and fees.]]></description>
             <link>https://www.investingsnippets.com/post/inflation-planning-future-cash-flows</link>
             <guid isPermaLink="false">inflation-planning-future-cash-flows</guid>
