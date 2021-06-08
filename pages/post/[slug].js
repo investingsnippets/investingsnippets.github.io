@@ -16,39 +16,26 @@ import { getPostBySlug, getPostsSlugs } from "utils/posts";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
 import { MarkdownImage, getSiteMetaData } from "utils/helpers";
+import style from './markdown-styles.module.css';
 
-// const components = {
-//   inlineMath: ({value}) => <rehypeKatex math={value} />,
-//   math: ({value}) => <rehypeKatex block math={value} />,
-  // image: MarkdownImage,
-  // link: ({ children, href }) => {
-  //   return <Link href={href}><a>{children}</a></Link>
-  // },
-//   code: ({language, value}) => {
-//     return <SyntaxHighlighter style={darcula} language={language} children={value} />
-//   },
-  // list: ({children}) => {
-  //   return children
-  // }
-// }
+
 
 const components = {
-  code({node, inline, className, children, ...props}) {
+  code({node, inline, className, children}) {
     const match = /language-(\w+)/.exec(className || '')
     return !inline && match ? (
-      <SyntaxHighlighter style={darcula} language={match[1]} PreTag="div" {...props} >
+      <SyntaxHighlighter style={darcula} language={match[1]} PreTag="div" >
         {String(children).replace(/\n$/, '')}
       </SyntaxHighlighter>
     ) : (
-      <code className={className} {...props} />
+      <code className={className}>
+        {children}
+      </code>
     )
   },
   img: MarkdownImage,
   link: ({ children, href }) => {
     return <Link href={href}><a>{children}</a></Link>
-  },
-  ul: ({children}) => {
-    return children
   }
 }
 
@@ -114,7 +101,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           )}
         </header>
         <ReactMarkdown
-          className="mb-4 prose-lg max-w-none"
+          className={`mb-4 prose-lg max-w-none ${style.reactMarkDown}`}
           skipHtml={false}
           children={post.content}
           remarkPlugins={[RemarkMathPlugin, gfm]}

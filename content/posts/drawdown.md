@@ -19,7 +19,7 @@ We employ a well known measure of risk in Investing, called **Drawdown**.
 
 First the ground code that allows us to fetch stock historical data.
 
-```
+```python
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
 import pandas as pd
@@ -46,7 +46,7 @@ def normal_rets(S):
 
 I'll randomly pick Apple's (AAPL) stock for this analysis.
 
-```
+```python
 apple_stock_prices = retrieve_stock_data("AAPL", "1990-03-14", "2021-02-17")
 apple_rets = normal_rets(apple_stock_prices).dropna()
 fig, (ax1, ax2) = plt.subplots(2, sharex=True, figsize=(14,7))
@@ -61,7 +61,7 @@ plt.show()
 
 Say now that we invested 100$ late 2016. Let's build the wealth index like we did in this [post](/post/from-portfolio-wealth-index-to-index-fund), and find the peaks of the wealth index. That is, the highest generated wealth prices before a deep.
 
-```
+```python
 wealth_index = 100*(1+apple_rets.AAPL["12-2016":]).cumprod()
 peaks = wealth_index.cummax()
 ax = wealth_index.plot(figsize=(14,7), label="W-Index")
@@ -78,7 +78,7 @@ So, moving forward we want to find which lagoon was the deepest, how deep? and h
 
 First things first, we have to measure at any given point what is the difference between the peak and the wealth index. For example, the peak at a given point is 220\$ and the index is 150\$. That means that the index is 70\$ below the peak. Since our target point is 220\$ and we have lost 70\$, we can say that we we are $-\frac{70}{220}=31.8$% below the target.
 
-```
+```python
 drawdown =  (wealth_index - peaks)/peaks
 drawdown.plot(figsize=(14,7), title="Drawdown")
 ```
@@ -91,7 +91,7 @@ The diagram above is what we call a **Drawdown** of an asset and it doesn't real
 
 We are now ready to find the largest drawdown and the date that occurred. 
 
-```
+```python
 drawdown.min(), drawdown.idxmin()
 ```
     (-0.38515910000506054, Timestamp('2019-01-03 00:00:00'))
@@ -100,7 +100,7 @@ We see that on the 3rd of January 2019 our investment was loosing 38.5% of its v
 
 One step further, we will try to find how long the lagoons lasted and find the longest one and an average of their durations.
 
-```
+```python
 def compute_drawdown_lagoons_durations(drawdown):
   # find all the locations where the drawdown == 0
   zero_locations = np.unique(np.r_[(drawdown == 0).values.nonzero()[0], len(drawdown) - 1])
@@ -118,11 +118,10 @@ def compute_drawdown_lagoons_durations(drawdown):
   return df['duration']
 ```
 
-```
+```python
 df = compute_drawdown_lagoons_durations(drawdown)
 df
 ```
-
     date
     2016-12-06     4 days
     2016-12-13     4 days
@@ -139,10 +138,9 @@ df
 
 The DataFrame above prints the last day of a drawdown, and its duration in days.
 
-```
+```python
 df.max(), df.mean()
 ```
-
     (Timedelta('372 days 00:00:00'), Timedelta('20 days 02:46:57.391304347'))
 
 The longest drawdown lasted 372 days! and the average duration of a drawdown was 20 days :)

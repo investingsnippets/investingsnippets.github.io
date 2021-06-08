@@ -51,7 +51,7 @@ Let's see an example...
 
 At first, let's set the ground work to be able to fetch some stock prices.
 
-```
+```python
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
 import pandas as pd
@@ -77,7 +77,7 @@ def normal_rets(S):
 
 We are now ready to fetch prices. I have picked Microsoft Corporation (MSFT) and Alpha Pro Tech, Ltd. (APT). Below we see how the price of the stocks unfolded throughout 2020! 
 
-```
+```python
 msft_stock_prices = retrieve_stock_data("MSFT", "2020-01-01", "2021-01-01")
 msft_rets = normal_rets(msft_stock_prices).dropna()
 msft_rets.columns = ['returns']
@@ -100,18 +100,18 @@ plt.show()
 
 The graphs show some king of un-correlation. When one stock goes up the other goes down and vice versa. Let's explore the average return, standard deviation and correlation of the stocks.
 
-```
+```python
 msft_rets.mean().values[0], apt_rets.mean().values[0]
 ```
     (0.0017171460669071206, 0.009654517798428635)
 
 
-```
+```python
 msft_rets.std().values[0], apt_rets.std().values[0]
 ```
     (0.027679154652983044, 0.10987021868530256)
 
-```
+```python
 returns = msft_rets.merge(apt_rets, left_index=True, right_index=True)
 returns.columns = ['MSFT', 'APT']
 returns.corr()
@@ -147,7 +147,7 @@ Obviously, both stocks yield a positive average daily return (small but positive
 Let us now try to construct a portfolio of these two assets. From equations (1) and (2) we see that the weights are variable. We should also notice that the return is not a series of returns anymore but a single value. This value is the total return of an asset over the year. It is the so called [`Annualized Return`](/post/geometric-progression-and-compounding-of-returns).
 
 
-```
+```python
 def annualize_rets(r, periods_per_year):
     compounded_growth = (1+r).prod()
     n_periods = r.shape[0]
@@ -156,7 +156,6 @@ def annualize_rets(r, periods_per_year):
 annualized_returns = annualize_rets(returns, 252)
 annualized_returns
 ```
-
     MSFT    0.399429
     APT     2.222543
     dtype: float64
@@ -167,7 +166,7 @@ As you can see the annual return for 2020 for MSFT was ~40%, while for APT was ~
 Now, we move on and try to generate some portfolios where we assign different weights to the assets and try to calculate the return and the volatility of the portfolio. I will not get into what transposing a matrix means in algebra since it is not the focus of this post. Please check [this wikipedia article](https://en.wikipedia.org/wiki/Transpose) for more info.
 
 
-```
+```python
 # from equation (1)
 def portfolio_return(weights, returns):
     return weights.T @ returns

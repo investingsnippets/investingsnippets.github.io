@@ -24,7 +24,7 @@ Before explaining the moments, we should first understand what a density functio
 30 people are gathered in a house party. Let us measure their weights:
 
 
-```
+```python
 import pandas as pd
 m_v = [56.8, 81.3, 47.9, 32.5, 24.1, 25.3, 14.3, 29.4, 71.3, 86.0, 54.2, 15.2,
        54.7, 25.1, 49.5, 1.9, 70.0, 69.6, 75.4, 38.9, 49.2, 22.5, 68.6, 60.1,
@@ -32,7 +32,6 @@ m_v = [56.8, 81.3, 47.9, 32.5, 24.1, 25.3, 14.3, 29.4, 71.3, 86.0, 54.2, 15.2,
 values = pd.Series(m_v)
 values.describe()
 ```
-
     count     30.000000
     mean      49.053333
     std       24.001634
@@ -50,7 +49,7 @@ What if we change the way we present the data, and instead of having them in a s
 We will get the, so called, histogram of the values. It shows how the probabilities of measurement are distributed.
 
 
-```
+```python
 import matplotlib.pyplot as plt
 histogram = values.plot.hist(bins=10, figsize=(10,5))
 plt.show()
@@ -59,13 +58,12 @@ plt.show()
 ![png](higher-moments-of-a-distribution/higher-moments-of-a-distribution_3_0.png)
     
 
-
 If we ask the question: What is the probability, the next person that joins the party, weights between 80 and 90 kilos?
 
 To answer this question, we need to imagine as if the upper boundaries of the blue colored space above, are a continuous line, a curve. This curve is what we call PDF or density function.
 
 
-```
+```python
 from scipy.stats import norm
 import numpy as np
 x = np.linspace(min(values), max(values))
@@ -136,7 +134,7 @@ $$
 Following the pattern above and using k=3 around the mean $c=μ$ then we get the skewness which measures the relative size of the two tails of a distribution.
 
 
-```
+```python
 from scipy.stats import skew
 skew(values, bias=False) # bias=False calculates the skewness and kurtosis of the sample as opposed to the population.
 ```
@@ -153,7 +151,7 @@ A right-skewed (positive-skew) distribution has a long right tail. That’s beca
 
 The fourth central moment is a measure of the heaviness of the tail of the distribution.
 
-```
+```python
 from scipy.stats import kurtosis
 kurtosis(values, bias=False)
 ```
@@ -163,7 +161,7 @@ kurtosis(values, bias=False)
 
 ## Higher Moments of the Normal Distribution
 
-```
+```python
 data = np.random.normal(0, 1, 10000000)
 plt.hist(data, bins='auto')
 
@@ -181,4 +179,4 @@ print("kurt : ", kurtosis(data, bias=False, fisher=False))
 ![png](higher-moments-of-a-distribution/higher-moments-of-a-distribution_12_1.png)
     
 
-For a normal distribution the skeweness is zero and the kurtosis is 3. These properties are specific to the normal distribution and are used for normality testing of distributions. We will go deeper in that in a later post.
+For a normal distribution the skewness is zero and the kurtosis is 3. These properties are specific to the normal distribution and are used for normality testing of distributions. We will go deeper in that in a later post.

@@ -19,7 +19,6 @@ In these cases I find it very handy to store my data (csv format) and my modules
 However, loading the data to Google Colab turned into pain since I had to manually upload the files each time I wanted to run a notebook.
 
 To avoid this situation I mount google drive and:
-
 1. add the folder with my python modules to the path
 2. copy the data to the Colab data folder
 

@@ -9,7 +9,7 @@ img: /static/fractal-star.png
 
 ## Compounding of Returns
 
-Let us consider the following scenario. A stock asset yields an average monthly return R of 2% for the last 12 months. If we had invested 100$ on this asset a year ago, what would be the outcome of this investment today?
+Let us consider the following scenario. A stock asset yields an average monthly return R of 2% for the last 12 months. If we had invested 100\$ on this asset a year ago, what would be the outcome of this investment today?
 
 Consider the initial asset price $P_0 = 100$. After the first month of the investment the outcome would be:
 

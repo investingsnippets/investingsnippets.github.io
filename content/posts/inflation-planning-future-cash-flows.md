@@ -55,7 +55,6 @@ print(f"Liabilities per year: {list(liabilities.values)}, \
         \nTotal amount needed today: {inflated_liabilities.sum():.2f}, \
         \nNo inflation case: {liabilities.sum():.2f}")
 ```
-
     Liabilities per year: [3600, 3600, 3600],         
     Inflated liabilities: [3672.0, 3745.44, 3820.3488000000007],         
     Total amount needed today: 11237.79,         
@@ -98,7 +97,7 @@ def present_value(liabilities, return_annual, earnings_tax):
 ```python
 present_value(inflated_liabilities, investment_annual_return, investment_profit_tax)
 ```
-  10842.491757684631
+    10842.491757684631
 
 
 Moving forward, lets say that instead of a savings account we invest in funds that have an annual return of 2%, a profit tax of 10% and an annual administration fee of 0.5% on the total invested amount.
@@ -115,13 +114,12 @@ def present_value_with_fees(liabilities, return_annual, earnings_tax, annual_fee
   discounts = discount(dates, return_annual, earnings_tax)
   liabilities_with_fees = [liabilities[len(dates) +1 - i] * (1-annual_fee)**-i for i in list(dates)[::-1]]
   return ((discounts * liabilities_with_fees).values).sum()
-  
 ```
 
 ```python
 present_value_with_fees(inflated_liabilities, investment_annual_return, investment_profit_tax, annual_fee)
 ```
-  10951.755210394398
+    10951.755210394398
 
 It becomes apparent that taxes and fees play an important role in calculating future cash flows.
 
@@ -145,7 +143,7 @@ def show_funding_ratio(monthly_liabilities, years, inflation_rate, current_asset
 ```python
 funding_ratio(10951.76, inflated_liabilities, investment_annual_return, investment_profit_tax, annual_fee)
 ```
-  100.00004373368022
+    100.00004373368022
 
 
 Below I have included a widget which helps me plan for my future goals. I will try to have it as an HTML widget at some point but for the ones who are interested try the [colab](https://drive.google.com/file/d/13aiLUQUIXhfjfnO_20U4Dap0tsfRiF-B/view?usp=sharing) representation of this article. 
