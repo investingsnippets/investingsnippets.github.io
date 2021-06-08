@@ -147,7 +147,6 @@ For example, given weights [0.5, 0.5], the portfolio return is:
 ```python
 portfolio_return(np.array([0.5, 0.5]), annualize_rets(returns, 252)) - 1
 ```
-
     0.3109859252509841
 
 
@@ -170,7 +169,6 @@ result = minimize(portfolio_volatility, np.repeat(0, n), args=(cov, ),
                   constraints=(weights_sum_to_1), bounds=((0.0, 1.0),)*n)
 result.x
 ```
-
     array([0.89906844, 0.10093156])
 
 

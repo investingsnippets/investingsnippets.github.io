@@ -87,7 +87,7 @@ Personal information and other information that you register on InvestingSnippet
 
 ### Email Subscription
 
-As for the newsletter, you use [tinyletter](http://tinyletter.com/). 
+As for the newsletter, we use [tinyletter](http://tinyletter.com/). 
 
 Their terms state: 
 

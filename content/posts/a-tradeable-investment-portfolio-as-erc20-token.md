@@ -28,7 +28,7 @@ The distributed manner of the contract execution is achieved by the nodes on a b
 
 On another side, a blockchain solves the well known `double spending` problem (which we will analyze in another post) and due to that, it can be used as an exchange mechanism for digital currencies! Combining these two aspects together, we achieve tradeable contracts (digital assets), which we generally call tokens (they can hold a balance, have a defined supply amount, and can be transferred).
 
-As an example, imagine a digital currency where you are able to program it with something like. If, the user solves a puzzle on the internet, wins one coin! Or, if the user deposits purchases the coin with some $, then these $ will be used to purchase other coins and hold them locked in the initial coin, until the owner decides to sell the coin and as a consequence sell the subsequent coins! 
+As an example, imagine a digital currency where you are able to program it with something like. If, the user solves a puzzle on the internet, wins one coin! Or, if the user deposits purchases the coin with some \$, then these \$ will be used to purchase other coins and hold them locked in the initial coin, until the owner decides to sell the coin and as a consequence sell the subsequent coins! 
 
 Now, the contract creation usually follows some coding principles and is implemented using a programming language. This language is called [Solidity](https://docs.soliditylang.org/en/v0.8.1/) (on Ethereum) and the principles are called standards. ERC20 is such a standard and allows for a digital currency/token creation!
 
@@ -38,7 +38,7 @@ The tokens can be used in many different ways, which I will describe in a future
 
 Below I'm pasting the simplified version of the contract with inlined comments.
 
-```
+```javascript
 // define the solidity compiler version to be used
 pragma solidity 0.6.10;
 // additional functionalities for passing around structs  
@@ -152,7 +152,7 @@ To run the example, clone the [github repo](https://github.com/investingsnippets
 
 Then, use the command
 
-```
+```bash
 docker-compose run -p "3000:3000" -p "8545:8545" --rm develop
 ```
 

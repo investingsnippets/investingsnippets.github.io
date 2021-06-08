@@ -25,7 +25,7 @@ Let me show you how this index progresses over time.
 
 At first we set the ground work for fetching historical prices.
 
-```
+```python
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
 import pandas as pd
@@ -54,7 +54,7 @@ Say, we have invested 100$ in the MSFT stock on the 11th of October 2019. Earlie
 
 Below we will download the stock prices for the aforementioned period and calculate the daily returns.
 
-```
+```python
 msft_stock_prices = retrieve_stock_data("MSFT", "2019-10-11", "2021-02-04")
 msft_rets = normal_rets(msft_stock_prices).dropna()
 msft_rets.head()
@@ -97,9 +97,9 @@ msft_rets.head()
 </table>
 </div>
 
-Then, we will build the cummulative wealth index based on the initial investment, over time.
+Then, we will build the cumulative wealth index based on the initial investment, over time.
 
-```
+```python
 # See equation (1) in the post about geometric progression and the 
 # compounding of returns
 wealth_index = 100 * (1 + msft_rets).cumprod() 
@@ -145,7 +145,7 @@ wealth_index.head()
 
 And let's see how it looks like
 
-```
+```python
 f, (ax1, ax2) = plt.subplots(1, 2, sharex=True)
 msft_stock_prices.plot(ax=ax1, figsize=(14,7))
 wealth_index.plot(ax=ax2)
@@ -172,7 +172,7 @@ I will simplify how a primitive index fund (or Mutual Fund or an ETF) is built b
 
 Say now that, instead of investing 100$ to MSFT, we split the amount into 4 equal parts and we buy 4 different stocks. I will randomly pick Google's, Tesla's and Paypal's stocks.
 
-```
+```python
 from functools import reduce
 google_stock_prices = retrieve_stock_data("GOOGL", "2019-10-11", "2021-02-04")
 google_rets = normal_rets(google_stock_prices).dropna()
@@ -249,7 +249,7 @@ assets_returns.head()
 
 Based on the weight allocation of [.25, .25, .25, .25], let us now find the new cumulative wealth index of the investment.
 
-```
+```python
 # since the weights stay same throughout the index and since 100*0.25 = 25
 portfolio_wealth_index = 25 * (1 + assets_returns).cumprod()
 portfolio_wealth_index.head()
@@ -315,7 +315,7 @@ portfolio_wealth_index.head()
 
 Now, we just fave to sum the columns per row and plot the result
 
-```
+```python
 portfolio_wealth_index.sum(axis=1).plot.line(figsize=(14,7))
 plt.title('4 Asset Index')
 plt.show()

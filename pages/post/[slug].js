@@ -1,40 +1,48 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
 /* eslint-disable react/prop-types */
-import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import gfm from 'remark-gfm';
-import Tex from '@matejmazur/react-katex'
-import RemarkMathPlugin from 'remark-math';
+import Link from "next/link"
+import ReactMarkdown from "react-markdown"
+import gfm from 'remark-gfm'
+import rehypeKatex from 'rehype-katex'
+import rehypeRaw from 'rehype-raw'
+import RemarkMathPlugin from 'remark-math'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import Disqus from "disqus-react"
-import Layout from "components/Layout";
-import SEO from "components/Seo";
-import { getPostBySlug, getPostsSlugs } from "utils/posts";
-import { getSortedTags } from "utils/tags";
-import { getSortedTopics, getAllTopics } from "utils/topics";
-import { MarkdownImage, getSiteMetaData } from "utils/helpers";
+import Layout from "components/Layout"
+import SEO from "components/Seo"
+import { getPostBySlug, getPostsSlugs } from "utils/posts"
+import { getSortedTags } from "utils/tags"
+import { getSortedTopics, getAllTopics } from "utils/topics"
+import { MarkdownImage, getSiteMetaData } from "utils/helpers"
+import style from './markdown-styles.module.css'
 
-const renderers = {
-  inlineMath: ({value}) => <Tex math={value} />,
-  math: ({value}) => <Tex block math={value} />,
-  image: MarkdownImage,
+
+
+const components = {
+  code({node, inline, className, children}) {
+    const match = /language-(\w+)/.exec(className || '')
+    return !inline && match ? (
+      <SyntaxHighlighter style={darcula} language={match[1]} PreTag="div" >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className}>
+        {children}
+      </code>
+    )
+  },
+  img: MarkdownImage,
   link: ({ children, href }) => {
     return <Link href={href}><a>{children}</a></Link>
-  },
-  code: ({language, value}) => {
-    return <SyntaxHighlighter style={darcula} language={language} children={value} />
-  },
-  list: ({children}) => {
-    return children
   }
 }
 
 export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
-  const { siteUrl, disqus } = getSiteMetaData();
-  const { post, frontmatter, nextPost, previousPost } = postData;
+  const { siteUrl, disqus } = getSiteMetaData()
+  const { post, frontmatter, nextPost, previousPost } = postData
   const disqusShortname = disqus.hostname
   const disqusConfig = {
     url: siteUrl,
@@ -94,11 +102,12 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           )}
         </header>
         <ReactMarkdown
-          className="mb-4 prose-lg"
-          escapeHtml={false}
-          source={post.content}
-          plugins={[RemarkMathPlugin, gfm]}
-          renderers={renderers}
+          className={`mb-4 prose-lg max-w-none ${style.reactMarkDown}`}
+          skipHtml={false}
+          children={post.content}
+          remarkPlugins={[RemarkMathPlugin, gfm]}
+          rehypePlugins={[rehypeKatex, rehypeRaw]}
+          components={components}
         />
         <hr className="mt-4" />
         <footer />
@@ -132,32 +141,32 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
         config={disqusConfig}
       />
     </Layout>
-  );
+  )
 }
 
 export async function getStaticPaths() {
-  const paths = getPostsSlugs();
+  const paths = getPostsSlugs()
 
   return {
     paths,
     fallback: false,
-  };
+  }
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const postData = getPostBySlug(slug);
+  const postData = getPostBySlug(slug)
 
   if (!postData.previousPost) {
-    postData.previousPost = null;
+    postData.previousPost = null
   }
 
   if (!postData.nextPost) {
-    postData.nextPost = null;
+    postData.nextPost = null
   }
 
-  const tags = getSortedTags();
-  const sortedTopics = getSortedTopics();
-  const allTopics = getAllTopics();
+  const tags = getSortedTags()
+  const sortedTopics = getSortedTopics()
+  const allTopics = getAllTopics()
 
   return { 
     props: {
@@ -167,5 +176,5 @@ export async function getStaticProps({ params: { slug } }) {
       allTopics,
       slug
     },
-  };
+  }
 }

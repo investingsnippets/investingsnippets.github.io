@@ -16,7 +16,7 @@ The question though is: Really, which distribution do returns follow?
 Below we load the MSFT stock returns as we did before! 
 
 
-```
+```python
 %%capture
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
@@ -50,7 +50,7 @@ rets.columns = ['returns']
 Instead of trying to fit the Gaussian Distribution to our data, we will try to fit all the known (scipy.stats implementations) distributions and see which one (or ones) fits the data best.
 
 
-```
+```python
 import numpy as np
 from scipy.stats._continuous_distns import _distn_names
 import scipy.stats as st
@@ -94,7 +94,7 @@ def fit_all_distributions(data):
 ```
 
 
-```
+```python
 dist_fit = fit_all_distributions(rets.returns)
 len(dist_fit)
 ```
@@ -107,7 +107,7 @@ What? 99? :) Well, It should not be of a surprise that several distributions wou
 Let's get the 15 distributions with the lowest SSE (the ones that best fit the data).
 
 
-```
+```python
 dname_list = []
 sse_list = []
 pdf = []
@@ -227,12 +227,9 @@ df_15
 </table>
 </div>
 
-
-
 Interestingly `laplace` was the distribution which approximates best the initial data. However, several other distributions are not that far from `laplace` with regards to SSE distances. To showcase that, let's see how the distributions visually correlate with the actual data.
 
-
-```
+```python
 y, x = np.histogram(rets.returns, bins=19, density=True)
 x = (x + np.roll(x, -1))[:-1] / 2.0
 ax = rets.returns.plot(kind='hist', bins=19, figsize=(14,7), density=True, alpha=0.5, 
@@ -272,7 +269,7 @@ The answer to that question can be derived from the CDF (Cumulative Distribution
 
 Here is how the normal and student-t PDF looks like for MSFT returns in the period we test. 
 
-```
+```python
 ax = rets.returns.plot(kind='hist', bins=19, figsize=(14,7), density=True, alpha=0.5, 
                        color=list(matplotlib.rcParams['axes.prop_cycle'])[1]['color'])
 
@@ -293,7 +290,7 @@ ax.plot()
 
 Back to our question now. How confident are we that tomorrow the price will not drop below 2% (-0.02)? 
 
-```
+```python
 norm_cdf = np.cumsum(normal_pdf)
 t_cdf = np.cumsum(student_t_pdf)
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14,7))
@@ -305,12 +302,12 @@ plt.show()
 
 ![png](fit-distributions-to-asset-returns/fit_distributions_to_asset_returns_12_0.png)
     
-```
+```python
 norm_cdf[np.where(x <= -0.02)][-1]
 ```
     9.876651890962592
 
-```
+```python
 t_cdf[np.where(x <= -0.02)][-1]
 ```
     8.086428763077489

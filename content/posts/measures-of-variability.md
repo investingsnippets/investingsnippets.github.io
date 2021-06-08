@@ -60,7 +60,7 @@ Normal distributions have some very unique attributes. The most important are:
 
 ![png](measures-of-variability-normal-distribution.png)
 
-Let's assume that the average price of an asset $40 (measured with daily returns for some period) and the standard deviation is $5. We can assume with 95% certainty the next closing price remains between $30 and $50! (More on that in a later post). In other words, we are 95% sure that the max loss will not exceed $10.
+Let's assume that the average price of an asset is 40\$ (measured with daily returns for some period) and the standard deviation is 5\$. We can assume with 95% certainty the next closing price remains between 30\$ and 50\$! (More on that in a later post). In other words, we are 95% sure that the max loss will not exceed 10\$.
 
 > Standard Deviation is considered a pure measure of risk (due to returns distribution deviate from the normal one), but is a good indicator of how volatile as asset is. 
 

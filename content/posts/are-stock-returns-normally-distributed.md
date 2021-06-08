@@ -15,7 +15,7 @@ Let's try this approach on the MSFT stock.
 
 First step is to to fetch the data and print the returns.
 
-```
+```python
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
 import pandas as pd
@@ -57,7 +57,7 @@ plt.title("Daily returns", weight="bold");
 
 Let's find skewness and kurtosis:
 
-```
+```python
 from scipy.stats import kurtosis, skew
 skew(rets, bias=False)[0], kurtosis(rets, bias=False, fisher=False)[0]
 ```
@@ -65,7 +65,7 @@ skew(rets, bias=False)[0], kurtosis(rets, bias=False, fisher=False)[0]
 
 It is obvious that the MSFT stock returns (for that period) do not comply with the kurtosis and skewness of a normal distribution. Same, of course, happens if we get the log returns instead.
 
-```
+```python
 log_msft_rets = log_rets(stock_prices).dropna()
 skew(log_msft_rets, bias=False)[0], kurtosis(log_msft_rets, bias=False, fisher=False)[0]
 ```
@@ -73,7 +73,7 @@ skew(log_msft_rets, bias=False)[0], kurtosis(log_msft_rets, bias=False, fisher=F
 
 ## Normality Tests
 
-There are several interrelated approaches to determining normality.
+There are several interrelated approaches to determining normality:
 
 * Histogram with the normal curve superimposed. Unfortunately, there is no automated way to represent the "fitness" as a value. This approach is empirical mostly and requires experience.
 * Skewness & Kurtosis Tests.
@@ -82,7 +82,7 @@ There are several interrelated approaches to determining normality.
 
 ### Histogram & Normal PDF
 
-```
+```python
 from scipy.stats import norm
 x = np.linspace(min(rets.returns.values), max(rets.returns.values))
 ax = rets.plot(kind='hist', bins=500, density=True)
@@ -95,22 +95,20 @@ plt.show()
 
 ### Skewness & Kurtosis Tests
 
-```
+```python
 from scipy import stats
 stats.kurtosistest(rets.returns)
 ```
-
     KurtosistestResult(statistic=29.93227785492693, pvalue=7.484189304773088e-197)
 
-```
+```python
 stats.skewtest(rets.returns)
 ```
-
     SkewtestResult(statistic=5.99114785753993, pvalue=2.083650895527666e-09)
 
 ### QQ-Plot
 
-```
+```python
 from numpy.random import seed
 from statsmodels.graphics.gofplots import qqplot
 from matplotlib import pyplot
@@ -140,20 +138,18 @@ A result above 5% does not mean that the null hypothesis is true. It means that 
 #### Kolmogorov-Smirnov test (K-S)
 
 
-```
+```python
 kstest = stats.kstest(rets.returns, 'norm')
 kstest.pvalue > 0.05
 ```
-
     False
 
 #### Shapiro-Wilk Test
 
-```
+```python
 shapiro_stat, shapiro_p = stats.shapiro(rets.returns)
 shapiro_p > 0.05
 ```
-
     False
 
 
@@ -166,21 +162,19 @@ The D’Agostino’s K^2 test calculates summary statistics from the data, namel
 
 It is a simple and commonly used statistical test for normality.
 
-```
+```python
 seed(1)
 dagostino_stat, dagostino_p = stats.normaltest(rets.returns)
 dagostino_p > 0.05
 ```
-
     False
 
 #### Jarque-Bera Test for Normality
 
-```
+```python
 jarque_bera_stat, jarque_bera_p = stats.jarque_bera(rets.returns)
 jarque_bera_p > 0.05
 ```
-
     False
 
 ## Conclusion
@@ -189,4 +183,4 @@ In this article we went through some techniques that allow us identify if stock 
 
 The question is still... Since the returns are not following a normal distribution, then what type of distribution do they follow?
 
-The answer to that ... in a later article! :)
+The answer to that in [Fit Multiple Distributions to Asset Returns!](/post/fit-distributions-to-asset-returns)
