@@ -1,22 +1,23 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable global-require */
 /* eslint-disable react/prop-types */
-import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import gfm from 'remark-gfm';
+import Link from "next/link"
+import ReactMarkdown from "react-markdown"
+import gfm from 'remark-gfm'
 import rehypeKatex from 'rehype-katex'
-import RemarkMathPlugin from 'remark-math';
+import rehypeRaw from 'rehype-raw'
+import RemarkMathPlugin from 'remark-math'
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {darcula} from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 import Disqus from "disqus-react"
-import Layout from "components/Layout";
-import SEO from "components/Seo";
-import { getPostBySlug, getPostsSlugs } from "utils/posts";
-import { getSortedTags } from "utils/tags";
-import { getSortedTopics, getAllTopics } from "utils/topics";
-import { MarkdownImage, getSiteMetaData } from "utils/helpers";
-import style from './markdown-styles.module.css';
+import Layout from "components/Layout"
+import SEO from "components/Seo"
+import { getPostBySlug, getPostsSlugs } from "utils/posts"
+import { getSortedTags } from "utils/tags"
+import { getSortedTopics, getAllTopics } from "utils/topics"
+import { MarkdownImage, getSiteMetaData } from "utils/helpers"
+import style from './markdown-styles.module.css'
 
 
 
@@ -40,8 +41,8 @@ const components = {
 }
 
 export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
-  const { siteUrl, disqus } = getSiteMetaData();
-  const { post, frontmatter, nextPost, previousPost } = postData;
+  const { siteUrl, disqus } = getSiteMetaData()
+  const { post, frontmatter, nextPost, previousPost } = postData
   const disqusShortname = disqus.hostname
   const disqusConfig = {
     url: siteUrl,
@@ -105,7 +106,7 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
           skipHtml={false}
           children={post.content}
           remarkPlugins={[RemarkMathPlugin, gfm]}
-          rehypePlugins={[rehypeKatex]}
+          rehypePlugins={[rehypeKatex, rehypeRaw]}
           components={components}
         />
         <hr className="mt-4" />
@@ -140,32 +141,32 @@ export default function Post({postData, tags, sortedTopics, allTopics, slug}) {
         config={disqusConfig}
       />
     </Layout>
-  );
+  )
 }
 
 export async function getStaticPaths() {
-  const paths = getPostsSlugs();
+  const paths = getPostsSlugs()
 
   return {
     paths,
     fallback: false,
-  };
+  }
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const postData = getPostBySlug(slug);
+  const postData = getPostBySlug(slug)
 
   if (!postData.previousPost) {
-    postData.previousPost = null;
+    postData.previousPost = null
   }
 
   if (!postData.nextPost) {
-    postData.nextPost = null;
+    postData.nextPost = null
   }
 
-  const tags = getSortedTags();
-  const sortedTopics = getSortedTopics();
-  const allTopics = getAllTopics();
+  const tags = getSortedTags()
+  const sortedTopics = getSortedTopics()
+  const allTopics = getAllTopics()
 
   return { 
     props: {
@@ -175,5 +176,5 @@ export async function getStaticProps({ params: { slug } }) {
       allTopics,
       slug
     },
-  };
+  }
 }
