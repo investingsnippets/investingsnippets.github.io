@@ -9,7 +9,7 @@ img: /static/inflation.jpeg
 colab: https://drive.google.com/file/d/13aiLUQUIXhfjfnO_20U4Dap0tsfRiF-B/view?usp=sharing
 ---
 
-Inflation is the reason behind the erosion of the value of money over time. 1\$ today is more valuable that 1\$ after 5 years given a positive Inflation rate. I will not get into the details of what inflation is since there is lots of literature around that.
+Inflation is the reason behind the erosion of the value of money over time. 1\$ today is more valuable than 1\$ after 5 years (given a positive Inflation rate). I will not get into the details of what inflation is, since there is lots of literature around that.
 
 In this article I will showcase how to plan the financing of future expenses by including inflation, taxes on earnings and annual fees.
 
