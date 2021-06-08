@@ -3,7 +3,7 @@
 /* eslint-disable global-require */
 import Layout from "components/Layout";
 import SEO from "components/Seo";
-import ReactMarkdown from "react-markdown/with-html";
+import ReactMarkdown from "react-markdown";
 import { getTermsSlugs, getTermsBySlug } from "utils/terms";
 import { getSortedTags } from "utils/tags";
 import { getSortedTopics, getAllTopics } from "utils/topics";
@@ -25,10 +25,10 @@ export default function Terms({termData, tags, sortedTopics, allTopics}) {
           <p className="text-sm mb-2">{frontmatter.date}</p>
         </header>
         <ReactMarkdown
-          className="mb-4 prose-sm prose sm:prose lg:prose-lg"
-          escapeHtml={false}
-          source={term.content}
-          renderers={{ image: MarkdownImage }}
+          className={`mb-4 prose-sm prose sm:prose lg:prose-lg`}
+          skipHtml={false}
+          children={term.content}
+          components={{ image: MarkdownImage }}
         />
         <hr className="mt-4" />
         <footer />
