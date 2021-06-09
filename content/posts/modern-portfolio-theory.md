@@ -157,8 +157,7 @@ portfolio_return(np.array([0.5, 0.5]), annualize_rets(returns, 252)) - 1
     0.3109859252509841
 
 
-
-To avoid a brute-force approach with trying different weights and get the ones that give the minimum volatility, we can use algorithms that do this for us. Algorithms like [Sequential quadratic programming](https://en.wikipedia.org/wiki/Sequential_quadratic_programming) which based on the amount of constraints performs different levels of differentiations with purpose to minimize a cost function. In general, the objective function which in our case is the Efficient Frontier, has a point where the tangent either gets 0 or 1. In our case the tangent should be 1. The algorithm iteratively walks through the objective function, finds the tangent, and applies the constraints. Of course, like any cost function optimization in Machine Learning the accuracy is not always 100%! The algorithm may get stuck in local minima and not be able to find the best result. However, in the case of Efficient Frontier, the objective function has only one minimum and thus makes it easier to find.
+To avoid a brute-force approach with trying different weights and getting the ones that give the minimum volatility, we can use algorithms that do this for us. Algorithms like [Sequential quadratic programming](https://en.wikipedia.org/wiki/Sequential_quadratic_programming) which based on the amount of constraints performs different levels of differentiations with purpose to minimize a cost function. In general, the objective function which in our case is the Efficient Frontier, has a point where the tangent either gets 0 or 1. In our case the tangent should be 1. The algorithm iteratively walks through the objective function, finds the tangent, and applies the constraints. Of course, like any cost function optimization in Machine Learning the accuracy is not always 100%! The algorithm may get stuck in local minima and not be able to find the best result. However, in the case of Efficient Frontier, the objective function has only one minimum and thus makes it easier to find.
 
 Let's apply the algorithm to our data. The only constraints we provide for now is that the sum of the weights must be equal to 1.
 
@@ -179,7 +178,7 @@ result.x
     array([0.89906844, 0.10093156])
 
 
-As expected the weights are in the range we expected!
+The portfolio that produces the minimum risk for an investor is called `Global Minimum Variance (GMV)` portfolio and lies at the far left of the Efficient Frontier.
 
 In a next article we will go one step further in the Efficient Frontier analysis and try to find other points in the graph that are of interest.
 

@@ -13,10 +13,21 @@
 .reactMarkDown ol li {
     counter-increment: muffins
 }
+
 .reactMarkDown ol li:before {
     content: counter(muffins) ". ";
 }
+
 .reactMarkDown ol {
     list-style: none;
     counter-reset: muffins;
 }
+
+.reactMarkDown blockquote {
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+  }
