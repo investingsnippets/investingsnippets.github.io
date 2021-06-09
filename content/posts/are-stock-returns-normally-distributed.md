@@ -15,6 +15,9 @@ Let's try this approach on the MSFT stock.
 
 First step is to to fetch the data and print the returns.
 
+<details><summary>Package Installation</summary>
+<p>
+
 ```python
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
@@ -27,7 +30,12 @@ import numpy as np
 
 matplotlib.rcParams['figure.figsize'] = (10.0, 5.0)
 matplotlib.style.use('ggplot')
+```
 
+</p>
+</details>
+
+```python
 def retrieve_stock_data(ticker, start, end):
     json = YahooFinancials(ticker).get_historical_price_data(start, end, "daily")
     columns=["adjclose"]  # ["open","close","adjclose"]

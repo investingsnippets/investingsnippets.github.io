@@ -25,6 +25,9 @@ Let me show you how this index progresses over time.
 
 At first we set the ground work for fetching historical prices.
 
+<details><summary>Package Installation</summary>
+<p>
+
 ```python
 %pip install yahoofinancials
 from yahoofinancials import YahooFinancials
@@ -34,7 +37,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import dateutil.parser
 import numpy as np
+```
 
+</p>
+</details>
+
+```python
 def retrieve_stock_data(ticker, start, end):
     json = YahooFinancials(ticker).get_historical_price_data(start, end, "daily")
     columns=["adjclose"]  # ["open","close","adjclose"]

@@ -27,6 +27,8 @@ The example above can easily be extended to loan payments, house rent or even pe
 
 Let's get into code and replicate the scenario above.
 
+<details><summary>Package Installation</summary>
+<p>
 
 ```python
 %%capture
@@ -36,6 +38,9 @@ import ipywidgets as widgets
 from IPython.display import display
 %matplotlib inline
 ```
+
+</p>
+</details>
 
 ```python
 monthly_liabilities = 300

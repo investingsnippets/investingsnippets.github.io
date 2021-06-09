@@ -15,6 +15,8 @@ The question though is: Really, which distribution do returns follow?
 
 Below we load the MSFT stock returns as we did before! 
 
+<details><summary>Package Installation</summary>
+<p>
 
 ```python
 %%capture
@@ -25,7 +27,12 @@ import matplotlib
 import matplotlib.pyplot as plt
 import seaborn as sns
 import dateutil.parser
+```
 
+</p>
+</details>
+
+```python
 def retrieve_stock_data(ticker, start, end):
     json = YahooFinancials(ticker).get_historical_price_data(start, end, "daily")
     columns=["adjclose"]  # ["open","close","adjclose"]

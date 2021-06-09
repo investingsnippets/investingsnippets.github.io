@@ -54,13 +54,21 @@ Is the value of the random sample that occurs with the greatest frequency (might
 
 Let us generate some random data to showcase the above. We use `random.normal` here, which generates normally distributed numbers (we will discuss about normality in a following article) between -10 and 10. In terms of Investing, think of it as the simple returns (return = the percentage change of the today's closing price, over the yesterday's closing price) of a stock over a period.
 
+<details><summary>Package Installation</summary>
+<p>
+
 ```python
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set() 
+```
 
+</p>
+</details>
+
+```python
 randomInts = np.random.normal(loc=10, scale=3, size=1000).astype(int)-10
 
 df = pd.DataFrame(randomInts, columns=['Returns'])

@@ -29,6 +29,8 @@ We will do the same today but instead of using the Efficient Frontier for that, 
 
 As always, we set the ground work needed to fetch some stock data.
 
+<details><summary>Package Installation</summary>
+<p>
 
 ```python
 %%capture
@@ -39,7 +41,12 @@ import matplotlib
 import matplotlib.pyplot as plt
 import dateutil.parser
 import numpy as np
+```
 
+</p>
+</details>
+
+```python
 STOCK_SYMBOLS = ['MSFT', 'APT']
 
 def retrieve_stock_data(symbol, start, end):

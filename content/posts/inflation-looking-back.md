@@ -12,6 +12,9 @@ colab: https://drive.google.com/file/d/1DUyPzZAVkdg1QMiPNnkbBMB1cu2AT33o/view?us
 In [Inflation - Planning Forward](/post/inflation-planning-future-cash-flows) we picked a static annual inflation rate to plan the financing of future expenses. In this article we will use the inflation historical data to determine how inflation had affected our savings. 
 
 
+<details><summary>Package Installation</summary>
+<p>
+
 ```python
 %%capture
 import pandas as pd
@@ -22,6 +25,9 @@ import matplotlib.pyplot as plt
 !pip install -q requests
 !pip install -q pyscbwrapper
 ```
+
+</p>
+</details>
 
 Let us assume that 10 years ago a person started depositing 500\$ of hers/his salary to the bank once a month.
 

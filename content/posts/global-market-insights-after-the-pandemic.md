@@ -15,13 +15,22 @@ Below is an attempt to get a feeling of the emerging sectors by analyzing some [
 
 And as always, let's automate ...
 
+<details><summary>Package Installation</summary>
+<p>
+
 ```python
 !pip install requests beautifulsoup4
 import requests
 import re
 from bs4 import BeautifulSoup
 import string
+import pandas as pd
+```
 
+</p>
+</details>
+
+```python
 class GlobalMarketInsights:
   __DEFAULT_BASE_URL = 'https://www.gminsights.com/industry-reports'
   
@@ -112,8 +121,6 @@ print(f"Parsed {len(all_reports)} out of {number_of_records} report descriptions
 Next, we add the reports to a dataframe for better presentation and easier data manipulation.
 
 ```python
-import pandas as pd
-
 gmi_reports_df = pd.DataFrame(all_reports) 
 gmi_reports_df.head()
 ```
