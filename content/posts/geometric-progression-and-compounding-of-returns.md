@@ -86,12 +86,12 @@ $$
 
 where $P_i$ is the price of the asset on the period $i$.
 
-The equation (2) can be written as $P_i = P_{i-1} * (1 + R_i)$. Or $P_{end_of_year} = P_{start_of_year} * (1 + R_{annual})$.
+The equation (2) can be written as $P_i = P_{i-1} * (1 + R_i)$. Or $P_{end-of-year} = P_{start-of-year} * (1 + R_{annual})$.
 
 The equation (1) will take the form,
 
 $$
-P_{end_of_year} = P_{start_of_year} * (1 + R_{month})^{12}
+P_{end-of-year} = P_{start-of-year} * (1 + R_{month})^{12}
 $$
 
 Combining them,
@@ -113,7 +113,7 @@ So, a monthly return of 0.79% will produce a 10% return at the end of the year.
 To generalize
 
 $$
-R_{periodic} = \sqrt[no_of_periods]{1+R_{cumulative}} - 1 \qquad (3)
+R_{periodic} = \sqrt[number-of-periods]{1+R_{cumulative}} - 1 \qquad (3)
 $$
 
 ## Compounding variable returns
