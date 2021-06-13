@@ -21,7 +21,7 @@ which is part of Modern portfolio theory (MPT) and according to [wikipedia](http
 
 > Economist Harry Markowitz introduced MPT in a 1952 essay, for which he was later awarded a Nobel Memorial Prize in Economic Sciences; see [Markowitz model](https://en.wikipedia.org/wiki/Markowitz_model).
 
-The "two asset" Efficient Frontier we built in the previous post was done through carefully picking the asset weights and printing the mean-variance graph. Then, we were able to find on the graph which pair of wights was responsible for the minimum volatility amount.
+The "two asset" Efficient Frontier we built in the previous post was done through carefully picking the asset weights and printing the mean-variance graph. Then, we were able to find on the graph which pair of weights was responsible for the minimum volatility portfolio.
 
 We will do the same today but instead of using the Efficient Frontier for that, we will use some optimizers provided by `numpy`. 
 
@@ -61,8 +61,8 @@ def retrieve_stock_data(symbol, start, end):
     df.index.name = "date"
     return df
 
-def normal_rets(S):
-    '''Returns the returns. (price_today - price_yesterday)/price_yesterday'''
+def arithmetic_rets(S):
+    '''Returns the arithmetic returns. (price_today - price_yesterday)/price_yesterday'''
     return S.pct_change().dropna()
 
 def annualize_rets(r, periods_per_year):
@@ -83,7 +83,7 @@ def generate_returns_dataframe(symbols_list, d_from="2020-01-01", d_to="2021-01-
     returns = pd.DataFrame()
     for symbol in symbols_list:
         stock_prices = retrieve_stock_data(symbol, d_from, d_to)
-        rets = normal_rets(stock_prices).dropna()
+        rets = arithmetic_rets(stock_prices).dropna()
         rets.columns = [symbol]
 
         if returns.empty:
@@ -159,7 +159,7 @@ portfolio_return(np.array([0.5, 0.5]), annualize_rets(returns, 252)) - 1
 
 To avoid a brute-force approach with trying different weights and getting the ones that give the minimum volatility, we can use algorithms that do this for us. Algorithms like [Sequential quadratic programming](https://en.wikipedia.org/wiki/Sequential_quadratic_programming) which based on the amount of constraints performs different levels of differentiations with purpose to minimize a cost function. In general, the objective function which in our case is the Efficient Frontier, has a point where the tangent either gets 0 or 1. In our case the tangent should be 1. The algorithm iteratively walks through the objective function, finds the tangent, and applies the constraints. Of course, like any cost function optimization in Machine Learning the accuracy is not always 100%! The algorithm may get stuck in local minima and not be able to find the best result. However, in the case of Efficient Frontier, the objective function has only one minimum and thus makes it easier to find.
 
-Let's apply the algorithm to our data. The only constraints we provide for now is that the sum of the weights must be equal to 1.
+Let's apply the algorithm on our data. The only constraints we provide for now is that the sum of the weights must be equal to 1.
 
 
 ```python

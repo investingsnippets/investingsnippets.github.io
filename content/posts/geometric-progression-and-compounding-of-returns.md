@@ -74,11 +74,11 @@ Some interesting properties to notice:
 
 In the example above the way we used the return to calculate the end result is called **Compounding of Returns**.
 
-## From annual to periodic returns
+## From cumulative to periodic returns
 
-Let's see the example above from another angle. Let's say that an assets had a total return over the last year of 10%. What was the average monthly return of the asset?
+Let's see the example above from another angle. Let's say that an asset had a total return over the last year of 10%. What was the average monthly return of the asset?
 
-We calculate a simple/arithmetic return (pandas.pct_change) like:
+The cumulative return (pandas.pct_change) is given by the type:
 
 $$
 R_i = \frac{P_i-P_{i-1}}{P_{i-1}} = \frac{P_i}{P_{i-1}} - 1 \qquad (2)
@@ -86,27 +86,41 @@ $$
 
 where $P_i$ is the price of the asset on the period $i$.
 
-By assuming (for simplicity) that $P_0 = 1$ and from (2), $P_1 = P_0 * (1 + R_{annual})$
+The equation (2) can be written as $P_i = P_{i-1} * (1 + R_i)$. Or $P_{end_of_year} = P_{start_of_year} * (1 + R_{annual})$.
 
-Then from (1),
+The equation (1) will take the form,
 
 $$
-1 + R_{annual} = 1 * (1 + R_{month})^12 => R_{month} = \sqrt[12]{1+R_{annual}} - 1 \qquad (3)
+P_{end_of_year} = P_{start_of_year} * (1 + R_{month})^{12}
+$$
+
+Combining them,
+
+$$
+1 + R_{annual} = (1 + R_{month})^{12} => R_{month} = \sqrt[12]{1+R_{annual}} - 1
 $$
 
 We use ν = 12, because 1 year = 12 months (=> 12 compounding periods). If instead of monthly returns we were asked to find quarter returns then we would use ν = 4 ($R_{quarter} = \sqrt[4]{1+R_{annual}} - 1$).
 
-Finally, from (3),
+Finally,
 
 $$
 R_{monthly} = \sqrt[12]{1 + 0.1} - 1 = \sqrt[12]{1.1} - 1 = 1.0079 - 1 = 0.0079
+$$ 
+
+So, a monthly return of 0.79% will produce a 10% return at the end of the year.
+
+To generalize
+
+$$
+R_{periodic} = \sqrt[no_of_periods]{1+R_{cumulative}} - 1 \qquad (3)
 $$
 
 ## Compounding variable returns
 
 It is commonly accepted that returns do not stay the same over periods. For example, the average return of this month is not the same as the one from last month! However, the same principle of compounding applies in this case too. Let's see an example.
 
-An asset yields the following return for the past couple of months $0.021, 0.032, -0.018, 0.06, -0.043, 0.048$. The total return is the **product** of the individual returns when 1 is added to them:
+An asset yields the following returns for the past couple of months $0.021, 0.032, -0.018, 0.06, -0.043, 0.048$. The total return is the **product** of the individual returns when 1 is added to them:
 
 $$
 R = (1 + 0.021) * (1 + 0.032) * (1 - 0.018) * (1 + 0.06) * (1 - 0.043) * (1 + 0.048) = ...
