@@ -11,7 +11,7 @@ class Subscribe extends Component {
   constructor (props) {
     super(props)
     const siteMeta = getSiteMetaData();
-    this.tinyletter = siteMeta.tinyletter;
+    this.tinyLetterId = siteMeta.tinyletter.id;
     this.submitForm = this.submitForm.bind(this);
   }
 
@@ -22,7 +22,7 @@ class Subscribe extends Component {
       category: 'Subscribe',
       label: 'buttont_clicked',
     })
-    window.open(`https://tinyletter.com/${this.tinyletter}`, 'popupwindow', 'scrollbars=yes,width=800,height=600');
+    window.open(`https://tinyletter.com/${this.tinyLetterId}`, 'popupwindow', 'scrollbars=yes,width=800,height=600');
     return true
   }
 
@@ -30,13 +30,13 @@ class Subscribe extends Component {
     return (
       <content>
         <h5 className="font-semibold text-lg uppercase text-gray-700 mb-2"> Subscribe </h5>
-        {this.tinyletter && (
+        {this.tinyLetterId && (
         <>
           <p className="text-gray-600">
             Receive the next blog article directly to your email!
           </p>
           <form
-            action={`https://tinyletter.com/${this.tinyletter}`}
+            action={`https://tinyletter.com/${this.tinyLetterId}`}
             method="post"
             target="popupwindow"
             // onSubmit={this.submitForm}
