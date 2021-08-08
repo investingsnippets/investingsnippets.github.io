@@ -1,5 +1,5 @@
 <h1 align="center">
-  Investing Snippets Website & Blog
+  Investing Snippets Website & Blog 
 </h1>
 
 ## Develop
