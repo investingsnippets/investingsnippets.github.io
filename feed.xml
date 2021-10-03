@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 21 Jun 2021 05:59:15 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Oct 2021 15:41:44 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Pyinvestingsnippets]]></title>
+            <description><![CDATA[A python library to aid stock and portfolio analysis and reporting.]]></description>
+            <link>https://www.investingsnippets.com/post/generating-stock-reports-with-pyinvestingsnippets</link>
+            <guid isPermaLink="false">generating-stock-reports-with-pyinvestingsnippets</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sun, 03 Oct 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Modern Portfolio Theory - Part 2]]></title>
             <description><![CDATA[Global Minimum Variance (GMV), Maximum Sharpe Ratio (MSR), Capital Allocation Line (Cal) and the mixed portfolio.]]></description>
