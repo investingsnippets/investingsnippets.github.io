@@ -27,12 +27,13 @@ export default function Topic({topic, posts, tags, sortedTopics, allTopics}) {
           <a className='' key={topic.id}>{topic.name}</a>
         </Link>
       </p>
-      <div className="mb-4 flex text-center content-center flex-wrap place-items-center">
+      <div className="mb-4 flex flex-wrap">
         <Image
           className="mx-auto"
           src={require(`../../content/assets/${topic.image}`)}
           previewSrc={require(`../../content/assets/${topic.image}?lqip`)}
-          alt="Automation"
+          alt="Topic"
+          lazyload={false}
         />
       </div>
 
