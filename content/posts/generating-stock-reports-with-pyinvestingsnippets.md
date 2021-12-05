@@ -6,6 +6,7 @@ topic: automation
 tags: python
 author: chris
 colab: https://colab.research.google.com/drive/1ffDTOO0xjlHWJR-XbyoRcoGiZvgN5L9-?usp=sharing
+img: /static/python-module.jpeg
 ---
 
 It's been a while since the last time! All this period, I was building a new python library :) This library extends pandas and implements most of the concepts we have discussed in earlier articles.
