@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 03 Oct 2021 15:41:44 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 06 Dec 2021 08:51:57 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[The Richest Man in Babylon]]></title>
+            <description><![CDATA[Takes just 7 steps to become wealthy!]]></description>
+            <link>https://www.investingsnippets.com/post/the-richest-man-in-babylon</link>
+            <guid isPermaLink="false">the-richest-man-in-babylon</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Mon, 29 Nov 2021 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Pyinvestingsnippets]]></title>
             <description><![CDATA[A python library to aid stock and portfolio analysis and reporting.]]></description>
