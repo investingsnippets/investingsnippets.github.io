@@ -57,4 +57,4 @@ img: /static/richest-man-book.jpeg
   * Ask for a security in case the borrower cannot repay.
   * Always think that your well deserved savings are yours due to the sacrifices you have made. 
 
-  <center><h2><u>Better a little caution that a great regret!</u><h2></center>
+  <center><h2><u>Better a little caution than a great regret!</u><h2></center>
