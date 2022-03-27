@@ -4,8 +4,16 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 13 Feb 2022 10:25:32 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 27 Mar 2022 09:24:04 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Hosting Beancount on Google Colab]]></title>
+            <description><![CDATA[Access your Accounting books for free, wherever you are ;)]]></description>
+            <link>https://www.investingsnippets.com/post/google-colab-and-beancount</link>
+            <guid isPermaLink="false">google-colab-and-beancount</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sat, 26 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[pyinvestingsnippets + plotly = AWESOME]]></title>
             <description><![CDATA[An amazing Dash + Plotly + Pyinvestingsnippets stock/portfolio benchmarking tool.]]></description>
