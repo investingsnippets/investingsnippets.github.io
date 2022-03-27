@@ -19,6 +19,8 @@ services:
     volumes:
      - .:/app
   npm:
+    environment:
+      - GIT_SSH_COMMAND
     build:
       context: .
       dockerfile: Dockerfile

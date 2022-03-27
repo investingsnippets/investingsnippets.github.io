@@ -14,6 +14,12 @@ docker-compose run -p "3000:3000" --rm dev
 docker-compose run --rm npm npm run deploy
 ```
 
+or if the ssh keys are elsewhere
+
+```
+docker-compose run -e GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa_investingsnippets -o IdentitiesOnly=yes' --rm npm npm run deploy
+```
+
 ## Generate md from ipynb
 
 ```bash
