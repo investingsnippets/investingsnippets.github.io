@@ -9,7 +9,7 @@ img: /static/nobel-price.jpg
 colab: https://colab.research.google.com/drive/1UhsvOExkQsHE_wIBzQR9rqwcKUSI_FZr?usp=sharing
 ---
 
-Previously in [Modern Portfolio Theory - Part 1](/post/modern-portfolio-theory) we located the global minimum variance portfolio (GMV) on the Efficient Frontier. In [Inflation - Planning Forward!](/post/inflation-planning-future-cash-flows) we showed how inflation drags down the real return of an investment. 
+Previously in [Modern Portfolio Theory - Part 1](/post/modern-portfolio-theory) we located the global minimum variance portfolio (GMV) on the Efficient Frontier. In [Present Value & the Funding Ratio](/post/pv-and-funding-ratio) we showed how inflation drags down the real return of an investment. 
 
 While GMV would pose the minimum (estimated) risk for an investor, it might not be the one that outperforms inflation. In addition to that, government bonds are considered very low risk and yield an annual return which is the profit for the investor. When constructing a portfolio of assets that are riskier, the expectation on return should be higher. A return that surpasses inflation and bond returns should be the goal.
 

@@ -9,7 +9,7 @@ img: /static/no-piggy-bank.png
 colab: https://drive.google.com/file/d/1DUyPzZAVkdg1QMiPNnkbBMB1cu2AT33o/view?usp=sharing
 ---
 
-In [Inflation - Planning Forward](/post/inflation-planning-future-cash-flows) we picked a static annual inflation rate to plan the financing of future expenses. In this article we will use the inflation historical data to determine how inflation had affected our savings. 
+In [Present Value & the Funding Ratio](/post/pv-and-funding-ratio) we picked a static annual inflation rate to plan the financing of future expenses. In this article we will use the inflation historical data to determine how inflation had affected our savings.
 
 
 <details><summary>Package Installation</summary>

@@ -1,5 +1,5 @@
 ---
-title: Inflation - Planning Forward!
+title: Present Value & the Funding Ratio - Planning Forward!
 description: How to plan for future cash flows taking into account inflation, taxes and fees.
 date: 2021-05-23T11:00:00.000Z
 topic: investing
@@ -17,13 +17,21 @@ Let's see that with an example. Let's assume that a person decides a job break f
 
 The quick response to that is $3 * 12 * 300 = 10800$\$! but that is not actually true due to the inflation. Let's (for the sake of the example) say that the inflation is 2% per year. That means that 1\$ today will be valued at $1*\frac{1}{1 + .02}=0.9804$\$ in one year from now.
 
-So, for the first year, the person will pay 3600\$ but the actual cost of 3600\$ today is $3600*(1+.02)^1 =3672$\$. That means that there are $3672-3600=72$\$ that are missing and should be added to the initial amount. The second year the person will need to pay 3600 again, but the value today is $3600*(1+.02)^2=3745.44$\$. The third year, the situation is the same and the calculated value for the 3600\$ would today be $3600*(1+.02)^3=3820.348$\$.
-
 > Note: the notation $(1+i)^n$ where i is the annual inflation rate and n is the periods in years, is something we discussed in the [Geometric Progression and the Compounding of the Returns](/post/geometric-progression-and-compounding-of-returns) article. Think of inflation as compounding with negative rate.
+
+In other words we are asking for the `Present Value` of a future ($t=1$) 1\$ ($C_1$) with a discount rate ($r$) of 2%. The formula is:
+
+$$
+Present-Value = \frac{C_t}{(1 + r)^{t}} \qquad (1)
+$$
+
+We call the $1*\frac{1}{(1 + r)^{t}}$ `discount factor`.
+
+So, for the first year, the person will pay 3600\$ but the actual cost of 3600\$ today is $3600*(1+.02)^1 =3672$\$. That means that there are $3672-3600=72$\$ that are missing and should be added to the initial amount. The second year the person will need to pay 3600 again, but the value today is $3600*(1+.02)^2=3745.44$\$. The third year, the situation is the same and the calculated value for the 3600\$ would today be $3600*(1+.02)^3=3820.348$\$.
 
 So far, the deficit for the first year is 72, for the second year is 145 and for the third year is 220. A total of 437\$ needs to be added to our initial thought of 10800!
 
-The example above can easily be extended to loan payments, house rent or even pension forecasting.
+The example above can easily be extended to loan payments, house rent or even pension forecasting (the financial term for all these is [`annuities`](/post/perpetuities-annuities)).
 
 Let's get into code and replicate the scenario above.
 
@@ -66,7 +74,7 @@ print(f"Liabilities per year: {list(liabilities.values)}, \
     No inflation case: 10800.00
 
 
-## Balancing inflation through investing
+## Present Value - Balancing inflation through investing
 
 Inflation is eroding the value of money when they stand still! However, a balanced situation can be achieved if the money is invested to something that yields a return equal (or even better, more) than the inflation rate. There are several options to that, from 0 risk saving accounts that pay an interest, to a type of bond that increases the risk a bit and gives a better return (or even inflation-adjusted bonds), to more risky assets like equity funds that might yield an even better return.
 
@@ -74,7 +82,9 @@ In any case, we should take into account the taxes on profits and the administra
 
 Let's go back to our example and say that we found a savings account that pays 2% annually in interest without fees and taxes. That would mean that we could invest 10800 to this account today and each year pay out the bill.
 
-But what if there was a 10% tax on the profits from this interest? How much money would we need today to start with?
+But what if there was a 10% tax on the profits from this interest? How much money would we need today to start with? Or else, what is the present value of the investment?
+
+
 
 ```python
 investment_annual_return = 0.02
