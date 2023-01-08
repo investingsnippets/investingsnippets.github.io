@@ -4,8 +4,40 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 27 Mar 2022 09:24:04 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 08 Jan 2023 16:04:49 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Pension Planning - Lite]]></title>
+            <description><![CDATA[Understand how to account for your pension.]]></description>
+            <link>https://www.investingsnippets.com/post/pension-planning-lite</link>
+            <guid isPermaLink="false">pension-planning-lite</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sun, 08 Jan 2023 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The rule of 72]]></title>
+            <description><![CDATA[A reverse engineered proof.]]></description>
+            <link>https://www.investingsnippets.com/post/rule-of-72</link>
+            <guid isPermaLink="false">rule-of-72</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sat, 24 Sep 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Arithmetic vs. Log returns]]></title>
+            <description><![CDATA[Why and when.]]></description>
+            <link>https://www.investingsnippets.com/post/arithmetic-vs-log-returns</link>
+            <guid isPermaLink="false">arithmetic-vs-log-returns</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Wed, 29 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Annuities and Perpetuities]]></title>
+            <description><![CDATA[How a credit installment is repaid? How to plan for pension. A cheat sheet for annuities and perpetuities.]]></description>
+            <link>https://www.investingsnippets.com/post/perpetuities-annuities</link>
+            <guid isPermaLink="false">perpetuities-annuities</guid>
+            <dc:creator><![CDATA[Chris]]></dc:creator>
+            <pubDate>Sun, 29 May 2022 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Hosting Beancount on Google Colab]]></title>
             <description><![CDATA[Access your Accounting books for free, wherever you are ;)]]></description>
@@ -55,10 +87,10 @@
             <pubDate>Tue, 08 Jun 2021 00:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Inflation - Planning Forward!]]></title>
+            <title><![CDATA[Present Value & the Funding Ratio - Planning Forward!]]></title>
             <description><![CDATA[How to plan for future cash flows taking into account inflation, taxes and fees.]]></description>
-            <link>https://www.investingsnippets.com/post/inflation-planning-future-cash-flows</link>
-            <guid isPermaLink="false">inflation-planning-future-cash-flows</guid>
+            <link>https://www.investingsnippets.com/post/pv-and-funding-ratio</link>
+            <guid isPermaLink="false">pv-and-funding-ratio</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
             <pubDate>Sun, 23 May 2021 00:00:00 GMT</pubDate>
         </item>
