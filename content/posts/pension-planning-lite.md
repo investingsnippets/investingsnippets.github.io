@@ -5,7 +5,7 @@ date: 2023-01-08T11:00:00.000Z
 topic: investing
 tags: python
 author: chris
-img: /static/inflation.jpeg
+img: /static/pension.jpeg
 ---
 
 It has been some time now that I was looking around the net for a pension calculator that is intuitive and will help me understand
