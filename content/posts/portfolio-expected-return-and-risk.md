@@ -9,13 +9,13 @@ img: /static/magic.png
 colab: https://colab.research.google.com/drive/1lNirrCFUfWaZ_Cci-mmsio79wX_KwR5b?usp=sharing
 ---
 
-In previous posts we talked about the [expected return](/post/measures-of-location) (mean value of a distribution) and the [volatility](/post/measures-of-variability) (standard deviation) of an asset.
+In previous posts we discussed about the [expected return](/post/measures-of-location) (mean value of a distribution) and the [volatility](/post/measures-of-variability) (standard deviation) of an asset.
 
-But, in investing, we rarely hold a portfolio of just one stock! Let's start then, by picking two stocks.
+But, in investing, we rarely hold a portfolio of just one stock! Let's start with two stocks and observe what happens with return and volatility.
 
 The first question is: OK, what percentage of the total investment amount shall we allocate to stock A and what to stock B?
 
-If we allocate 100% to A and 0% to B or the other way around, then we get into the "one asset" portfolio and that is not desirable! Let's assume that we set 50% on asset A and 50% on asset B. Let's also call this percentage allocations, weights (w_A, w_B respectively).
+If we allocate 100% to A and 0% to B or the other way around, then we get into the "one asset" portfolio. Let's assume that we set weight w_A=50% on asset A and w_B=50% on asset B.
 
 In that case, we are asked to come up with the return (mean) and the volatility (standard deviation) of the portfolio.
 
@@ -33,11 +33,11 @@ $$
 \sigma_{A,B}=\sqrt{\sigma_A^2w_A^2 + \sigma_B^2w_B^2 + 2w_Aw_B\sigma_A\sigma_B\rho_{A,B}}  \qquad (2)
 $$
 
-This second (2) equation tells us that the standard deviation of a 2 asset distribution is equal to the square root of the variance of asset A multiplied by the squared weight of A plus the variance of asset B multiplied by the squared weight of B, plus twice the product of variance of A times the variance of B times the weight of A times the weight of B times the correlation coefficient of A and B!
+This second (2) equation tells us that the standard deviation of a 2 asset distribution is equal to the square root of the variance of asset A multiplied by the squared weight of A plus the variance of asset B multiplied by the squared weight of B, plus twice the product of the standard deviation of A times the standard deviation of B times the weight of A times the weight of B times the correlation coefficient of A and B!
 
 So far so good! But where exactly does the magic begin? Well, the correlation coefficient is not always a positive number :O
 
-The correlation coefficient can take values between -1 and 1. -1 when the two assets are totally uncorrelated, which means that when the first asset goes up the other goes down at the same pace and same angle. 1 when both assets move to the same direction with the same pace and same angle (either positive or negative direction). Values between -1 and 1 indicate a more loose correlation, but show the trend.
+The correlation coefficient can take values between -1 and 1. -1 when the two assets are perfectly negatively correlated, which means that when the first asset goes up the other goes down at the same pace and same angle. 1 when both assets move to the same direction with the same pace and same angle (either positive or negative direction) and 0 when the assets are totally uncorrelated. Values between -1 and 1 indicate a more loose correlation, but show the trend.
 
 Back to the equation (2). If we have a negative correlation of the assets, the total volatility is less than the average volatility, and if we have a positive correlation the total volatility is more that the average.
 

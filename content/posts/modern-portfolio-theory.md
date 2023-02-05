@@ -11,7 +11,7 @@ colab: https://colab.research.google.com/drive/1U6dR3xx-g4NWXl-5NKtGlMZVIkSJcJEz
 
 In a previous post about [Return & Volatility of a Multi-Asset Portfolio](/post/portfolio-expected-return-and-risk) we saw how the correlation of the prices of two assets was a key part to achieving lower volatility than the volatility of the assets' individually. We built a visual proof with just two random assets.
 
-This "visual proof" is called Efficient Frontier
+The locus of all frontier portfolios in the mean-variance plane is called Portfolio Frontier.
 
 ![jpg](https://upload.wikimedia.org/wikipedia/commons/e/e1/Markowitz_frontier.jpg)
 
@@ -21,9 +21,11 @@ which is part of Modern portfolio theory (MPT) and according to [wikipedia](http
 
 > Economist Harry Markowitz introduced MPT in a 1952 essay, for which he was later awarded a Nobel Memorial Prize in Economic Sciences; see [Markowitz model](https://en.wikipedia.org/wiki/Markowitz_model).
 
-The "two asset" Efficient Frontier we built in the previous post was done through carefully picking the asset weights and printing the mean-variance graph. Then, we were able to find on the graph which pair of weights was responsible for the minimum volatility portfolio.
+The "two asset" Portfolio Frontier we built in the previous post was done through carefully picking the asset weights and printing the mean-variance graph. Then, we were able to find on the graph which pair of weights was responsible for the minimum volatility portfolio.
 
-We will do the same today but instead of using the Efficient Frontier for that, we will use some optimizers provided by `numpy`. 
+We can construct portfolios that have the same variance but different returns. A mean-variance investor would, of course, prefer the portfolio with the highest return. Then, we can see that out of the whole frontier line we are mostly interested for the upper part and disregard any portfolios below. This part of the frontier is called Efficient Frontier since it really represents the most efficient portfolios.
+
+Next, we will use optimizers provided by `numpy` and find the `Global Minimum Variance (GMV)` portfolio.
 
 ## Data Collection
 
