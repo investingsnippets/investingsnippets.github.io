@@ -4,7 +4,7 @@
         <description><![CDATA[InvestingSnippets]]></description>
         <link>https://www.investingsnippets.com</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 15 Jan 2023 14:22:04 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Feb 2023 08:21:52 GMT</lastBuildDate>
         <atom:link href="https://www.investingsnippets.com/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Pension Planning - Lite]]></title>
@@ -13,30 +13,6 @@
             <guid isPermaLink="false">pension-planning-lite</guid>
             <dc:creator><![CDATA[Chris]]></dc:creator>
             <pubDate>Sun, 08 Jan 2023 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[The rule of 72]]></title>
-            <description><![CDATA[A reverse engineered proof.]]></description>
-            <link>https://www.investingsnippets.com/post/rule-of-72</link>
-            <guid isPermaLink="false">rule-of-72</guid>
-            <dc:creator><![CDATA[Chris]]></dc:creator>
-            <pubDate>Sat, 24 Sep 2022 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Arithmetic vs. Log returns]]></title>
-            <description><![CDATA[Why and when.]]></description>
-            <link>https://www.investingsnippets.com/post/arithmetic-vs-log-returns</link>
-            <guid isPermaLink="false">arithmetic-vs-log-returns</guid>
-            <dc:creator><![CDATA[Chris]]></dc:creator>
-            <pubDate>Wed, 29 Jun 2022 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Annuities and Perpetuities]]></title>
-            <description><![CDATA[How a credit installment is repaid? How to plan for pension. A cheat sheet for annuities and perpetuities.]]></description>
-            <link>https://www.investingsnippets.com/post/perpetuities-annuities</link>
-            <guid isPermaLink="false">perpetuities-annuities</guid>
-            <dc:creator><![CDATA[Chris]]></dc:creator>
-            <pubDate>Sun, 29 May 2022 00:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Hosting Beancount on Google Colab]]></title>
